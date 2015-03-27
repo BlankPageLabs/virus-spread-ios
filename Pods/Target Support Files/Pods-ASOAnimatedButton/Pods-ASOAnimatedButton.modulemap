@@ -1,0 +1,6 @@
+framework module ASOAnimatedButton {
+  umbrella header "Pods-ASOAnimatedButton-umbrella.h"
+
+  export *
+  module * { export * }
+}

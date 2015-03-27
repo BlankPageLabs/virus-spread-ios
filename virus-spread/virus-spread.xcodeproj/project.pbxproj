@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E32CADC84530EBEB52637E3F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5009B0F3D759BB65F6B615DF /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F397530FD3210598B23CD441 /* VirusData.m in Sources */ = {isa = PBXBuildFile; fileRef = F397538DF2F20E910E5D7906 /* VirusData.m */; };
 		F667697E1AC5CA1F00D2C96E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F667697D1AC5CA1F00D2C96E /* main.m */; };
 		F66769811AC5CA1F00D2C96E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F66769801AC5CA1F00D2C96E /* AppDelegate.m */; };
 		F66769841AC5CA1F00D2C96E /* virus_spread.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F66769821AC5CA1F00D2C96E /* virus_spread.xcdatamodeld */; };
@@ -28,6 +30,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5009B0F3D759BB65F6B615DF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		685FF2DB814FF48CA27ABE1A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8C41C0E62BB111D6F35B90D9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F397538DF2F20E910E5D7906 /* VirusData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VirusData.m; sourceTree = "<group>"; };
+		F397570CEB674F8B17F77BF9 /* VirusData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirusData.h; sourceTree = "<group>"; };
 		F66769781AC5CA1F00D2C96E /* virus-spread.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "virus-spread.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F667697C1AC5CA1F00D2C96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F667697D1AC5CA1F00D2C96E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -49,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E32CADC84530EBEB52637E3F /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,12 +70,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D8B147F512FE14C8EA74C96 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				685FF2DB814FF48CA27ABE1A /* Pods.debug.xcconfig */,
+				8C41C0E62BB111D6F35B90D9 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9A9BBAD50734C2AA6D2CF316 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5009B0F3D759BB65F6B615DF /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F667696F1AC5CA1F00D2C96E = {
 			isa = PBXGroup;
 			children = (
 				F667697A1AC5CA1F00D2C96E /* virus-spread */,
 				F66769971AC5CA1F00D2C96E /* virus-spreadTests */,
 				F66769791AC5CA1F00D2C96E /* Products */,
+				8D8B147F512FE14C8EA74C96 /* Pods */,
+				9A9BBAD50734C2AA6D2CF316 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +119,8 @@
 				F667698D1AC5CA1F00D2C96E /* LaunchScreen.xib */,
 				F66769821AC5CA1F00D2C96E /* virus_spread.xcdatamodeld */,
 				F667697B1AC5CA1F00D2C96E /* Supporting Files */,
+				F397538DF2F20E910E5D7906 /* VirusData.m */,
+				F397570CEB674F8B17F77BF9 /* VirusData.h */,
 			);
 			path = "virus-spread";
 			sourceTree = "<group>";
@@ -129,9 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F667699E1AC5CA1F00D2C96E /* Build configuration list for PBXNativeTarget "virus-spread" */;
 			buildPhases = (
+				6100630658A1497C45BCFA6D /* Check Pods Manifest.lock */,
 				F66769741AC5CA1F00D2C96E /* Sources */,
 				F66769751AC5CA1F00D2C96E /* Frameworks */,
 				F66769761AC5CA1F00D2C96E /* Resources */,
+				C81E163AC165C7A225CF6924 /* Embed Pods Frameworks */,
+				E6CBE3818FAE48652BEE9EA5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,6 +249,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6100630658A1497C45BCFA6D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C81E163AC165C7A225CF6924 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6CBE3818FAE48652BEE9EA5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F66769741AC5CA1F00D2C96E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -226,6 +306,7 @@
 				F66769811AC5CA1F00D2C96E /* AppDelegate.m in Sources */,
 				F66769871AC5CA1F00D2C96E /* ViewController.m in Sources */,
 				F667697E1AC5CA1F00D2C96E /* main.m in Sources */,
+				F397530FD3210598B23CD441 /* VirusData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +430,7 @@
 		};
 		F667699F1AC5CA1F00D2C96E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 685FF2DB814FF48CA27ABE1A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "virus-spread/Info.plist";
@@ -359,6 +441,7 @@
 		};
 		F66769A01AC5CA1F00D2C96E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C41C0E62BB111D6F35B90D9 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "virus-spread/Info.plist";
@@ -420,6 +503,7 @@
 				F66769A01AC5CA1F00D2C96E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F66769A11AC5CA1F00D2C96E /* Build configuration list for PBXNativeTarget "virus-spreadTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +512,7 @@
 				F66769A31AC5CA1F00D2C96E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
