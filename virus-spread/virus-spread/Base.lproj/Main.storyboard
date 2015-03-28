@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController definesPresentationContext="YES" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lzJ-im-1P2" customClass="ASOBounceButtonView">
-                                <rect key="frame" x="43" y="-79" width="66" height="78"/>
+                                <rect key="frame" x="-81" y="-53" width="25" height="88"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outletCollection property="bounceButtonsFromUI" destination="BMp-Fy-eBg" id="lpq-8j-mcJ"/>
@@ -27,7 +27,7 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcW-x4-W4a" customClass="VirusButton">
-                                <rect key="frame" x="295" y="471" width="30" height="30"/>
+                                <rect key="frame" x="285" y="451" width="30" height="30"/>
                                 <state key="normal" title="Flu">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W86-DH-XgF" customClass="VirusButton">
-                                <rect key="frame" x="381" y="515" width="57" height="30"/>
+                                <rect key="frame" x="352" y="495" width="57" height="30"/>
                                 <state key="normal" title="Measles">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -50,25 +50,44 @@
                                     <action selector="virusSelected:" destination="x5A-6p-PRh" eventType="touchUpInside" id="TQB-3A-OT9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZr-R4-Z0U">
-                                <rect key="frame" x="258" y="550" width="85" height="30"/>
-                                <state key="normal" title="I got a virus!">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZr-R4-Z0U">
+                                <rect key="frame" x="275" y="530" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="DjW-Of-GnE"/>
+                                    <constraint firstAttribute="height" constant="50" id="Web-VL-LFN"/>
+                                </constraints>
+                                <state key="normal" title="I got a virus!" image="cold">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="gotVirus:" destination="x5A-6p-PRh" eventType="touchUpInside" id="8WR-tq-dK1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMp-Fy-eBg" customClass="VirusButton">
-                                <rect key="frame" x="160" y="515" width="97" height="30"/>
-                                <state key="normal" title="Common cold">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="BMp-Fy-eBg" customClass="VirusButton">
+                                <rect key="frame" x="215" y="495" width="32" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Cold"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="virusId" value="ccold"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="virusSelected:" destination="x5A-6p-PRh" eventType="touchUpInside" id="nSl-aP-wZ4"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="cRO-k7-4JB">
+                                <rect key="frame" x="43" y="20" width="514" height="410"/>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YR8-hu-DJ8">
+                                <rect key="frame" x="275" y="526" width="50" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="1xu-Gh-oEi"/>
+                                    <constraint firstAttribute="width" constant="50" id="ca9-2t-FeK"/>
+                                </constraints>
+                                <state key="normal" title="Cured" image="yeah">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cured:" destination="x5A-6p-PRh" eventType="touchUpInside" id="dan-zr-eeC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -77,21 +96,64 @@
                             <constraint firstItem="jZr-R4-Z0U" firstAttribute="top" secondItem="EcW-x4-W4a" secondAttribute="bottom" constant="49" id="2le-es-AdU"/>
                             <constraint firstAttribute="centerX" secondItem="jZr-R4-Z0U" secondAttribute="centerX" id="37Y-zC-UfP"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="jZr-R4-Z0U" secondAttribute="bottom" constant="20" id="6Hm-vV-UgT"/>
-                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="leading" secondItem="BMp-Fy-eBg" secondAttribute="trailing" constant="1" id="Bu2-gR-0He"/>
+                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="leading" secondItem="BMp-Fy-eBg" secondAttribute="trailing" constant="28" id="Bu2-gR-0He"/>
+                            <constraint firstItem="YR8-hu-DJ8" firstAttribute="top" secondItem="cRO-k7-4JB" secondAttribute="bottom" priority="750" constant="96" id="KXt-X8-YeD"/>
+                            <constraint firstItem="cRO-k7-4JB" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="N5E-Ua-j7L"/>
                             <constraint firstItem="jZr-R4-Z0U" firstAttribute="top" secondItem="BMp-Fy-eBg" secondAttribute="bottom" constant="5" id="Pjz-sS-rBf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cRO-k7-4JB" secondAttribute="trailing" priority="999" constant="27" id="QMo-0Z-E66"/>
                             <constraint firstItem="jZr-R4-Z0U" firstAttribute="top" secondItem="W86-DH-XgF" secondAttribute="bottom" constant="5" id="Tdk-IW-h10"/>
-                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="leading" secondItem="EcW-x4-W4a" secondAttribute="trailing" constant="-67" id="oyw-rB-2fT"/>
-                            <constraint firstItem="W86-DH-XgF" firstAttribute="leading" secondItem="jZr-R4-Z0U" secondAttribute="trailing" constant="38" id="wXi-w4-Y2w"/>
+                            <constraint firstItem="YR8-hu-DJ8" firstAttribute="bottom" secondItem="jZr-R4-Z0U" secondAttribute="bottom" id="XEC-0p-pe7"/>
+                            <constraint firstItem="YR8-hu-DJ8" firstAttribute="leading" secondItem="jZr-R4-Z0U" secondAttribute="leading" id="ZGi-sc-cch"/>
+                            <constraint firstItem="cRO-k7-4JB" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" priority="999" constant="27" id="bSl-QN-ylt"/>
+                            <constraint firstItem="YR8-hu-DJ8" firstAttribute="trailing" secondItem="jZr-R4-Z0U" secondAttribute="trailing" id="hrp-dS-2df"/>
+                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="top" secondItem="cRO-k7-4JB" secondAttribute="bottom" priority="750" constant="100" id="lhI-c7-xYc"/>
+                            <constraint firstAttribute="centerX" secondItem="cRO-k7-4JB" secondAttribute="centerX" id="oOG-aV-WRk"/>
+                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="leading" secondItem="EcW-x4-W4a" secondAttribute="trailing" constant="-40" id="oyw-rB-2fT"/>
+                            <constraint firstItem="W86-DH-XgF" firstAttribute="leading" secondItem="jZr-R4-Z0U" secondAttribute="trailing" constant="27" id="wXi-w4-Y2w"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bounceButtons" destination="lzJ-im-1P2" id="6wN-ss-3n5"/>
+                        <outlet property="curedButton" destination="YR8-hu-DJ8" id="Vqz-bw-AJK"/>
                         <outlet property="gotVirusButton" destination="jZr-R4-Z0U" id="wQg-5A-RBb"/>
+                        <outlet property="statusImage" destination="cRO-k7-4JB" id="twt-sN-aRS"/>
                         <segue destination="Ipy-q4-zYH" kind="presentation" identifier="registration" id="nDG-a5-cME"/>
+                        <segue destination="ppR-nZ-aVh" kind="presentation" identifier="progress" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" animates="NO" id="k6Y-wp-f8i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Dzq-iY-Lnr">
+            <objects>
+                <viewController id="ppR-nZ-aVh" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="seL-D3-xMU"/>
+                        <viewControllerLayoutGuide type="bottom" id="pXF-o0-Ivj"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" alpha="0.34999999999999998" contentMode="scaleToFill" id="Lu2-Hm-yxg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="c24-jb-6r4">
+                                <rect key="frame" x="282" y="282" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="c24-jb-6r4" secondAttribute="centerY" id="LQr-yE-vfT"/>
+                            <constraint firstAttribute="centerX" secondItem="c24-jb-6r4" secondAttribute="centerX" id="Xld-7p-ddq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="aUv-tC-p1g" kind="unwind" identifier="return" unwindAction="unwindToRoot:" id="fjb-Jm-xau"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XGS-gi-YGu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="aUv-tC-p1g" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="995" y="55"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="hou-gQ-wBO">
@@ -125,25 +187,25 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZf-xI-cuM">
                                 <rect key="frame" x="16" y="20" width="93" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19j-kP-Zep">
                                 <rect key="frame" x="16" y="54" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAP-zE-7MB">
                                 <rect key="frame" x="16" y="92" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfy-Bm-LYc">
                                 <rect key="frame" x="16" y="130" width="57" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1U-IZ-itF">
@@ -191,4 +253,8 @@
             <point key="canvasLocation" x="1031" y="784"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cold" width="592" height="640"/>
+        <image name="yeah" width="250" height="270"/>
+    </resources>
 </document>

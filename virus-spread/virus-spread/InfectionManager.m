@@ -52,6 +52,7 @@
 
 - (void)cure {
     self.infected = NO;
+    self.virus = nil;
 
     [[AppDelegate instance].bluetoothManager deactivatePeripheralManager];
     [[AppDelegate instance].bluetoothManager requestActivateCentralManager];

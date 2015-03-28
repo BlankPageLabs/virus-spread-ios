@@ -25,6 +25,10 @@
 
 @property(nonatomic, assign) BOOL buttonsExpanded;
 
+@property(nonatomic, retain) IBOutlet UIImageView *statusImage;
+
+@property(nonatomic, retain) IBOutlet UIButton *curedButton;
+
 @end
 
 @implementation ViewController
@@ -36,6 +40,8 @@
     [self.bounceButtons collapseWithAnimationStyle:ASOAnimationStyleExpand];
     self.bounceButtons.bouncingDistance = @0.3;
     self.bounceButtons.speed = @0.2;
+
+    [self updateButtons];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,9 +70,48 @@
     [self.bounceButtons collapseWithAnimationStyle:ASOAnimationStyleRiseConcurrently];
     self.buttonsExpanded = NO;
 
+    [self performSegueWithIdentifier:@"progress" sender:self];
     [[NSOperationQueue new] addOperationWithBlock:^{
         [[AppDelegate instance].infectionManager infectWith:[VirusInfo infoWithType:sender.virusId]];
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self updateButtons];
+            [self.presentedViewController performSegueWithIdentifier:@"return" sender:self];
+        }];
     }];
+}
+
+- (void)updateButtons {
+    if ([AppDelegate instance].infectionManager.infected) {
+        static NSDictionary *virusToImage = nil;
+        static dispatch_once_t once;
+
+        dispatch_once(&once, ^{
+            virusToImage = @{
+                    @"ccold": @"germ2",
+                    @"flu": @"bacteria",
+                    @"measles": @"germ1",
+            };
+        });
+
+        self.statusImage.image = [[UIImage imageNamed:virusToImage[[AppDelegate instance].infectionManager.virus.type]
+                                             inBundle:[NSBundle bundleForClass:[self class]]
+                        compatibleWithTraitCollection:nil] resizableImageWithCapInsets:UIEdgeInsetsZero
+                                                                          resizingMode:UIImageResizingModeStretch];
+        self.curedButton.hidden = NO;
+        self.gotVirusButton.hidden = YES;
+    } else {
+        self.gotVirusButton.hidden = NO;
+        self.curedButton.hidden = YES;
+        self.statusImage.image = [UIImage imageNamed:@"yeah"
+                                            inBundle:[NSBundle bundleForClass:[self class]]
+                       compatibleWithTraitCollection:nil];
+    }
+    [self.view setNeedsUpdateConstraints];
+}
+
+- (IBAction)cured:(id)sender {
+    [[AppDelegate instance].infectionManager cure];
+    [self updateButtons];
 }
 
 @end
