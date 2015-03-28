@@ -10,7 +10,7 @@
 }
 
 - (instancetype)init {
-    self = [super initWithBaseURL:[[NSURL alloc] initWithString:@"http://10.168.1.68:4508/api"]];
+    self = [super initWithBaseURL:[[NSURL alloc] initWithString:@"http://artie18.local:4508/api"]];
     if (self) {
         self.requestSerializer = [[AFJSONRequestSerializer alloc] init];
         self.responseSerializer = [[AFJSONResponseSerializer alloc] init];
