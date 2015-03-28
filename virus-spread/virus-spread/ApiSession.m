@@ -12,7 +12,9 @@
 - (instancetype)init {
     self = [super initWithBaseURL:[[NSURL alloc] initWithString:@"http://artie18.local:4508/api"]];
     if (self) {
-        self.requestSerializer = [[AFJSONRequestSerializer alloc] init];
+        self.requestSerializer = [[AFHTTPRequestSerializer alloc] init];
+        self.requestSerializer.HTTPMethodsEncodingParametersInURI =
+                [self.requestSerializer.HTTPMethodsEncodingParametersInURI setByAddingObject:@"POST"];
         self.responseSerializer = [[AFJSONResponseSerializer alloc] init];
     }
 

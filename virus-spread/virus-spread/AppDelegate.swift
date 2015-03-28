@@ -31,6 +31,8 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
 
     public func application(application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+        // TODO: don't clear defaults
+        NSUserDefaults.resetStandardUserDefaults()
         let defaults = NSUserDefaults.standardUserDefaults()
         if let deviceInfoDictionary = defaults.objectForKey("deviceInfo")
                 as? Dictionary<NSObject, AnyObject> {
@@ -43,11 +45,12 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
             self.deviceInfo.userName = "test user"
 
             ApiSession.instance().POST("device/reg",
-                parameters: [self.deviceInfo.encodeToDictionary()],
+                parameters: self.deviceInfo.encodeToDictionary(),
                 success: { (task, responseObject) -> Void in
                     defaults.setObject(self.deviceInfo.encodeToDictionary(), forKey: "deviceInfo")
             }, failure: { (task, error) -> Void in
-
+                NSLog("Network error for task %@: %@, %@", task, error!, error!.userInfo!)
+                abort()
             })
         }
 

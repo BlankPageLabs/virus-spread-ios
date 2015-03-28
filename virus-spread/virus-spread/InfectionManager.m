@@ -24,7 +24,7 @@
     [[AppDelegate instance].bluetoothManager requestActivatePeripheralManager];
     [[AppDelegate instance].bluetoothManager deactivateCentralManager];
 
-    [[ApiSession instance] POST:@"virus" parameters:@[]
+    [[ApiSession instance] POST:@"virus" parameters:@[[self.virus encodeToDictionary]]
                         success:^(NSURLSessionDataTask *task, id responseObject) {
 
                         }
