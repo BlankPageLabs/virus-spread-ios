@@ -9,6 +9,12 @@
 import Foundation
 import CoreData
 
+public let defaultDateFormatter: NSDateFormatter = {
+    let formatter = NSDateFormatter()
+    formatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'"
+    return formatter
+}()
+
 public class AppDelegate: UIResponder, UIApplicationDelegate {
     public var deviceInfo: DeviceInfo!
     public var bluetoothManager: BluetoothManager!

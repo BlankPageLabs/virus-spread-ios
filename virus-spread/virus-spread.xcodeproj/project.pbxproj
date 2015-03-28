@@ -51,6 +51,7 @@
 		F3975BE8F9FF31D525E46922 /* BluetoothManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothManager.h; sourceTree = "<group>"; };
 		F3975DCF94245863ECA43C5B /* InfectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfectionManager.h; sourceTree = "<group>"; };
 		F3975EF5247852D66C73BCF2 /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
+		F3975F3404FE061D9155706A /* swift-shim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "swift-shim.h"; sourceTree = "<group>"; };
 		F3975F9D03864BC5B1592A60 /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
 		F60C45F91AC62138002936BE /* virus-spread-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "virus-spread-Bridging-Header.h"; sourceTree = "<group>"; };
 		F60C45FA1AC62138002936BE /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -152,6 +153,7 @@
 				F60C45FA1AC62138002936BE /* LocationManager.swift */,
 				F60C45F91AC62138002936BE /* virus-spread-Bridging-Header.h */,
 				F60C45FC1AC6218B002936BE /* Observation.swift */,
+				F3975F3404FE061D9155706A /* swift-shim.h */,
 			);
 			path = "virus-spread";
 			sourceTree = "<group>";

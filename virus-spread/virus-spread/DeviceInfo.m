@@ -4,7 +4,7 @@
 //
 
 
-@import UIKit
+@import UIKit;
 #import "DeviceInfo.h"
 
 
