@@ -16,7 +16,7 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
 
     public let defaultDateFormatter: NSDateFormatter = {
         let formatter = NSDateFormatter()
-        formatter.setTimeZone(NSTimeZone(forSecondsFromGMT: 0))
+        formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
         formatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'"
         return formatter
     }()

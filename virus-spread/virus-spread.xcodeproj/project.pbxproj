@@ -10,7 +10,6 @@
 		E32CADC84530EBEB52637E3F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5009B0F3D759BB65F6B615DF /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F39751C30C727AC3E3127596 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F3975EF5247852D66C73BCF2 /* DeviceInfo.m */; };
 		F39752C19C6551137F4437DC /* VirusInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F39751C0DFB0B421C6F29C25 /* VirusInfo.m */; };
-		F397530FD3210598B23CD441 /* VirusData.m in Sources */ = {isa = PBXBuildFile; fileRef = F397538DF2F20E910E5D7906 /* VirusData.m */; };
 		F39753940BDD846C1266D6A5 /* BluetoothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F397583C8E95EAE0CFB3ED02 /* BluetoothManager.m */; };
 		F3975514BB47BEDE9ABA9784 /* VirusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F3975140809169F353C9B248 /* VirusButton.m */; };
 		F3975832D861311E357222E7 /* InfectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3975457D5742F6BE484EDD5 /* InfectionManager.m */; };
@@ -46,10 +45,8 @@
 		F3975068BBE15310C971C288 /* ApiSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiSession.m; sourceTree = "<group>"; };
 		F3975140809169F353C9B248 /* VirusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VirusButton.m; sourceTree = "<group>"; };
 		F39751C0DFB0B421C6F29C25 /* VirusInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VirusInfo.m; sourceTree = "<group>"; };
-		F397538DF2F20E910E5D7906 /* VirusData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VirusData.m; sourceTree = "<group>"; };
 		F3975457D5742F6BE484EDD5 /* InfectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfectionManager.m; sourceTree = "<group>"; };
 		F3975635BCA9C0DDA5667148 /* ApiSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiSession.h; sourceTree = "<group>"; };
-		F397570CEB674F8B17F77BF9 /* VirusData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirusData.h; sourceTree = "<group>"; };
 		F39757819BF232A9A3178306 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		F397583C8E95EAE0CFB3ED02 /* BluetoothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothManager.m; sourceTree = "<group>"; };
 		F39758820C2FD7F9D7187ACA /* VirusInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirusInfo.h; sourceTree = "<group>"; };
@@ -146,8 +143,6 @@
 				F667698D1AC5CA1F00D2C96E /* LaunchScreen.xib */,
 				F66769821AC5CA1F00D2C96E /* virus_spread.xcdatamodeld */,
 				F667697B1AC5CA1F00D2C96E /* Supporting Files */,
-				F397538DF2F20E910E5D7906 /* VirusData.m */,
-				F397570CEB674F8B17F77BF9 /* VirusData.h */,
 				F397583C8E95EAE0CFB3ED02 /* BluetoothManager.m */,
 				F3975BE8F9FF31D525E46922 /* BluetoothManager.h */,
 				F39751C0DFB0B421C6F29C25 /* VirusInfo.m */,
@@ -354,7 +349,6 @@
 				F60C45FD1AC6218B002936BE /* Observation.swift in Sources */,
 				F65D75101AC6CA3000C22954 /* LocationSynchronous.swift in Sources */,
 				F667697E1AC5CA1F00D2C96E /* main.m in Sources */,
-				F397530FD3210598B23CD441 /* VirusData.m in Sources */,
 				F39753940BDD846C1266D6A5 /* BluetoothManager.m in Sources */,
 				F60C45FF1AC621D0002936BE /* AppDelegate.swift in Sources */,
 				F39752C19C6551137F4437DC /* VirusInfo.m in Sources */,
