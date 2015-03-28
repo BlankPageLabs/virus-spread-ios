@@ -9,7 +9,7 @@
 
 @interface VirusInfo : NSObject
 
-
+@property(nonatomic, retain) NSString *deviceId;
 
 @property(nonatomic, retain) NSString *type;
 
@@ -21,14 +21,19 @@
 
 + (instancetype)infoWithType:(NSString *)type;
 
-
 - (NSDictionary *)encodeToDictionary;
 
 + (VirusInfo *)infoWithDictionary:(NSDictionary *)dictionary;
 
-- (instancetype)initWithType:(NSString *)type originCoordinates:(CLLocationCoordinate2D)originCoordinates infectionDate:(NSDate *)infectionDate;
+- (instancetype)initWithType:(NSString *)type
+           originCoordinates:(CLLocationCoordinate2D)originCoordinates
+               infectionDate:(NSDate *)infectionDate
+                    deviceId:(NSString *)deviceId;
 
-+ (instancetype)infoWithType:(NSString *)type originCoordinates:(CLLocationCoordinate2D)originCoordinates infectionDate:(NSDate *)infectionDate;
++ (instancetype)infoWithType:(NSString *)type
+           originCoordinates:(CLLocationCoordinate2D)originCoordinates
+               infectionDate:(NSDate *)infectionDate
+                    deviceId:(NSString *)deviceId;
 
 
 @end
