@@ -33,6 +33,9 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
 
     public func application(application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+        self.bluetoothManager = BluetoothManager()
+        self.infectionManager = InfectionManager()
+
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.rootViewController = UIStoryboard(name: "Main",
             bundle: NSBundle(forClass: AppDelegate.self)).instantiateInitialViewController() as? ViewController
@@ -46,9 +49,6 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             self.rootViewController?.performSegueWithIdentifier("registration", sender: self)
         }
-
-        self.bluetoothManager = BluetoothManager()
-        self.infectionManager = InfectionManager()
 
         return true
     }
@@ -107,7 +107,7 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
         return coordinator
     }()
 
-    private class var applicationDocumentsDirectory: NSURL {
+    public class var applicationDocumentsDirectory: NSURL {
         return NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory,
             inDomains: .UserDomainMask).last as! NSURL
     }

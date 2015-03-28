@@ -21,8 +21,10 @@ public class LocationHelper {
         case let .GpsBasedLocation(coordinate, _):
             return coordinate
         default:
+            NSLog("Location not immediately available, awaiting update")
             condition.lock()
             observe(manager.locationChangeObservable, observer: dummy) { o,i in
+                NSLog("Location update received")
                 condition.lock()
                 hasLocation = true
                 condition.signal()
@@ -32,6 +34,7 @@ public class LocationHelper {
                 condition.wait()
             }
             condition.unlock()
+            location = manager.location
             switch (location) {
             case let .GpsBasedLocation(coordinate, _):
                 return coordinate
