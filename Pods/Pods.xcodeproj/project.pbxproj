@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		00082B624B289531BC13400B /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = E226DEFE2C37F538359D2028 /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		003145C05C208E65BE486CFF /* ASOBounceButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = B05BFDA4F3513592ED195286 /* ASOBounceButtonView.m */; };
 		034141F8317D06C7CED230EA /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = EB273F6F4BDA9F10A0E78431 /* UIKit+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		06957BA3D0DBCABB153FDFD6 /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = ABE548463388204C3B59FD6D /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0D164988F2E4AB73664D717A /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D953854889CCB89B155821D /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,7 +30,6 @@
 		598240894EAB4ACFF46B159C /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F83693F7A1C0137D3DBF88C /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FEDE533FA804F5AE7D3BC30 /* ASOBounceButtonView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C0775C836F67FED4712BFA8 /* ASOBounceButtonView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		600CD18CFF862FCF5247D7C4 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B66C0A3283AEEFBD63BFAEF /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		61DADB3FF80D153D0F3AB1DA /* ASOTwoStateButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A90505F345498D75D1748D57 /* ASOTwoStateButton.m */; };
 		68155A586B8F9E8BC618875F /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF9EE62C7981A4E4B1CA90C /* UIRefreshControl+AFNetworking.m */; };
 		681BAC2FEC602519F8FC8197 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A10FC978C5A8008D4A51F42D /* AFURLSessionManager.m */; };
 		6AE0518E1E9B433C3965788C /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 80C85F35B8739106832BFA5C /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -649,9 +647,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98630FB5113BEC60178D256C /* ASOBounceButtonView.m in Sources */,
-				003145C05C208E65BE486CFF /* ASOBounceButtonView.m in Sources */,
 				A654352ABA8251F0019A4F91 /* ASOTwoStateButton.m in Sources */,
-				61DADB3FF80D153D0F3AB1DA /* ASOTwoStateButton.m in Sources */,
 				4C8D6ED425E04E1DD9496096 /* Pods-ASOAnimatedButton-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

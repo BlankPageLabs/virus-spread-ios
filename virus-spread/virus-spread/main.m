@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
+#import "virus_spread-Swift.h"
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
