@@ -16,10 +16,27 @@
     if (self) {
         self.type = type;
         self.originCoordinates = [LocationHelper locationSynchronous:[AppDelegate instance].locaionManager];
+        self.infectionDate = [NSDate date];
     }
 
     return self;
 }
+
+- (instancetype)initWithType:(NSString *)type originCoordinates:(CLLocationCoordinate2D)originCoordinates infectionDate:(NSDate *)infectionDate {
+    self = [super init];
+    if (self) {
+        self.type = type;
+        self.originCoordinates = originCoordinates;
+        self.infectionDate = infectionDate;
+    }
+
+    return self;
+}
+
++ (instancetype)infoWithType:(NSString *)type originCoordinates:(CLLocationCoordinate2D)originCoordinates infectionDate:(NSDate *)infectionDate {
+    return [[self alloc] initWithType:type originCoordinates:originCoordinates infectionDate:infectionDate];
+}
+
 
 + (instancetype)infoWithType:(NSString *)type {
     return [[self alloc] initWithType:type];
@@ -31,11 +48,27 @@
             @"deviceId": [AppDelegate instance].deviceInfo.deviceId,
             @"location": @{
                     @"lat": @(self.originCoordinates.latitude),
-                    @"lon": @(self.originCoordinates.longitude),
+                    @"ln": @(self.originCoordinates.longitude),
             },
             @"type": self.type,
             @"time": [[AppDelegate instance].defaultDateFormatter stringFromDate:self.infectionDate],
     };
 }
+
++ (VirusInfo *)infoWithDictionary:(NSDictionary *)dictionary {
+    NSString *type = dictionary[@"type"];
+    CLLocationCoordinate2D coordinate2D = {
+            [dictionary[@"location"][@"lat"] doubleValue],
+            [dictionary[@"location"][@"ln"] doubleValue]
+    };
+    NSDate *date = [[AppDelegate instance].defaultDateFormatter dateFromString:dictionary[@"time"]];
+    NSString *devId = dictionary[@"deviceId"];
+    if (type && date && devId) {
+        return [VirusInfo infoWithType:type originCoordinates:coordinate2D infectionDate:date];
+    } else {
+        return nil;
+    }
+}
+
 
 @end

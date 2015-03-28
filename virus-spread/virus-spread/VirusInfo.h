@@ -24,4 +24,11 @@
 
 - (NSDictionary *)encodeToDictionary;
 
++ (VirusInfo *)infoWithDictionary:(NSDictionary *)dictionary;
+
+- (instancetype)initWithType:(NSString *)type originCoordinates:(CLLocationCoordinate2D)originCoordinates infectionDate:(NSDate *)infectionDate;
+
++ (instancetype)infoWithType:(NSString *)type originCoordinates:(CLLocationCoordinate2D)originCoordinates infectionDate:(NSDate *)infectionDate;
+
+
 @end
