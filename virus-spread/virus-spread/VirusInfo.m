@@ -4,6 +4,8 @@
 //
 
 #import "VirusInfo.h"
+#import "virus_spread-Swift.h"
+#import "DeviceInfo.h"
 
 
 @implementation VirusInfo {
@@ -12,7 +14,13 @@
 
 - (NSDictionary *)encodeToDictionary {
     return @{
-//            @"location":
+            @"deviceId": [AppDelegate instance].deviceInfo.deviceId,
+            @"location": @{
+                    @"lat": @(self.originCoordinates.latitude),
+                    @"lon": @(self.originCoordinates.longitude),
+            },
+            @"type": self.type,
+            @"time": [[AppDelegate instance].defaultDateFormatter stringFromDate:self.infectionDate],
     };
 }
 

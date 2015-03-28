@@ -7,11 +7,13 @@
 #import <CoreLocation/CoreLocation.h>
 
 
-@interface VirusInfo : NSObject <NSCoding>
+@interface VirusInfo : NSObject
 
 @property(nonatomic, retain) NSString *type;
 
 @property(nonatomic, assign) CLLocationCoordinate2D originCoordinates;
+
+@property(nonatomic, retain) NSDate *infectionDate;
 
 - (NSDictionary *)encodeToDictionary;
 
