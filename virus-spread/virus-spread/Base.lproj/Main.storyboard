@@ -17,51 +17,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lzJ-im-1P2" customClass="ASOBounceButtonView">
-                                <rect key="frame" x="173" y="412" width="255" height="168"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lzJ-im-1P2" customClass="ASOBounceButtonView">
+                                <rect key="frame" x="43" y="-79" width="66" height="78"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="255" id="c52-Ab-fkm"/>
-                                    <constraint firstAttribute="height" constant="168" id="r20-Jr-bso"/>
-                                </constraints>
                                 <connections>
                                     <outletCollection property="bounceButtonsFromUI" destination="BMp-Fy-eBg" id="lpq-8j-mcJ"/>
                                     <outletCollection property="bounceButtonsFromUI" destination="EcW-x4-W4a" id="zXx-70-Cxu"/>
                                     <outletCollection property="bounceButtonsFromUI" destination="W86-DH-XgF" id="nE7-Lh-vm4"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMp-Fy-eBg">
-                                <rect key="frame" x="77" y="481" width="46" height="30"/>
-                                <state key="normal" title="Common cold">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcW-x4-W4a">
-                                <rect key="frame" x="173" y="345" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcW-x4-W4a" customClass="VirusButton">
+                                <rect key="frame" x="295" y="471" width="30" height="30"/>
                                 <state key="normal" title="Flu">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="virusId" value="flu"/>
+                                </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W86-DH-XgF">
-                                <rect key="frame" x="359" y="339" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W86-DH-XgF" customClass="VirusButton">
+                                <rect key="frame" x="381" y="515" width="57" height="30"/>
                                 <state key="normal" title="Measles">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="virusId" value="measles"/>
+                                </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZr-R4-Z0U">
-                                <rect key="frame" x="461" y="512" width="88" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZr-R4-Z0U">
+                                <rect key="frame" x="258" y="550" width="85" height="30"/>
                                 <state key="normal" title="I got a virus!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="gotVirus:" destination="x5A-6p-PRh" eventType="touchUpInside" id="8WR-tq-dK1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMp-Fy-eBg" customClass="VirusButton">
+                                <rect key="frame" x="160" y="515" width="97" height="30"/>
+                                <state key="normal" title="Common cold">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="virusId" value="ccold"/>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="lzJ-im-1P2" secondAttribute="centerX" id="Fsl-g1-StC"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="lzJ-im-1P2" secondAttribute="bottom" constant="20" id="tvG-oE-BLX"/>
+                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="top" secondItem="EcW-x4-W4a" secondAttribute="bottom" constant="49" id="2le-es-AdU"/>
+                            <constraint firstAttribute="centerX" secondItem="jZr-R4-Z0U" secondAttribute="centerX" id="37Y-zC-UfP"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="jZr-R4-Z0U" secondAttribute="bottom" constant="20" id="6Hm-vV-UgT"/>
+                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="leading" secondItem="BMp-Fy-eBg" secondAttribute="trailing" constant="1" id="Bu2-gR-0He"/>
+                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="top" secondItem="BMp-Fy-eBg" secondAttribute="bottom" constant="5" id="Pjz-sS-rBf"/>
+                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="top" secondItem="W86-DH-XgF" secondAttribute="bottom" constant="5" id="Tdk-IW-h10"/>
+                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="leading" secondItem="EcW-x4-W4a" secondAttribute="trailing" constant="-67" id="oyw-rB-2fT"/>
+                            <constraint firstItem="W86-DH-XgF" firstAttribute="leading" secondItem="jZr-R4-Z0U" secondAttribute="trailing" constant="38" id="wXi-w4-Y2w"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bounceButtons" destination="lzJ-im-1P2" id="6wN-ss-3n5"/>
+                        <outlet property="gotVirusButton" destination="jZr-R4-Z0U" id="wQg-5A-RBb"/>
                         <segue destination="Ipy-q4-zYH" kind="presentation" identifier="registration" id="nDG-a5-cME"/>
                     </connections>
                 </viewController>

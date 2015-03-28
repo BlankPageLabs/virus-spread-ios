@@ -12,6 +12,7 @@
 		F39752C19C6551137F4437DC /* VirusInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F39751C0DFB0B421C6F29C25 /* VirusInfo.m */; };
 		F397530FD3210598B23CD441 /* VirusData.m in Sources */ = {isa = PBXBuildFile; fileRef = F397538DF2F20E910E5D7906 /* VirusData.m */; };
 		F39753940BDD846C1266D6A5 /* BluetoothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F397583C8E95EAE0CFB3ED02 /* BluetoothManager.m */; };
+		F3975514BB47BEDE9ABA9784 /* VirusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F3975140809169F353C9B248 /* VirusButton.m */; };
 		F3975832D861311E357222E7 /* InfectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3975457D5742F6BE484EDD5 /* InfectionManager.m */; };
 		F3975E1B5959739283DEE220 /* ApiSession.m in Sources */ = {isa = PBXBuildFile; fileRef = F3975068BBE15310C971C288 /* ApiSession.m */; };
 		F3975F4BFE681094EB9E9B9C /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F39757819BF232A9A3178306 /* RegistrationViewController.m */; };
@@ -42,6 +43,7 @@
 		685FF2DB814FF48CA27ABE1A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8C41C0E62BB111D6F35B90D9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F3975068BBE15310C971C288 /* ApiSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiSession.m; sourceTree = "<group>"; };
+		F3975140809169F353C9B248 /* VirusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VirusButton.m; sourceTree = "<group>"; };
 		F39751C0DFB0B421C6F29C25 /* VirusInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VirusInfo.m; sourceTree = "<group>"; };
 		F397538DF2F20E910E5D7906 /* VirusData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VirusData.m; sourceTree = "<group>"; };
 		F3975457D5742F6BE484EDD5 /* InfectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfectionManager.m; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		F3975F3404FE061D9155706A /* swift-shim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "swift-shim.h"; sourceTree = "<group>"; };
 		F3975F9D03864BC5B1592A60 /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
 		F3975FB46EBDBE2DD07E0510 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
+		F3975FCB00A6FF5562781E9B /* VirusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirusButton.h; sourceTree = "<group>"; };
 		F60C45F91AC62138002936BE /* virus-spread-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "virus-spread-Bridging-Header.h"; sourceTree = "<group>"; };
 		F60C45FA1AC62138002936BE /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		F60C45FC1AC6218B002936BE /* Observation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observation.swift; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 				F3975F3404FE061D9155706A /* swift-shim.h */,
 				F39757819BF232A9A3178306 /* RegistrationViewController.m */,
 				F3975FB46EBDBE2DD07E0510 /* RegistrationViewController.h */,
+				F3975140809169F353C9B248 /* VirusButton.m */,
+				F3975FCB00A6FF5562781E9B /* VirusButton.h */,
 			);
 			path = "virus-spread";
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				F3975E1B5959739283DEE220 /* ApiSession.m in Sources */,
 				F3975832D861311E357222E7 /* InfectionManager.m in Sources */,
 				F3975F4BFE681094EB9E9B9C /* RegistrationViewController.m in Sources */,
+				F3975514BB47BEDE9ABA9784 /* VirusButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
