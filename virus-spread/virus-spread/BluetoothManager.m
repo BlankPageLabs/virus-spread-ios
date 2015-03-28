@@ -94,9 +94,13 @@ static NSString *const bt_VirusInfoCharacteristicId = @"1C5EB049-9D10-488C-9709-
 
 - (void)requestActivatePeripheralManager {
     [self unregisterPeripheralManager];
-    self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self
-                                                                     queue:nil
-                                                                   options:@{CBCentralManagerOptionShowPowerAlertKey: @YES}];
+    self.peripheralManager = [[CBPeripheralManager alloc]
+            initWithDelegate:self
+                       queue:nil
+                     options:@{
+                             CBPeripheralManagerOptionShowPowerAlertKey: @YES,
+                             CBPeripheralManagerOptionRestoreIdentifierKey: @"peripheralManagerRestoreId",
+                     }];
     self.peripheralManager.delegate = self;
 }
 
@@ -144,7 +148,10 @@ static NSString *const bt_VirusInfoCharacteristicId = @"1C5EB049-9D10-488C-9709-
     self.centralManager = [[CBCentralManager alloc]
             initWithDelegate:self
                        queue:nil
-                     options:@{CBCentralManagerOptionShowPowerAlertKey: @YES}];
+                     options:@{
+                             CBCentralManagerOptionShowPowerAlertKey: @YES,
+                             CBCentralManagerOptionRestoreIdentifierKey: @"centralManagerRestorationId",
+                     }];
     self.centralManager.delegate = self;
 }
 
@@ -181,8 +188,12 @@ static NSString *const bt_VirusInfoCharacteristicId = @"1C5EB049-9D10-488C-9709-
 
     if (![self.activePeripherals objectForKey:peripheral.identifier]) {
         self.activePeripherals[peripheral.identifier] = peripheral;
-        [central connectPeripheral:peripheral options:nil];
+        [self requestConnectPeripheral:peripheral];
     }
+}
+
+- (void)requestConnectPeripheral:(CBPeripheral *)peripheral {
+    [self.centralManager connectPeripheral:peripheral options:nil];
 }
 
 - (void)peripheralManager:(CBPeripheralManager *)peripheral didAddService:(CBService *)service error:(NSError *)error {
@@ -203,12 +214,27 @@ static NSString *const bt_VirusInfoCharacteristicId = @"1C5EB049-9D10-488C-9709-
 
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
     NSLog(@"Connected to %@", peripheral);
+    [self requestDiscoverServices:peripheral];
+}
+
+- (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
+    NSLog(@"Peripheral %@ disconnected due to %@, %@", peripheral, error, error.userInfo);
+    [self.activePeripherals removeObjectForKey:peripheral.identifier];
+}
+
+- (void)requestDiscoverServices:(CBPeripheral *)peripheral {
     peripheral.delegate = self;
     [peripheral discoverServices:@[[CBUUID UUIDWithString:bt_ServiceId]]];
 }
 
 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
     NSLog(@"Failed to connect with %@: %@, %@", peripheral, error, error.userInfo);
+    [self.activePeripherals removeObjectForKey:peripheral.identifier];
+}
+
+- (void)peripheral:(CBPeripheral *)peripheral didModifyServices:(NSArray *)invalidatedServices {
+    NSLog(@"Peripheral %@ changed services, requesting re-discovery", peripheral);
+    [self requestDiscoverServices:peripheral];
 }
 
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error {
@@ -217,8 +243,12 @@ static NSString *const bt_VirusInfoCharacteristicId = @"1C5EB049-9D10-488C-9709-
     } else {
         NSLog(@"Discovered on %@: %@", peripheral, peripheral.services);
         CBService *service = peripheral.services.firstObject;
-        [peripheral discoverCharacteristics:@[[CBUUID UUIDWithString:bt_VirusInfoCharacteristicId]] forService:service];
+        [self requestDiscoverCharacteristics:peripheral forService:service];
     }
+}
+
+- (void)requestDiscoverCharacteristics:(CBPeripheral *)peripheral forService:(CBService *)service {
+    [peripheral discoverCharacteristics:@[[CBUUID UUIDWithString:bt_VirusInfoCharacteristicId]] forService:service];
 }
 
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error {
@@ -228,8 +258,12 @@ static NSString *const bt_VirusInfoCharacteristicId = @"1C5EB049-9D10-488C-9709-
     } else {
         NSLog(@"Discovered characteristics for %@ on %@: %@", service, peripheral, service.characteristics);
         CBCharacteristic *characteristic = service.characteristics.firstObject;
-        [peripheral readValueForCharacteristic:characteristic];
+        [self requestReadValueForCharacteristic:characteristic onPeripheral:peripheral];
     }
+}
+
+- (void)requestReadValueForCharacteristic:(CBCharacteristic *)characteristic onPeripheral:(CBPeripheral *)peripheral {
+    [peripheral readValueForCharacteristic:characteristic];
 }
 
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
@@ -237,26 +271,60 @@ static NSString *const bt_VirusInfoCharacteristicId = @"1C5EB049-9D10-488C-9709-
         NSLog(@"Failed to read characteristic %@ on %@: %@, %@", characteristic, peripheral, error, error.userInfo);
     } else {
         NSData *data = characteristic.value;
-        NSDictionary *virusDict = [data objectFromJSONData];
-        NSLog(@"Read virus: %@", virusDict);
-        VirusInfo *virus = [VirusInfo infoWithDictionary:virusDict];
-
-        [[NSOperationQueue new] addOperationWithBlock:^{
-            KissInfo *kissInfo = [KissInfo infoWithVirusInfo:virus];
-            [[ApiSession instance] POST:@"kiss"
-                             parameters:[kissInfo encodeToDictionary]
-                                success:^(NSURLSessionDataTask *task, id responseObject) {
-                                    NSLog(@"Kiss, response: %@, kiss: %@", responseObject, [kissInfo encodeToDictionary]);
-                                }
-                                failure:^(NSURLSessionDataTask *task, NSError *error) {
-                                    NSLog(@"Couldn't send kiss: %@, %@", error, error.userInfo);
-                                }];
-        }];
+        [self kiss:data];
 
         NSLog(@"Removing peripheral %@", peripheral);
         [self.centralManager cancelPeripheralConnection:peripheral];
-        [self.activePeripherals removeObjectForKey:peripheral.identifier];
     }
+}
+
+- (void)kiss:(NSData *)data {
+    NSDictionary *virusDict = [data objectFromJSONData];
+    NSLog(@"Read virus: %@", virusDict);
+    VirusInfo *virus = [VirusInfo infoWithDictionary:virusDict];
+
+    [[NSOperationQueue new] addOperationWithBlock:^{
+        KissInfo *kissInfo = [KissInfo infoWithVirusInfo:virus];
+        [[ApiSession instance] POST:@"kiss"
+                         parameters:[kissInfo encodeToDictionary]
+                            success:^(NSURLSessionDataTask *task, id responseObject) {
+                                NSLog(@"Kiss, response: %@, kiss: %@", responseObject, [kissInfo encodeToDictionary]);
+                            }
+                            failure:^(NSURLSessionDataTask *task, NSError *error) {
+                                NSLog(@"Couldn't send kiss: %@, %@", error, error.userInfo);
+                            }];
+    }];
+}
+
+- (void)peripheralManager:(CBPeripheralManager *)peripheral willRestoreState:(NSDictionary *)dict {
+}
+
+- (void)centralManager:(CBCentralManager *)central willRestoreState:(NSDictionary *)dict {
+    CBPeripheral *peripheral = [dict[CBCentralManagerRestoredStatePeripheralsKey] firstObject];
+    // TODO: there may be several peripherals
+    self.activePeripherals[peripheral.identifier] = peripheral;
+    if (peripheral.state == CBPeripheralStateConnected) {
+        peripheral.delegate = self;
+        if (peripheral.services.count == 0) {
+            [self requestDiscoverServices:peripheral];
+        } else {
+            CBService *service = peripheral.services.firstObject;
+            if (service.characteristics.count == 0) {
+                [self requestDiscoverCharacteristics:peripheral
+                                          forService:service];
+            } else {
+                CBCharacteristic *characteristic = service.characteristics.firstObject;
+                if (characteristic.value == nil) {
+                    [self requestReadValueForCharacteristic:characteristic
+                                               onPeripheral:peripheral];
+                } else {
+                    // Well, data is there. Just kiss
+                    [self kiss:characteristic.value];
+                }
+            }
+        }
+    }
+
 }
 
 @end
