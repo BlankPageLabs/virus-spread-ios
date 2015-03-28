@@ -26,7 +26,7 @@
                                     <outletCollection property="bounceButtonsFromUI" destination="W86-DH-XgF" id="nE7-Lh-vm4"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcW-x4-W4a" customClass="VirusButton">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcW-x4-W4a" customClass="VirusButton">
                                 <rect key="frame" x="295" y="471" width="30" height="30"/>
                                 <state key="normal" title="Flu">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -38,7 +38,7 @@
                                     <action selector="virusSelected:" destination="x5A-6p-PRh" eventType="touchUpInside" id="pE2-3c-X6x"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W86-DH-XgF" customClass="VirusButton">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W86-DH-XgF" customClass="VirusButton">
                                 <rect key="frame" x="381" y="515" width="57" height="30"/>
                                 <state key="normal" title="Measles">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
