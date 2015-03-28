@@ -34,6 +34,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="virusId" value="flu"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="virusSelected:" destination="x5A-6p-PRh" eventType="touchUpInside" id="pE2-3c-X6x"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W86-DH-XgF" customClass="VirusButton">
                                 <rect key="frame" x="381" y="515" width="57" height="30"/>
@@ -43,6 +46,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="virusId" value="measles"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="virusSelected:" destination="x5A-6p-PRh" eventType="touchUpInside" id="TQB-3A-OT9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZr-R4-Z0U">
                                 <rect key="frame" x="258" y="550" width="85" height="30"/>
@@ -61,6 +67,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="virusId" value="ccold"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="virusSelected:" destination="x5A-6p-PRh" eventType="touchUpInside" id="nSl-aP-wZ4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

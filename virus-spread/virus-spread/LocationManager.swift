@@ -54,8 +54,12 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
     private func configureCoreLocation () {
         // Configure manager
         self.locationManager.activityType = .Fitness
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        self.locationManager.distanceFilter = 10 // 10 meters
         self.locationManager.delegate = self
+        if let location = self.locationManager.location {
+            self.location = .GpsBasedLocation(coordinate: location.coordinate, accuracy: location.horizontalAccuracy)
+        }
 
         // Ask user for permissions, if not yet
         self.locationManager.requestWhenInUseAuthorization()
@@ -98,6 +102,10 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
         if let lastLocation = locations.last as? CLLocation {
             self.location = .GpsBasedLocation(coordinate: lastLocation.coordinate, accuracy: lastLocation.horizontalAccuracy)
         }
+    }
+
+    public func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        NSLog("Location failure: %@, %@", error, error.userInfo!)
     }
     
     public func locationManager(manager: CLLocationManager!, didUpdateHeading newHeading: CLHeading!) {

@@ -14,18 +14,24 @@ public class LocationHelper {
     @objc
     static func locationSynchronous(manager: LocationManager) -> CLLocationCoordinate2D {
         let dummy = NSObject()
-        let lock = NSLock()
+        let condition = NSCondition()
         var location = manager.location
+        var hasLocation = false
         switch (location) {
         case let .GpsBasedLocation(coordinate, _):
             return coordinate
         default:
-            lock.lock()
+            condition.lock()
             observe(manager.locationChangeObservable, observer: dummy) { o,i in
-                lock.unlock()
+                condition.lock()
+                hasLocation = true
+                condition.signal()
+                condition.unlock()
             }
-            lock.lock()
-            lock.unlock()
+            while !hasLocation {
+                condition.wait()
+            }
+            condition.unlock()
             switch (location) {
             case let .GpsBasedLocation(coordinate, _):
                 return coordinate

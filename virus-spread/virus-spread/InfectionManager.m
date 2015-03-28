@@ -24,12 +24,12 @@
     [[AppDelegate instance].bluetoothManager requestActivatePeripheralManager];
     [[AppDelegate instance].bluetoothManager deactivateCentralManager];
 
-    [[ApiSession instance] POST:@"virus" parameters:@[[self.virus encodeToDictionary]]
+    [[ApiSession instance] POST:@"virus/sick" parameters:[self.virus encodeToDictionary]
                         success:^(NSURLSessionDataTask *task, id responseObject) {
 
                         }
                         failure:^(NSURLSessionDataTask *task, NSError *error) {
-
+                            NSLog(@"Error communicating with %@: %@, %@", task, error, error.userInfo);
                         }];
 }
 

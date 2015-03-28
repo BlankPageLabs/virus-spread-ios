@@ -12,6 +12,9 @@
 #import <ASOAnimatedButton/ASOBounceButtonView.h>
 #import "ViewController.h"
 #import "VirusButton.h"
+#import "virus_spread-Swift.h"
+#import "InfectionManager.h"
+#import "VirusInfo.h"
 
 
 @interface ViewController ()
@@ -61,7 +64,9 @@
     [self.bounceButtons collapseWithAnimationStyle:ASOAnimationStyleRiseConcurrently];
     self.buttonsExpanded = NO;
 
-
+    [[NSOperationQueue new] addOperationWithBlock:^{
+        [[AppDelegate instance].infectionManager infectWith:[VirusInfo infoWithType:sender.virusId]];
+    }];
 }
 
 @end
