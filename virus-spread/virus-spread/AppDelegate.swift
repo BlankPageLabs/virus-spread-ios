@@ -23,6 +23,7 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var locaionManager = LocationManager()
 
     public var window: UIWindow?
+    public var rootViewController: ViewController?
 
     public var infected: Bool { return self.infectionManager.infected }
 
@@ -31,27 +32,19 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
 
     public func application(application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.rootViewController = UIStoryboard(name: "Main",
+            bundle: NSBundle(forClass: AppDelegate.self)).instantiateInitialViewController() as? ViewController
+        self.window?.rootViewController = self.rootViewController
+        self.window?.makeKeyAndVisible()
+
         // TODO: don't clear defaults
-        NSUserDefaults.resetStandardUserDefaults()
         let defaults = NSUserDefaults.standardUserDefaults()
         if let deviceInfoDictionary = defaults.objectForKey("deviceInfo")
                 as? Dictionary<NSObject, AnyObject> {
             self.deviceInfo = DeviceInfo(dictionary: deviceInfoDictionary)
         } else {
-            self.deviceInfo = DeviceInfo()
-            self.deviceInfo.deviceId = UIDevice.currentDevice().identifierForVendor.UUIDString
-            self.deviceInfo.age = 18
-            self.deviceInfo.gender = "male"
-            self.deviceInfo.userName = "test user"
-
-            ApiSession.instance().POST("device/reg",
-                parameters: self.deviceInfo.encodeToDictionary(),
-                success: { (task, responseObject) -> Void in
-                    defaults.setObject(self.deviceInfo.encodeToDictionary(), forKey: "deviceInfo")
-            }, failure: { (task, error) -> Void in
-                NSLog("Network error for task %@: %@, %@", task, error!, error!.userInfo!)
-                abort()
-            })
+            self.rootViewController?.performSegueWithIdentifier("registration", sender: self)
         }
 
         self.bluetoothManager = BluetoothManager()

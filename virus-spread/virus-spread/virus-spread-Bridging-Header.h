@@ -7,3 +7,5 @@
 #import "ApiSession.h"
 #import "BluetoothManager.h"
 #import "InfectionManager.h"
+#import "ViewController.h"
+#import "RegistrationViewController.h"
