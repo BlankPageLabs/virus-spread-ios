@@ -3,6 +3,9 @@
 // Copyright (c) 2015 morpheby. All rights reserved.
 //
 
+@import UIKit;
+@import AFNetworking;
+
 #import "InfectionManager.h"
 #import "virus_spread-Swift.h"
 #import "BluetoothManager.h"

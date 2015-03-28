@@ -14,7 +14,7 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
     public var bluetoothManager: BluetoothManager!
     public var infectionManager: InfectionManager!
 
-    lazy let locaionManager = LocationManager()
+    lazy var locaionManager = LocationManager()
 
     public var window: UIWindow?
 
