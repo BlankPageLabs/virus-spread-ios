@@ -4,8 +4,19 @@
 //
 
 #import "BluetoothManager.h"
+#import "VirusInfo.h"
+#import "virus_spread-Swift.h"
+#import "InfectionManager.h"
+
 @import CoreBluetooth;
 @import UIKit;
+
+#import <JSONKit/JSONKit.h>
+
+
+static NSString *const bt_ServiceId = @"D89EDBCB-8128-4122-94E1-94E388843CF6";
+static NSString *const bt_VirusInfoCharacteristicId = @"1C5EB049-9D10-488C-9709-647B63916539";
+
 
 @interface BluetoothManager () <CBPeripheralManagerDelegate, CBCentralManagerDelegate>
 
@@ -61,12 +72,17 @@
 
 - (void)registerPeripheralManager {
     if (!self.peripheralManagerRegistered) {
+        [self.peripheralManager addService:[self compileAdvertisingInfo]];
+        [self.peripheralManager startAdvertising:@{
+                CBAdvertisementDataServiceUUIDsKey: [CBUUID UUIDWithString:bt_ServiceId]}];
         self.peripheralManagerRegistered = YES;
     }
 }
 
 - (void)unregisterPeripheralManager {
     if (self.peripheralManagerRegistered) {
+        [self.peripheralManager stopAdvertising];
+        [self.peripheralManager removeAllServices];
         self.peripheralManagerRegistered = NO;
     }
 }
@@ -101,6 +117,8 @@
 
 - (void)registerCentralManager {
     if (!self.centralManagerRegistered) {
+        [self.centralManager scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:bt_ServiceId]]
+                                                    options:@{CBCentralManagerScanOptionAllowDuplicatesKey: @YES}];
         self.centralManagerRegistered = YES;
     }
 }
@@ -124,9 +142,32 @@
     self.centralManager = nil;
 }
 
-- (NSDictionary *)compileAdvertisingInfo {
-    NSMutableDictionary *advertisingInfo = [[NSMutableDictionary alloc] init];
-    return nil;
+- (CBMutableService *)compileAdvertisingInfo {
+    VirusInfo *virus = [AppDelegate instance].infectionManager.virus;
+
+    CBMutableService *service = [[CBMutableService alloc] initWithType:[CBUUID UUIDWithString:bt_ServiceId]
+                                                               primary:YES];
+    CBMutableCharacteristic *idCharacteristic = [[CBMutableCharacteristic alloc]
+            initWithType:[CBUUID UUIDWithString:bt_VirusInfoCharacteristicId]
+              properties:CBCharacteristicPropertyRead
+                   value:[[virus encodeToDictionary] JSONData]
+             permissions:CBAttributePermissionsReadable];
+
+    service.characteristics = @[idCharacteristic];
+
+    return service;
+}
+
+- (void)centralManager:(CBCentralManager *)central
+ didDiscoverPeripheral:(CBPeripheral *)peripheral
+     advertisementData:(NSDictionary *)advertisementData
+                  RSSI:(NSNumber *)RSSI {
+    NSDictionary *services = advertisementData[CBAdvertisementDataServiceDataKey];
+    NSData *serviceData = advertisementData[[CBUUID UUIDWithString:bt_ServiceId]];
+    NSDictionary *virusInfoDict = [serviceData objectFromJSONData];
+    VirusInfo *virusInfo = [VirusInfo infoWithDictionary:virusInfoDict];
+
+
 }
 
 @end

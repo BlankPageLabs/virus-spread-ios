@@ -13,6 +13,7 @@
 		F39753940BDD846C1266D6A5 /* BluetoothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F397583C8E95EAE0CFB3ED02 /* BluetoothManager.m */; };
 		F3975514BB47BEDE9ABA9784 /* VirusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F3975140809169F353C9B248 /* VirusButton.m */; };
 		F3975832D861311E357222E7 /* InfectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3975457D5742F6BE484EDD5 /* InfectionManager.m */; };
+		F3975D546109AFE08E15A348 /* KissInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F3975CC2F38B720D3452EFD6 /* KissInfo.m */; };
 		F3975E1B5959739283DEE220 /* ApiSession.m in Sources */ = {isa = PBXBuildFile; fileRef = F3975068BBE15310C971C288 /* ApiSession.m */; };
 		F3975F4BFE681094EB9E9B9C /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F39757819BF232A9A3178306 /* RegistrationViewController.m */; };
 		F60C45FB1AC62138002936BE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C45FA1AC62138002936BE /* LocationManager.swift */; };
@@ -50,7 +51,9 @@
 		F39757819BF232A9A3178306 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		F397583C8E95EAE0CFB3ED02 /* BluetoothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothManager.m; sourceTree = "<group>"; };
 		F39758820C2FD7F9D7187ACA /* VirusInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirusInfo.h; sourceTree = "<group>"; };
+		F397599577C670FE55D092A4 /* KissInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KissInfo.h; sourceTree = "<group>"; };
 		F3975BE8F9FF31D525E46922 /* BluetoothManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothManager.h; sourceTree = "<group>"; };
+		F3975CC2F38B720D3452EFD6 /* KissInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KissInfo.m; sourceTree = "<group>"; };
 		F3975DCF94245863ECA43C5B /* InfectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfectionManager.h; sourceTree = "<group>"; };
 		F3975EF5247852D66C73BCF2 /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
 		F3975F3404FE061D9155706A /* swift-shim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "swift-shim.h"; sourceTree = "<group>"; };
@@ -162,6 +165,8 @@
 				F3975140809169F353C9B248 /* VirusButton.m */,
 				F3975FCB00A6FF5562781E9B /* VirusButton.h */,
 				F65D750F1AC6CA3000C22954 /* LocationSynchronous.swift */,
+				F3975CC2F38B720D3452EFD6 /* KissInfo.m */,
+				F397599577C670FE55D092A4 /* KissInfo.h */,
 			);
 			path = "virus-spread";
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 				F3975832D861311E357222E7 /* InfectionManager.m in Sources */,
 				F3975F4BFE681094EB9E9B9C /* RegistrationViewController.m in Sources */,
 				F3975514BB47BEDE9ABA9784 /* VirusButton.m in Sources */,
+				F3975D546109AFE08E15A348 /* KissInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
