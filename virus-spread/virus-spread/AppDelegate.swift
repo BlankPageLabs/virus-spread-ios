@@ -39,7 +39,6 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = self.rootViewController
         self.window?.makeKeyAndVisible()
 
-        // TODO: don't clear defaults
         let defaults = NSUserDefaults.standardUserDefaults()
         if let deviceInfoDictionary = defaults.objectForKey("deviceInfo")
                 as? Dictionary<NSObject, AnyObject> {
