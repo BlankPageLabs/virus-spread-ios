@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "virus_spread-Swift.h"
 
 
 @interface DeviceInfo : NSObject

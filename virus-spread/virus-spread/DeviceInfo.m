@@ -3,6 +3,8 @@
 // Copyright (c) 2015 morpheby. All rights reserved.
 //
 
+
+@import UIKit
 #import "DeviceInfo.h"
 
 
