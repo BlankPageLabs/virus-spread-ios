@@ -17,6 +17,23 @@
 
 }
 
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        if (self.infected) {
+            [[AppDelegate instance].bluetoothManager requestActivatePeripheralManager];
+            [[AppDelegate instance].bluetoothManager deactivateCentralManager];
+        } else {
+            [[AppDelegate instance].bluetoothManager deactivatePeripheralManager];
+            [[AppDelegate instance].bluetoothManager requestActivateCentralManager];
+        }
+    }
+
+    return self;
+}
+
+
 - (void)infectWith:(VirusInfo *)virus {
     self.infected = YES;
     self.virus = virus;

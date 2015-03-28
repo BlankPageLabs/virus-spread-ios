@@ -18,13 +18,15 @@ static NSString *const bt_ServiceId = @"D89EDBCB-8128-4122-94E1-94E388843CF6";
 static NSString *const bt_VirusInfoCharacteristicId = @"1C5EB049-9D10-488C-9709-647B63916539";
 
 
-@interface BluetoothManager () <CBPeripheralManagerDelegate, CBCentralManagerDelegate>
+@interface BluetoothManager () <CBPeripheralManagerDelegate, CBCentralManagerDelegate, CBPeripheralDelegate>
 
 @property(nonatomic, retain) CBPeripheralManager *peripheralManager;
 @property(nonatomic, retain) CBCentralManager *centralManager;
 
 @property(nonatomic, assign, getter=isCentralManagerRegistered) BOOL centralManagerRegistered;
 @property(nonatomic, assign, getter=isPeripheralManagerRegistered) BOOL peripheralManagerRegistered;
+
+@property(nonatomic, retain) NSMutableDictionary *activePeripherals;
 
 @end
 
@@ -40,6 +42,7 @@ static NSString *const bt_VirusInfoCharacteristicId = @"1C5EB049-9D10-488C-9709-
         self.peripheralManagerRegistered = NO;
         self.peripheralManager = nil;
         self.centralManager = nil;
+        self.activePeripherals = [NSMutableDictionary new];
     }
 
     return self;
@@ -74,7 +77,7 @@ static NSString *const bt_VirusInfoCharacteristicId = @"1C5EB049-9D10-488C-9709-
     if (!self.peripheralManagerRegistered) {
         [self.peripheralManager addService:[self compileAdvertisingInfo]];
         [self.peripheralManager startAdvertising:@{
-                CBAdvertisementDataServiceUUIDsKey: [CBUUID UUIDWithString:bt_ServiceId]}];
+                CBAdvertisementDataServiceUUIDsKey: @[[CBUUID UUIDWithString:bt_ServiceId]]}];
         self.peripheralManagerRegistered = YES;
     }
 }
@@ -88,7 +91,11 @@ static NSString *const bt_VirusInfoCharacteristicId = @"1C5EB049-9D10-488C-9709-
 }
 
 - (void)requestActivatePeripheralManager {
-    self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil];
+    [self unregisterPeripheralManager];
+    self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self
+                                                                     queue:nil
+                                                                   options:@{CBCentralManagerOptionShowPowerAlertKey: @YES}];
+    self.peripheralManager.delegate = self;
 }
 
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central {
@@ -118,19 +125,24 @@ static NSString *const bt_VirusInfoCharacteristicId = @"1C5EB049-9D10-488C-9709-
 - (void)registerCentralManager {
     if (!self.centralManagerRegistered) {
         [self.centralManager scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:bt_ServiceId]]
-                                                    options:@{CBCentralManagerScanOptionAllowDuplicatesKey: @YES}];
+                                                    options:@{CBCentralManagerScanOptionAllowDuplicatesKey: @NO}];
         self.centralManagerRegistered = YES;
     }
 }
 
 - (void)unregisterCentralManager {
     if (self.centralManagerRegistered) {
+        [self.centralManager stopScan];
         self.centralManagerRegistered = NO;
     }
 }
 
 - (void)requestActivateCentralManager {
-    self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
+    [self unregisterCentralManager];
+    self.centralManager = [[CBCentralManager alloc] initWithDelegate:self
+                                                               queue:nil
+                                                             options:@{CBCentralManagerOptionShowPowerAlertKey: @YES}];
+    self.centralManager.delegate = self;
 }
 
 - (void)deactivatePeripheralManager {
@@ -162,12 +174,73 @@ static NSString *const bt_VirusInfoCharacteristicId = @"1C5EB049-9D10-488C-9709-
  didDiscoverPeripheral:(CBPeripheral *)peripheral
      advertisementData:(NSDictionary *)advertisementData
                   RSSI:(NSNumber *)RSSI {
-    NSDictionary *services = advertisementData[CBAdvertisementDataServiceDataKey];
-    NSData *serviceData = advertisementData[[CBUUID UUIDWithString:bt_ServiceId]];
-    NSDictionary *virusInfoDict = [serviceData objectFromJSONData];
-    VirusInfo *virusInfo = [VirusInfo infoWithDictionary:virusInfoDict];
+    NSLog(@"Discovered: %@, RSSI: %@", peripheral, RSSI);
 
+    if (![self.activePeripherals objectForKey:peripheral.identifier]) {
+        self.activePeripherals[peripheral.identifier] = peripheral;
+        [central connectPeripheral:peripheral options:nil];
+    }
+}
 
+- (void)peripheralManager:(CBPeripheralManager *)peripheral didAddService:(CBService *)service error:(NSError *)error {
+    if (error) {
+        NSLog(@"Error adding service %@: %@, %@", service, error, error.userInfo);
+    } else {
+        NSLog(@"Added service %@", service);
+    }
+}
+
+- (void)peripheralManagerDidStartAdvertising:(CBPeripheralManager *)peripheral error:(NSError *)error {
+    if (error) {
+        NSLog(@"Error starting advertising: %@, %@", error, error.userInfo);
+    } else {
+        NSLog(@"Started advertising");
+    }
+}
+
+- (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
+    NSLog(@"Connected to %@", peripheral);
+    peripheral.delegate = self;
+    [peripheral discoverServices:@[[CBUUID UUIDWithString:bt_ServiceId]]];
+}
+
+- (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
+    NSLog(@"Failed to connect with %@: %@, %@", peripheral, error, error.userInfo);
+}
+
+- (void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error {
+    if (error) {
+        NSLog(@"Failed to discover services on %@: %@, %@", peripheral, error, error.userInfo);
+    } else {
+        NSLog(@"Discovered on %@: %@", peripheral, peripheral.services);
+        CBService *service = peripheral.services.firstObject;
+        [peripheral discoverCharacteristics:@[[CBUUID UUIDWithString:bt_VirusInfoCharacteristicId]] forService:service];
+    }
+}
+
+- (void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error {
+    if (error) {
+        NSLog(@"Failed to discover characteristics for service %@ on %@: %@, %@", service, peripheral,
+                error, error.userInfo);
+    } else {
+        NSLog(@"Discovered characteristics for %@ on %@: %@", service, peripheral, service.characteristics);
+        CBCharacteristic *characteristic = service.characteristics.firstObject;
+        [peripheral readValueForCharacteristic:characteristic];
+    }
+}
+
+- (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
+    if (error) {
+        NSLog(@"Failed to read characteristic %@ on %@: %@, %@", characteristic, peripheral, error, error.userInfo);
+    } else {
+        NSData *data = characteristic.value;
+        NSDictionary *virusDict = [data objectFromJSONData];
+        NSLog(@"Read virus: %@", virusDict);
+        VirusInfo *virus = [VirusInfo infoWithDictionary:virusDict];
+
+        NSLog(@"Removing peripheral %@", peripheral);
+        [self.activePeripherals removeObjectForKey:peripheral.identifier];
+    }
 }
 
 @end
