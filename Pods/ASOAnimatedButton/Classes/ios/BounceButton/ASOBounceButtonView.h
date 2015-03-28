@@ -115,4 +115,6 @@ typedef enum {
  */
 - (void) collapseWithAnimationStyle:(ASOAnimationStyle)animationStyle;
 
+@property (nonatomic, copy) IBOutletCollection(UIButton) NSArray *bounceButtonsFromUI;
+
 @end

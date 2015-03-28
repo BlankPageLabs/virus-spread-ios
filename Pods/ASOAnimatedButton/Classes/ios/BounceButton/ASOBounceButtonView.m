@@ -222,4 +222,12 @@
     self.collapsedViewDuration = [NSNumber numberWithDouble:([self.speed doubleValue] * [self.bounceButtons count])];
 }
 
+- (void)setBounceButtonsFromUI:(NSArray *)bounceButtonsFromUI {
+    [self addBounceButtons:bounceButtonsFromUI];
+}
+
+- (NSArray *)bounceButtonsFromUI {
+    return self.bounceButtons;
+}
+
 @end
