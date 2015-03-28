@@ -19,6 +19,7 @@
 		F60C45FB1AC62138002936BE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C45FA1AC62138002936BE /* LocationManager.swift */; };
 		F60C45FD1AC6218B002936BE /* Observation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C45FC1AC6218B002936BE /* Observation.swift */; };
 		F60C45FF1AC621D0002936BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C45FE1AC621D0002936BE /* AppDelegate.swift */; };
+		F65D75101AC6CA3000C22954 /* LocationSynchronous.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D750F1AC6CA3000C22954 /* LocationSynchronous.swift */; };
 		F667697E1AC5CA1F00D2C96E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F667697D1AC5CA1F00D2C96E /* main.m */; };
 		F66769841AC5CA1F00D2C96E /* virus_spread.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F66769821AC5CA1F00D2C96E /* virus_spread.xcdatamodeld */; };
 		F66769871AC5CA1F00D2C96E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66769861AC5CA1F00D2C96E /* ViewController.m */; };
@@ -63,6 +64,7 @@
 		F60C45FA1AC62138002936BE /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		F60C45FC1AC6218B002936BE /* Observation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observation.swift; sourceTree = "<group>"; };
 		F60C45FE1AC621D0002936BE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F65D750F1AC6CA3000C22954 /* LocationSynchronous.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSynchronous.swift; sourceTree = "<group>"; };
 		F66769781AC5CA1F00D2C96E /* virus-spread.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "virus-spread.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F667697C1AC5CA1F00D2C96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F667697D1AC5CA1F00D2C96E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				F3975FB46EBDBE2DD07E0510 /* RegistrationViewController.h */,
 				F3975140809169F353C9B248 /* VirusButton.m */,
 				F3975FCB00A6FF5562781E9B /* VirusButton.h */,
+				F65D750F1AC6CA3000C22954 /* LocationSynchronous.swift */,
 			);
 			path = "virus-spread";
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				F66769871AC5CA1F00D2C96E /* ViewController.m in Sources */,
 				F60C45FB1AC62138002936BE /* LocationManager.swift in Sources */,
 				F60C45FD1AC6218B002936BE /* Observation.swift in Sources */,
+				F65D75101AC6CA3000C22954 /* LocationSynchronous.swift in Sources */,
 				F667697E1AC5CA1F00D2C96E /* main.m in Sources */,
 				F397530FD3210598B23CD441 /* VirusData.m in Sources */,
 				F39753940BDD846C1266D6A5 /* BluetoothManager.m in Sources */,

@@ -11,6 +11,20 @@
 @implementation VirusInfo {
 
 }
+- (instancetype)initWithType:(NSString *)type {
+    self = [super init];
+    if (self) {
+        self.type = type;
+        self.originCoordinates = [LocationHelper locationSynchronous:[AppDelegate instance].locaionManager];
+    }
+
+    return self;
+}
+
++ (instancetype)infoWithType:(NSString *)type {
+    return [[self alloc] initWithType:type];
+}
+
 
 - (NSDictionary *)encodeToDictionary {
     return @{

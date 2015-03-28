@@ -28,7 +28,7 @@ enum CurrentLocation {
 }
 
 
-class LocationManager: NSObject, CLLocationManagerDelegate {
+public class LocationManager: NSObject, CLLocationManagerDelegate {
 
     var location: CurrentLocation = .None {
         didSet {
@@ -89,18 +89,18 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
 
     // CLLocationManagerDelegate
 
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    public func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         self.startMonitoringIfPermitted()
     }
 
 
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+    public func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         if let lastLocation = locations.last as? CLLocation {
             self.location = .GpsBasedLocation(coordinate: lastLocation.coordinate, accuracy: lastLocation.horizontalAccuracy)
         }
     }
     
-    func locationManager(manager: CLLocationManager!, didUpdateHeading newHeading: CLHeading!) {
+    public func locationManager(manager: CLLocationManager!, didUpdateHeading newHeading: CLHeading!) {
         
     }
     

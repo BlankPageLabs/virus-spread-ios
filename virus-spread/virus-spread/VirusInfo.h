@@ -9,11 +9,18 @@
 
 @interface VirusInfo : NSObject
 
+
+
 @property(nonatomic, retain) NSString *type;
 
 @property(nonatomic, assign) CLLocationCoordinate2D originCoordinates;
 
 @property(nonatomic, retain) NSDate *infectionDate;
+
+- (instancetype)initWithType:(NSString *)type;
+
++ (instancetype)infoWithType:(NSString *)type;
+
 
 - (NSDictionary *)encodeToDictionary;
 
