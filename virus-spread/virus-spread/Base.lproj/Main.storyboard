@@ -2,7 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7525" systemVersion="14D105g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7516"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,12 +16,12 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lzJ-im-1P2" customClass="ASOBounceButtonView">
-                                <rect key="frame" x="-81" y="-53" width="25" height="88"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="91" y="25" width="21" height="78"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outletCollection property="bounceButtonsFromUI" destination="BMp-Fy-eBg" id="lpq-8j-mcJ"/>
                                     <outletCollection property="bounceButtonsFromUI" destination="EcW-x4-W4a" id="zXx-70-Cxu"/>
@@ -27,7 +29,7 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcW-x4-W4a" customClass="VirusButton">
-                                <rect key="frame" x="285" y="451" width="30" height="30"/>
+                                <rect key="frame" x="192" y="587" width="30" height="30"/>
                                 <state key="normal" title="Flu">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -39,7 +41,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W86-DH-XgF" customClass="VirusButton">
-                                <rect key="frame" x="352" y="495" width="57" height="30"/>
+                                <rect key="frame" x="259" y="631" width="57" height="30"/>
                                 <state key="normal" title="Measles">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -51,7 +53,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZr-R4-Z0U">
-                                <rect key="frame" x="275" y="530" width="50" height="50"/>
+                                <rect key="frame" x="182" y="666" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="DjW-Of-GnE"/>
                                     <constraint firstAttribute="height" constant="50" id="Web-VL-LFN"/>
@@ -64,7 +66,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="BMp-Fy-eBg" customClass="VirusButton">
-                                <rect key="frame" x="215" y="495" width="32" height="30"/>
+                                <rect key="frame" x="122" y="631" width="32" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Cold"/>
                                 <userDefinedRuntimeAttributes>
@@ -75,10 +77,13 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="cRO-k7-4JB">
-                                <rect key="frame" x="43" y="20" width="514" height="410"/>
+                                <rect key="frame" x="43" y="81" width="328" height="328"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cRO-k7-4JB" secondAttribute="height" multiplier="1:1" id="4FT-CW-myu"/>
+                                </constraints>
                             </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YR8-hu-DJ8">
-                                <rect key="frame" x="275" y="526" width="50" height="54"/>
+                                <rect key="frame" x="182" y="662" width="50" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="1xu-Gh-oEi"/>
                                     <constraint firstAttribute="width" constant="50" id="ca9-2t-FeK"/>
@@ -98,10 +103,10 @@
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="jZr-R4-Z0U" secondAttribute="bottom" constant="20" id="6Hm-vV-UgT"/>
                             <constraint firstItem="jZr-R4-Z0U" firstAttribute="leading" secondItem="BMp-Fy-eBg" secondAttribute="trailing" constant="28" id="Bu2-gR-0He"/>
                             <constraint firstItem="YR8-hu-DJ8" firstAttribute="top" secondItem="cRO-k7-4JB" secondAttribute="bottom" priority="750" constant="96" id="KXt-X8-YeD"/>
-                            <constraint firstItem="cRO-k7-4JB" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="N5E-Ua-j7L"/>
                             <constraint firstItem="jZr-R4-Z0U" firstAttribute="top" secondItem="BMp-Fy-eBg" secondAttribute="bottom" constant="5" id="Pjz-sS-rBf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cRO-k7-4JB" secondAttribute="trailing" priority="999" constant="27" id="QMo-0Z-E66"/>
                             <constraint firstItem="jZr-R4-Z0U" firstAttribute="top" secondItem="W86-DH-XgF" secondAttribute="bottom" constant="5" id="Tdk-IW-h10"/>
+                            <constraint firstAttribute="centerY" secondItem="cRO-k7-4JB" secondAttribute="centerY" multiplier="3:2" constant="1" id="WZr-xm-liA"/>
                             <constraint firstItem="YR8-hu-DJ8" firstAttribute="bottom" secondItem="jZr-R4-Z0U" secondAttribute="bottom" id="XEC-0p-pe7"/>
                             <constraint firstItem="YR8-hu-DJ8" firstAttribute="leading" secondItem="jZr-R4-Z0U" secondAttribute="leading" id="ZGi-sc-cch"/>
                             <constraint firstItem="cRO-k7-4JB" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" priority="999" constant="27" id="bSl-QN-ylt"/>
@@ -112,6 +117,7 @@
                             <constraint firstItem="W86-DH-XgF" firstAttribute="leading" secondItem="jZr-R4-Z0U" secondAttribute="trailing" constant="27" id="wXi-w4-Y2w"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="bounceButtons" destination="lzJ-im-1P2" id="6wN-ss-3n5"/>
                         <outlet property="curedButton" destination="YR8-hu-DJ8" id="Vqz-bw-AJK"/>
@@ -133,11 +139,11 @@
                         <viewControllerLayoutGuide type="bottom" id="pXF-o0-Ivj"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" alpha="0.34999999999999998" contentMode="scaleToFill" id="Lu2-Hm-yxg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="c24-jb-6r4">
-                                <rect key="frame" x="282" y="282" width="37" height="37"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="c24-jb-6r4">
+                                <rect key="frame" x="170" y="316" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -164,21 +170,21 @@
                         <viewControllerLayoutGuide type="bottom" id="QpN-0N-4h8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zUo-2b-9CH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cK3-KN-n2y">
-                                <rect key="frame" x="70" y="51" width="514" height="30"/>
+                                <rect key="frame" x="70" y="51" width="328" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eW5-Ac-1ca">
-                                <rect key="frame" x="70" y="89" width="514" height="30"/>
+                                <rect key="frame" x="70" y="89" width="328" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="gVM-Ca-S30">
-                                <rect key="frame" x="467" y="127" width="117" height="29"/>
+                                <rect key="frame" x="281" y="127" width="117" height="29"/>
                                 <segments>
                                     <segment title="Male"/>
                                     <segment title="Female"/>
@@ -209,7 +215,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1U-IZ-itF">
-                                <rect key="frame" x="547" y="16" width="37" height="30"/>
+                                <rect key="frame" x="361" y="16" width="37" height="30"/>
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
