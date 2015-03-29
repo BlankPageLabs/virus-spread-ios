@@ -283,15 +283,22 @@ static NSString *const bt_VirusInfoCharacteristicId = @"1C5EB049-9D10-488C-9709-
     NSLog(@"Read virus: %@", virusDict);
     VirusInfo *virus = [VirusInfo infoWithDictionary:virusDict];
 
+    __block UIBackgroundTaskIdentifier bgTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        [[[ApiSession instance] operationQueue] cancelAllOperations];
+        [[UIApplication sharedApplication] endBackgroundTask:bgTaskId];
+    }];
+
     [[NSOperationQueue new] addOperationWithBlock:^{
         KissInfo *kissInfo = [KissInfo infoWithVirusInfo:virus];
         [[ApiSession instance] POST:@"kiss"
                          parameters:[kissInfo encodeToDictionary]
                             success:^(NSURLSessionDataTask *task, id responseObject) {
+                                [[UIApplication sharedApplication] endBackgroundTask:bgTaskId];
                                 NSLog(@"Kiss, response: %@, kiss: %@", responseObject, [kissInfo encodeToDictionary]);
                             }
                             failure:^(NSURLSessionDataTask *task, NSError *error) {
                                 NSLog(@"Couldn't send kiss: %@, %@", error, error.userInfo);
+                                [[UIApplication sharedApplication] endBackgroundTask:bgTaskId];
                             }];
     }];
 }

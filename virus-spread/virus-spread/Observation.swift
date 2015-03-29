@@ -43,11 +43,11 @@ class Observable<T: AnyObject> {
     }
 }
 
-func observe<A: AnyObject, B: AnyObject> (observable: Observable<B>, #observer: A, #fire: (A, B) -> ()) {
+func observe<A: AnyObject, B: AnyObject> (observable: Observable<B>, #observer: A, #fire: (A, B?) -> ()) {
     let info = ObservationInfo(observer: observer, observable: observable)
     let caller: ObservationCaller = {
         if let observer = info.observer {
-            fire(observer, info.observable.observant!)
+            fire(observer, info.observable.observant)
             return true
         } else {
             // Apparently, no more observer
@@ -65,10 +65,10 @@ assignment
 
 struct _TmpObservationOperatorStruct <A: AnyObject, B: AnyObject> {
     let observer: A
-    let fire: (A, B) -> ()
+    let fire: (A, B?) -> ()
 }
 
-func >><A: AnyObject, B: AnyObject> (observer: A, fire: (A, B) -> ()) -> _TmpObservationOperatorStruct<A, B> {
+func >><A: AnyObject, B: AnyObject> (observer: A, fire: (A, B?) -> ()) -> _TmpObservationOperatorStruct<A, B> {
     return _TmpObservationOperatorStruct(observer: observer, fire: fire)
 }
 

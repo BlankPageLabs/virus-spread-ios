@@ -40,6 +40,8 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
 
     private let locationManager = CLLocationManager()
 
+    private var inBackground = UIApplication.sharedApplication().applicationState == .Background;
+
     override init () {
         super.init()
 
@@ -48,7 +50,9 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
 
         self.configureCoreLocation()
 
-        self.startMonitoringIfPermitted()
+        if !inBackground || self.locationManager.location == nil {
+            self.startMonitoringIfPermitted()
+        }
     }
 
     private func configureCoreLocation () {
@@ -84,10 +88,14 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
     }
 
     func didEnterBackground() {
-        self.stopMonitoring()
+        self.inBackground = true
+        if self.locationManager.location != nil {
+            self.stopMonitoring()
+        }
     }
 
     func willEnterForeground() {
+        self.inBackground = false
         self.startMonitoringIfPermitted()
     }
 
@@ -101,6 +109,9 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
     public func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         if let lastLocation = locations.last as? CLLocation {
             self.location = .GpsBasedLocation(coordinate: lastLocation.coordinate, accuracy: lastLocation.horizontalAccuracy)
+            if self.inBackground {
+                self.stopMonitoring()
+            }
         }
     }
 
