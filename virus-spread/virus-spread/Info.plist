@@ -28,6 +28,8 @@
 	<string>Main</string>
     <key>NSLocationWhenInUseUsageDescription</key>
     <string>${PRODUCT_NAME} is using your location to find the points of virus spreading</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>${PRODUCT_NAME} is using your location to mark possible infection points</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

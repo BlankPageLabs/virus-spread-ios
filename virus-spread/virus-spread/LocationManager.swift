@@ -66,7 +66,8 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
         }
 
         // Ask user for permissions, if not yet
-        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.requestAlwaysAuthorization()
+//        self.locationManager.requestWhenInUseAuthorization()
     }
 
     private func startMonitoringIfPermitted () {
@@ -77,21 +78,21 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
         }
     }
 
-    private func startMonitoring () {
+    func startMonitoring () {
         self.locationManager.startUpdatingHeading()
         self.locationManager.startUpdatingLocation()
     }
 
-    private func stopMonitoring () {
-        self.locationManager.stopUpdatingLocation()
-        self.locationManager.startUpdatingHeading()
+    func stopMonitoring () {
+//        self.locationManager.stopUpdatingLocation()
+        // Actually, while we don't implement geofencing, this is the only way
+        self.locationManager.startUpdatingLocation()
+        self.locationManager.stopUpdatingHeading()
     }
 
     func didEnterBackground() {
         self.inBackground = true
-        if self.locationManager.location != nil {
-            self.stopMonitoring()
-        }
+        self.stopMonitoring()
     }
 
     func willEnterForeground() {
@@ -109,9 +110,6 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
     public func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         if let lastLocation = locations.last as? CLLocation {
             self.location = .GpsBasedLocation(coordinate: lastLocation.coordinate, accuracy: lastLocation.horizontalAccuracy)
-            if self.inBackground {
-                self.stopMonitoring()
-            }
         }
     }
 
