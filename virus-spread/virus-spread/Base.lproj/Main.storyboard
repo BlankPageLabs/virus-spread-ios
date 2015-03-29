@@ -16,11 +16,11 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lzJ-im-1P2" customClass="ASOBounceButtonView">
-                                <rect key="frame" x="91" y="25" width="21" height="78"/>
+                                <rect key="frame" x="97" y="-16" width="97" height="36"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outletCollection property="bounceButtonsFromUI" destination="BMp-Fy-eBg" id="lpq-8j-mcJ"/>
@@ -29,8 +29,9 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcW-x4-W4a" customClass="VirusButton">
-                                <rect key="frame" x="192" y="587" width="30" height="30"/>
-                                <state key="normal" title="Flu">
+                                <rect key="frame" x="132" y="337" width="56" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Грипп">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -41,8 +42,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W86-DH-XgF" customClass="VirusButton">
-                                <rect key="frame" x="259" y="631" width="57" height="30"/>
-                                <state key="normal" title="Measles">
+                                <rect key="frame" x="220" y="364" width="47" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Корь">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -52,23 +54,42 @@
                                     <action selector="virusSelected:" destination="x5A-6p-PRh" eventType="touchUpInside" id="TQB-3A-OT9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZr-R4-Z0U">
-                                <rect key="frame" x="182" y="666" width="50" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZr-R4-Z0U" userLabel="I got a virus!">
+                                <rect key="frame" x="85" y="398" width="150" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="DjW-Of-GnE"/>
-                                    <constraint firstAttribute="height" constant="50" id="Web-VL-LFN"/>
+                                    <constraint firstAttribute="width" constant="150" id="DjW-Of-GnE"/>
+                                    <constraint firstAttribute="height" constant="150" id="Web-VL-LFN"/>
                                 </constraints>
-                                <state key="normal" title="I got a virus!" image="cold">
+                                <state key="normal" image="btn-ill">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="gotVirus:" destination="x5A-6p-PRh" eventType="touchUpInside" id="8WR-tq-dK1"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="cRO-k7-4JB">
+                                <rect key="frame" x="43" y="72" width="234" height="234"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cRO-k7-4JB" secondAttribute="height" multiplier="1:1" id="4FT-CW-myu"/>
+                                </constraints>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YR8-hu-DJ8" userLabel="Cured">
+                                <rect key="frame" x="85" y="398" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="1xu-Gh-oEi"/>
+                                    <constraint firstAttribute="width" constant="150" id="ca9-2t-FeK"/>
+                                </constraints>
+                                <state key="normal" image="btn-cured">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cured:" destination="x5A-6p-PRh" eventType="touchUpInside" id="dan-zr-eeC"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="BMp-Fy-eBg" customClass="VirusButton">
-                                <rect key="frame" x="122" y="631" width="32" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Cold"/>
+                                <rect key="frame" x="35" y="364" width="89" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Простуда"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="virusId" value="ccold"/>
                                 </userDefinedRuntimeAttributes>
@@ -76,36 +97,17 @@
                                     <action selector="virusSelected:" destination="x5A-6p-PRh" eventType="touchUpInside" id="nSl-aP-wZ4"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="cRO-k7-4JB">
-                                <rect key="frame" x="43" y="81" width="328" height="328"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="cRO-k7-4JB" secondAttribute="height" multiplier="1:1" id="4FT-CW-myu"/>
-                                </constraints>
-                            </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YR8-hu-DJ8">
-                                <rect key="frame" x="182" y="662" width="50" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="1xu-Gh-oEi"/>
-                                    <constraint firstAttribute="width" constant="50" id="ca9-2t-FeK"/>
-                                </constraints>
-                                <state key="normal" title="Cured" image="yeah">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="cured:" destination="x5A-6p-PRh" eventType="touchUpInside" id="dan-zr-eeC"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="top" secondItem="EcW-x4-W4a" secondAttribute="bottom" constant="49" id="2le-es-AdU"/>
+                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="top" secondItem="EcW-x4-W4a" secondAttribute="bottom" constant="25" id="2le-es-AdU"/>
                             <constraint firstAttribute="centerX" secondItem="jZr-R4-Z0U" secondAttribute="centerX" id="37Y-zC-UfP"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="jZr-R4-Z0U" secondAttribute="bottom" constant="20" id="6Hm-vV-UgT"/>
-                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="leading" secondItem="BMp-Fy-eBg" secondAttribute="trailing" constant="28" id="Bu2-gR-0He"/>
+                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="leading" secondItem="BMp-Fy-eBg" secondAttribute="trailing" constant="-39" id="Bu2-gR-0He"/>
                             <constraint firstItem="YR8-hu-DJ8" firstAttribute="top" secondItem="cRO-k7-4JB" secondAttribute="bottom" priority="750" constant="96" id="KXt-X8-YeD"/>
-                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="top" secondItem="BMp-Fy-eBg" secondAttribute="bottom" constant="5" id="Pjz-sS-rBf"/>
+                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="top" secondItem="BMp-Fy-eBg" secondAttribute="bottom" constant="-2" id="Pjz-sS-rBf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cRO-k7-4JB" secondAttribute="trailing" priority="999" constant="27" id="QMo-0Z-E66"/>
-                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="top" secondItem="W86-DH-XgF" secondAttribute="bottom" constant="5" id="Tdk-IW-h10"/>
+                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="top" secondItem="W86-DH-XgF" secondAttribute="bottom" constant="-2" id="Tdk-IW-h10"/>
                             <constraint firstAttribute="centerY" secondItem="cRO-k7-4JB" secondAttribute="centerY" multiplier="3:2" constant="1" id="WZr-xm-liA"/>
                             <constraint firstItem="YR8-hu-DJ8" firstAttribute="bottom" secondItem="jZr-R4-Z0U" secondAttribute="bottom" id="XEC-0p-pe7"/>
                             <constraint firstItem="YR8-hu-DJ8" firstAttribute="leading" secondItem="jZr-R4-Z0U" secondAttribute="leading" id="ZGi-sc-cch"/>
@@ -113,11 +115,11 @@
                             <constraint firstItem="YR8-hu-DJ8" firstAttribute="trailing" secondItem="jZr-R4-Z0U" secondAttribute="trailing" id="hrp-dS-2df"/>
                             <constraint firstItem="jZr-R4-Z0U" firstAttribute="top" secondItem="cRO-k7-4JB" secondAttribute="bottom" priority="750" constant="100" id="lhI-c7-xYc"/>
                             <constraint firstAttribute="centerX" secondItem="cRO-k7-4JB" secondAttribute="centerX" id="oOG-aV-WRk"/>
-                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="leading" secondItem="EcW-x4-W4a" secondAttribute="trailing" constant="-40" id="oyw-rB-2fT"/>
-                            <constraint firstItem="W86-DH-XgF" firstAttribute="leading" secondItem="jZr-R4-Z0U" secondAttribute="trailing" constant="27" id="wXi-w4-Y2w"/>
+                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="leading" secondItem="EcW-x4-W4a" secondAttribute="trailing" constant="-103" id="oyw-rB-2fT"/>
+                            <constraint firstItem="W86-DH-XgF" firstAttribute="leading" secondItem="jZr-R4-Z0U" secondAttribute="trailing" constant="-15" id="wXi-w4-Y2w"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="bounceButtons" destination="lzJ-im-1P2" id="6wN-ss-3n5"/>
                         <outlet property="curedButton" destination="YR8-hu-DJ8" id="Vqz-bw-AJK"/>
@@ -139,7 +141,7 @@
                         <viewControllerLayoutGuide type="bottom" id="pXF-o0-Ivj"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" alpha="0.34999999999999998" contentMode="scaleToFill" id="Lu2-Hm-yxg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="c24-jb-6r4">
@@ -170,21 +172,21 @@
                         <viewControllerLayoutGuide type="bottom" id="QpN-0N-4h8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zUo-2b-9CH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cK3-KN-n2y">
-                                <rect key="frame" x="70" y="51" width="328" height="30"/>
+                                <rect key="frame" x="70" y="51" width="234" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eW5-Ac-1ca">
-                                <rect key="frame" x="70" y="89" width="328" height="30"/>
+                                <rect key="frame" x="70" y="89" width="234" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="gVM-Ca-S30">
-                                <rect key="frame" x="281" y="127" width="117" height="29"/>
+                                <rect key="frame" x="187" y="127" width="117" height="29"/>
                                 <segments>
                                     <segment title="Male"/>
                                     <segment title="Female"/>
@@ -215,7 +217,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1U-IZ-itF">
-                                <rect key="frame" x="361" y="16" width="37" height="30"/>
+                                <rect key="frame" x="267" y="16" width="37" height="30"/>
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -260,7 +262,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cold" width="592" height="640"/>
-        <image name="yeah" width="250" height="270"/>
+        <image name="btn-cured" width="150" height="150"/>
+        <image name="btn-ill" width="150" height="150"/>
     </resources>
 </document>

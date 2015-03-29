@@ -110,8 +110,24 @@
 }
 
 - (IBAction)cured:(id)sender {
-    [[AppDelegate instance].infectionManager cure];
-    [self updateButtons];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Выздороветь"
+                                                                             message:@"Вы точно здоровы?"
+                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Да, сопли прошли"
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action) {
+                                                          [[AppDelegate instance].infectionManager cure];
+                                                          [self updateButtons];
+                                                      }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Не, только что чихнул"
+                                                        style:UIAlertActionStyleCancel
+                                                      handler:^(UIAlertAction *action) {
+                                                      }]];
+    [self presentViewController:alertController
+                       animated:YES
+                     completion:^{
+                     }];
+
 }
 
 @end
