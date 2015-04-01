@@ -31,6 +31,7 @@
 		F68A8E9E1ACC56B7001F5735 /* ErrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68A8E9B1ACC56B7001F5735 /* ErrorController.swift */; };
 		F68A8E9F1ACC56B7001F5735 /* ErrorControllerExceptionShim.m in Sources */ = {isa = PBXBuildFile; fileRef = F68A8E9D1ACC56B7001F5735 /* ErrorControllerExceptionShim.m */; };
 		F68A8EA11ACC58A2001F5735 /* IsDebuggerAttached.m in Sources */ = {isa = PBXBuildFile; fileRef = F68A8EA01ACC58A2001F5735 /* IsDebuggerAttached.m */; };
+		F6A999B31ACC61B4000E3F02 /* Application.strings in Resources */ = {isa = PBXBuildFile; fileRef = F6A999B21ACC61B4000E3F02 /* Application.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,9 @@
 		F6A999AB1ACC607D000E3F02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F6A999AD1ACC608B000E3F02 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		F6A999AF1ACC609C000E3F02 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F6A999B01ACC6152000E3F02 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		F6A999B11ACC6152000E3F02 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F6A999B21ACC61B4000E3F02 /* Application.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Application.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +193,7 @@
 				F68A8EA01ACC58A2001F5735 /* IsDebuggerAttached.m */,
 				F68A8EA21ACC58CF001F5735 /* IsDebuggerAttached.h */,
 				F39759DA04DD1AB52898AFB1 /* Error-objc.h */,
+				F6A999B21ACC61B4000E3F02 /* Application.strings */,
 			);
 			path = "virus-spread";
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 				F667698A1AC5CA1F00D2C96E /* Main.storyboard in Resources */,
 				F667698F1AC5CA1F00D2C96E /* LaunchScreen.xib in Resources */,
 				F667698C1AC5CA1F00D2C96E /* Images.xcassets in Resources */,
+				F6A999B31ACC61B4000E3F02 /* Application.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +422,7 @@
 			children = (
 				F6A999AA1ACC607D000E3F02 /* Base */,
 				F6A999AD1ACC608B000E3F02 /* ru */,
+				F6A999B01ACC6152000E3F02 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -425,6 +432,7 @@
 			children = (
 				F6A999AB1ACC607D000E3F02 /* Base */,
 				F6A999AF1ACC609C000E3F02 /* ru */,
+				F6A999B11ACC6152000E3F02 /* en */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
