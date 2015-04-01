@@ -7,7 +7,7 @@
 //
 
 #import "ErrorControllerExceptionShim.h"
-#import "velo-Swift.h"
+#import "virus_spread-Swift.h"
 
 static ErrorController *localErrorController;
 

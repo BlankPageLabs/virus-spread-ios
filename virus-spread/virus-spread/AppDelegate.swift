@@ -9,10 +9,12 @@
 import Foundation
 import CoreData
 
+
 public class AppDelegate: UIResponder, UIApplicationDelegate {
     public var deviceInfo: DeviceInfo!
     public var bluetoothManager: BluetoothManager!
     public var infectionManager: InfectionManager!
+    var errorController: ErrorController = ErrorController()
 
     public let defaultDateFormatter: NSDateFormatter = {
         let formatter = NSDateFormatter()
@@ -30,6 +32,12 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let backgroundObservable = Observable(AppDelegate)
     let foregroundObservable = Observable(AppDelegate)
+
+    func presentError(title: String, message: String) {
+        let a = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        a.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+        self.rootViewController?.presentViewController(a, animated: true, completion: nil)
+    }
 
     public func application(application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {

@@ -9,3 +9,5 @@
 #import "InfectionManager.h"
 #import "ViewController.h"
 #import "RegistrationViewController.h"
+#import "ErrorControllerExceptionShim.h"
+#import "isDebuggerAttached.h"

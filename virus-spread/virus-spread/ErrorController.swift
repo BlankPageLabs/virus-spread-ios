@@ -80,8 +80,7 @@ class ErrorController: NSObject {
     func process(error: Error) {
         switch(error) {
         case let .Debug1(message):
-            VeloApp.sharedApp().navigationController.showScreen(
-                .DiscardableErrorScreen(title: "DEBUG", message: message))
+            AppDelegate.instance.presentError("DEBUG", message: message)
         case let .Fatal(message):
             performTaskWithCrashMode {
                 let alert = self.exceptionAlertViewController(title: "Fatal error",
@@ -93,8 +92,7 @@ class ErrorController: NSObject {
                 self.crashObservable.fire(from: self)
             }
         case let .Error(message):
-            VeloApp.sharedApp().navigationController.showScreen(
-                .DiscardableErrorScreen(title: "Error", message: message))
+            AppDelegate.instance.presentError("Error", message: message)
         }
     }
 
@@ -182,16 +180,16 @@ class ErrorController: NSObject {
 }
 
 func debugMessage(message: String) {
-    VeloApp.sharedApp().errorController.process(.Debug1(message))
+    AppDelegate.instance.errorController.process(.Debug1(message))
 }
 
 @noreturn func fatalErrorWithUi(@autoclosure message: () -> String) {
-    VeloApp.sharedApp().errorController.process(.Fatal(message()))
+    AppDelegate.instance.errorController.process(.Fatal(message()))
     fatalError("Unreachable code")
 }
 
 func defaultError(message: String) {
-    VeloApp.sharedApp().errorController.process(.Error(message))
+    AppDelegate.instance.errorController.process(.Error(message))
 }
 
 
