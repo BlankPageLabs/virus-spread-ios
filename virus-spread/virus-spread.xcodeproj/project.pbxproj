@@ -28,6 +28,8 @@
 		F667698C1AC5CA1F00D2C96E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F667698B1AC5CA1F00D2C96E /* Images.xcassets */; };
 		F667698F1AC5CA1F00D2C96E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F667698D1AC5CA1F00D2C96E /* LaunchScreen.xib */; };
 		F667699B1AC5CA1F00D2C96E /* virus_spreadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F667699A1AC5CA1F00D2C96E /* virus_spreadTests.m */; };
+		F68A8E9E1ACC56B7001F5735 /* ErrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68A8E9B1ACC56B7001F5735 /* ErrorController.swift */; };
+		F68A8E9F1ACC56B7001F5735 /* ErrorControllerExceptionShim.m in Sources */ = {isa = PBXBuildFile; fileRef = F68A8E9D1ACC56B7001F5735 /* ErrorControllerExceptionShim.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,9 @@
 		F66769941AC5CA1F00D2C96E /* virus-spreadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "virus-spreadTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66769991AC5CA1F00D2C96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F667699A1AC5CA1F00D2C96E /* virus_spreadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = virus_spreadTests.m; sourceTree = "<group>"; };
+		F68A8E9B1ACC56B7001F5735 /* ErrorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorController.swift; sourceTree = "<group>"; };
+		F68A8E9C1ACC56B7001F5735 /* ErrorControllerExceptionShim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorControllerExceptionShim.h; sourceTree = "<group>"; };
+		F68A8E9D1ACC56B7001F5735 /* ErrorControllerExceptionShim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorControllerExceptionShim.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +177,9 @@
 				F397599577C670FE55D092A4 /* KissInfo.h */,
 				F397599953E7FDBDAFC95B2A /* ProgressViewController.m */,
 				F3975295ABBDE5AA15019F1B /* ProgressViewController.h */,
+				F68A8E9B1ACC56B7001F5735 /* ErrorController.swift */,
+				F68A8E9C1ACC56B7001F5735 /* ErrorControllerExceptionShim.h */,
+				F68A8E9D1ACC56B7001F5735 /* ErrorControllerExceptionShim.m */,
 			);
 			path = "virus-spread";
 			sourceTree = "<group>";
@@ -362,9 +370,11 @@
 				F39753940BDD846C1266D6A5 /* BluetoothManager.m in Sources */,
 				F60C45FF1AC621D0002936BE /* AppDelegate.swift in Sources */,
 				F39752C19C6551137F4437DC /* VirusInfo.m in Sources */,
+				F68A8E9E1ACC56B7001F5735 /* ErrorController.swift in Sources */,
 				F39751C30C727AC3E3127596 /* DeviceInfo.m in Sources */,
 				F3975E1B5959739283DEE220 /* ApiSession.m in Sources */,
 				F3975832D861311E357222E7 /* InfectionManager.m in Sources */,
+				F68A8E9F1ACC56B7001F5735 /* ErrorControllerExceptionShim.m in Sources */,
 				F3975F4BFE681094EB9E9B9C /* RegistrationViewController.m in Sources */,
 				F3975514BB47BEDE9ABA9784 /* VirusButton.m in Sources */,
 				F3975D546109AFE08E15A348 /* KissInfo.m in Sources */,
