@@ -78,9 +78,7 @@
 		F66769831AC5CA1F00D2C96E /* virus_spread.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = virus_spread.xcdatamodel; sourceTree = "<group>"; };
 		F66769851AC5CA1F00D2C96E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F66769861AC5CA1F00D2C96E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F66769891AC5CA1F00D2C96E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F667698B1AC5CA1F00D2C96E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		F667698E1AC5CA1F00D2C96E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F66769941AC5CA1F00D2C96E /* virus-spreadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "virus-spreadTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66769991AC5CA1F00D2C96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F667699A1AC5CA1F00D2C96E /* virus_spreadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = virus_spreadTests.m; sourceTree = "<group>"; };
@@ -89,6 +87,10 @@
 		F68A8E9D1ACC56B7001F5735 /* ErrorControllerExceptionShim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorControllerExceptionShim.m; sourceTree = "<group>"; };
 		F68A8EA01ACC58A2001F5735 /* IsDebuggerAttached.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsDebuggerAttached.m; sourceTree = "<group>"; };
 		F68A8EA21ACC58CF001F5735 /* IsDebuggerAttached.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IsDebuggerAttached.h; sourceTree = "<group>"; };
+		F6A999AA1ACC607D000E3F02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F6A999AB1ACC607D000E3F02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F6A999AD1ACC608B000E3F02 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		F6A999AF1ACC609C000E3F02 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,7 +283,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
+				ru,
 				Base,
 			);
 			mainGroup = F667696F1AC5CA1F00D2C96E;
@@ -412,7 +414,8 @@
 		F66769881AC5CA1F00D2C96E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F66769891AC5CA1F00D2C96E /* Base */,
+				F6A999AA1ACC607D000E3F02 /* Base */,
+				F6A999AD1ACC608B000E3F02 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -420,7 +423,8 @@
 		F667698D1AC5CA1F00D2C96E /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F667698E1AC5CA1F00D2C96E /* Base */,
+				F6A999AB1ACC607D000E3F02 /* Base */,
+				F6A999AF1ACC609C000E3F02 /* ru */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
