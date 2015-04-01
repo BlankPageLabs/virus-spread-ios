@@ -80,7 +80,11 @@ class ErrorController: NSObject {
     func process(error: Error) {
         switch(error) {
         case let .Debug1(message):
-            AppDelegate.instance.presentError("DEBUG", message: message)
+            #if DEBUG
+                AppDelegate.instance.presentError("DEBUG", message: message)
+            #else
+                NSLog(message)
+            #endif
         case let .Fatal(message):
             performTaskWithCrashMode {
                 let alert = self.exceptionAlertViewController(title: "Fatal error",

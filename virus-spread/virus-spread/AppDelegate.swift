@@ -39,6 +39,21 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
         self.rootViewController?.presentViewController(a, animated: true, completion: nil)
     }
 
+    @objc
+    public func debugMessage_int(message: String) {
+        debugMessage(message)
+    }
+
+    @objc
+    @noreturn func fatalErrorWithUi_int(@autoclosure message: () -> String) {
+        fatalErrorWithUi(message)
+    }
+
+    @objc
+    func defaultError_int(message: String) {
+        defaultError(message)
+    }
+
     public func application(application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         self.bluetoothManager = BluetoothManager()

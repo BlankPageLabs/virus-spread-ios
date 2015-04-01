@@ -15,6 +15,7 @@
 #import "virus_spread-Swift.h"
 #import "InfectionManager.h"
 #import "VirusInfo.h"
+#import "Error-objc.h"
 
 
 @interface ViewController ()

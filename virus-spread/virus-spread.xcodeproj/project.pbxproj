@@ -58,6 +58,7 @@
 		F39758820C2FD7F9D7187ACA /* VirusInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirusInfo.h; sourceTree = "<group>"; };
 		F397599577C670FE55D092A4 /* KissInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KissInfo.h; sourceTree = "<group>"; };
 		F397599953E7FDBDAFC95B2A /* ProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressViewController.m; sourceTree = "<group>"; };
+		F39759DA04DD1AB52898AFB1 /* Error-objc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Error-objc.h"; sourceTree = "<group>"; };
 		F3975BE8F9FF31D525E46922 /* BluetoothManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothManager.h; sourceTree = "<group>"; };
 		F3975CC2F38B720D3452EFD6 /* KissInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KissInfo.m; sourceTree = "<group>"; };
 		F3975DCF94245863ECA43C5B /* InfectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfectionManager.h; sourceTree = "<group>"; };
@@ -185,6 +186,7 @@
 				F68A8E9D1ACC56B7001F5735 /* ErrorControllerExceptionShim.m */,
 				F68A8EA01ACC58A2001F5735 /* IsDebuggerAttached.m */,
 				F68A8EA21ACC58CF001F5735 /* IsDebuggerAttached.h */,
+				F39759DA04DD1AB52898AFB1 /* Error-objc.h */,
 			);
 			path = "virus-spread";
 			sourceTree = "<group>";
