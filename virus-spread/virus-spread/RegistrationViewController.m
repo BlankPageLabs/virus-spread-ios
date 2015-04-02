@@ -9,6 +9,7 @@
 #import "DeviceInfo.h"
 #import "ApiSession.h"
 #import "virus_spread-Swift.h"
+#import "Error-objc.h"
 
 
 @interface RegistrationViewController ()
@@ -71,6 +72,7 @@
                             }
                             failure: ^(NSURLSessionTask *task, NSError *error) {
                                 NSLog(@"Network error for task %@: %@, %@", task, error, error.userInfo);
+                                defaultError(NSLocalizedString(@"networkUnreachable", @"Network is unreachable"));
                                 abort();
                             }];
         return YES;

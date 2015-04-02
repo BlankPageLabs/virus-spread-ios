@@ -111,16 +111,16 @@
 }
 
 - (IBAction)cured:(id)sender {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Выздороветь"
-                                                                             message:@"Вы точно здоровы?"
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"getCured", @"Выздороветь")
+                                                                             message:NSLocalizedString(@"curedConfirm", @"Вы точно здоровы?")
                                                                       preferredStyle:UIAlertControllerStyleActionSheet];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"Да, сопли прошли"
+    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"curedConfirmYes", @"Да, сопли прошли")
                                                         style:UIAlertActionStyleDefault
                                                       handler:^(UIAlertAction *action) {
                                                           [[AppDelegate instance].infectionManager cure];
                                                           [self updateButtons];
                                                       }]];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"Не, только что чихнул"
+    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"curedConfirmNo", @"Не, только что чихнул")
                                                         style:UIAlertActionStyleCancel
                                                       handler:^(UIAlertAction *action) {
                                                       }]];

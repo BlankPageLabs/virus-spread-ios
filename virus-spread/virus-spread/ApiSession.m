@@ -10,7 +10,7 @@
 }
 
 - (instancetype)init {
-    self = [super initWithBaseURL:[[NSURL alloc] initWithString:@"http://artie18.local:4508/api"]];
+    self = [super initWithBaseURL:[[NSURL alloc] initWithString:@"http://virusspread.blankpagelabs.com/api"]];
     if (self) {
         self.requestSerializer = [[AFHTTPRequestSerializer alloc] init];
         self.requestSerializer.HTTPMethodsEncodingParametersInURI =
