@@ -3,13 +3,13 @@
 "19j-kP-Zep.text" = "Name";
 
 /* Class = "UIButton"; normalTitle = "Простуда"; ObjectID = "BMp-Fy-eBg"; */
-"BMp-Fy-eBg.normalTitle" = "Простуда";
+"BMp-Fy-eBg.normalTitle" = "Cold";
 
 /* Class = "UILabel"; text = "Вы здоровы"; ObjectID = "DAh-0p-Mac"; */
-"DAh-0p-Mac.text" = "Вы здоровы";
+"DAh-0p-Mac.text" = "Completely healthy";
 
 /* Class = "UIButton"; normalTitle = "Грипп"; ObjectID = "EcW-x4-W4a"; */
-"EcW-x4-W4a.normalTitle" = "Грипп";
+"EcW-x4-W4a.normalTitle" = "Flu";
 
 /* Class = "UILabel"; text = "Age"; ObjectID = "QAP-zE-7MB"; */
 "QAP-zE-7MB.text" = "Age";
@@ -18,7 +18,7 @@
 "TZf-xI-cuM.text" = "Registration";
 
 /* Class = "UIButton"; normalTitle = "Корь"; ObjectID = "W86-DH-XgF"; */
-"W86-DH-XgF.normalTitle" = "Корь";
+"W86-DH-XgF.normalTitle" = "Measles";
 
 /* Class = "UIButton"; normalTitle = "Done"; ObjectID = "Z1U-IZ-itF"; */
 "Z1U-IZ-itF.normalTitle" = "Done";

@@ -1,6 +1,6 @@
 
 /* Class = "UILabel"; text = "Name"; ObjectID = "19j-kP-Zep"; */
-"19j-kP-Zep.text" = "Name";
+"19j-kP-Zep.text" = "Имя";
 
 /* Class = "UIButton"; normalTitle = "Простуда"; ObjectID = "BMp-Fy-eBg"; */
 "BMp-Fy-eBg.normalTitle" = "Простуда";
@@ -12,22 +12,22 @@
 "EcW-x4-W4a.normalTitle" = "Грипп";
 
 /* Class = "UILabel"; text = "Age"; ObjectID = "QAP-zE-7MB"; */
-"QAP-zE-7MB.text" = "Age";
+"QAP-zE-7MB.text" = "Возраст";
 
 /* Class = "UILabel"; text = "Registration"; ObjectID = "TZf-xI-cuM"; */
-"TZf-xI-cuM.text" = "Registration";
+"TZf-xI-cuM.text" = "Регистрация";
 
 /* Class = "UIButton"; normalTitle = "Корь"; ObjectID = "W86-DH-XgF"; */
 "W86-DH-XgF.normalTitle" = "Корь";
 
 /* Class = "UIButton"; normalTitle = "Done"; ObjectID = "Z1U-IZ-itF"; */
-"Z1U-IZ-itF.normalTitle" = "Done";
+"Z1U-IZ-itF.normalTitle" = "Готово";
 
 /* Class = "UISegmentedControl"; gVM-Ca-S30.segmentTitles[0] = "Male"; ObjectID = "gVM-Ca-S30"; */
-"gVM-Ca-S30.segmentTitles[0]" = "Male";
+"gVM-Ca-S30.segmentTitles[0]" = "Мужской";
 
 /* Class = "UISegmentedControl"; gVM-Ca-S30.segmentTitles[1] = "Female"; ObjectID = "gVM-Ca-S30"; */
-"gVM-Ca-S30.segmentTitles[1]" = "Female";
+"gVM-Ca-S30.segmentTitles[1]" = "Женский";
 
 /* Class = "UILabel"; text = "Gender"; ObjectID = "xfy-Bm-LYc"; */
-"xfy-Bm-LYc.text" = "Gender";
+"xfy-Bm-LYc.text" = "Пол";
