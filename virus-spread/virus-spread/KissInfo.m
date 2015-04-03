@@ -69,7 +69,7 @@
     if (self) {
         self.deviceId = [AppDelegate instance].deviceInfo.deviceId;
         self.foreignId = strain.deviceId;
-        self.location = [LocationHelper locationSynchronous:[AppDelegate instance].locaionManager];
+        self.location = [LocationHelper locationSynchronous:[AppDelegate instance].locationManager];
         self.time = [NSDate date];
     }
     return self;

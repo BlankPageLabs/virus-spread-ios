@@ -15,7 +15,7 @@
     self = [super init];
     if (self) {
         self.type = type;
-        self.originCoordinates = [LocationHelper locationSynchronous:[AppDelegate instance].locaionManager];
+        self.originCoordinates = [LocationHelper locationSynchronous:[AppDelegate instance].locationManager];
         self.infectionDate = [NSDate date];
         self.deviceId = [AppDelegate instance].deviceInfo.deviceId;
     }

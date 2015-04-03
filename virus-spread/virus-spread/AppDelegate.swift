@@ -23,7 +23,7 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
         return formatter
     }()
 
-    lazy var locaionManager = LocationManager()
+    var locationManager: LocationManager!
 
     public var window: UIWindow?
     public var rootViewController: ViewController?
@@ -58,6 +58,9 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
     didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         self.bluetoothManager = BluetoothManager()
         self.infectionManager = InfectionManager()
+
+        // TODO: activate through UI
+        self.locationManager = LocationManager()
 
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.rootViewController = UIStoryboard(name: "Main",

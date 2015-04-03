@@ -57,10 +57,10 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
 
     private func configureCoreLocation () {
         // Configure manager
+        self.locationManager.delegate = self
         self.locationManager.activityType = .Fitness
         self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         self.locationManager.distanceFilter = 10 // 10 meters
-        self.locationManager.delegate = self
         if let location = self.locationManager.location {
             self.location = .GpsBasedLocation(coordinate: location.coordinate, accuracy: location.horizontalAccuracy)
         }
@@ -79,6 +79,7 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
     }
 
     func startMonitoring () {
+        self.locationManager.startMonitoringSignificantLocationChanges();
         self.locationManager.startUpdatingHeading()
         self.locationManager.startUpdatingLocation()
     }
@@ -106,7 +107,6 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
         self.startMonitoringIfPermitted()
     }
 
-
     public func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         if let lastLocation = locations.last as? CLLocation {
             self.location = .GpsBasedLocation(coordinate: lastLocation.coordinate, accuracy: lastLocation.horizontalAccuracy)
@@ -116,7 +116,7 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
     public func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         NSLog("Location failure: %@, %@", error, error.userInfo!)
     }
-    
+
     public func locationManager(manager: CLLocationManager!, didUpdateHeading newHeading: CLHeading!) {
         
     }
