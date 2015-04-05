@@ -44,7 +44,21 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
     func presentError(title: String, message: String) {
         let a = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         a.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
-        self.rootViewController?.presentViewController(a, animated: true, completion: nil)
+
+        let vc = self.topViewController()
+        if !(vc is UIAlertController) {
+            self.topViewController().presentViewController(a, animated: true, completion: nil)
+        } else {
+            // Don't stack errors
+        }
+    }
+
+    func topViewController() -> UIViewController {
+        var vc: UIViewController = self.rootViewController!
+        while let newVc = vc.presentedViewController {
+            vc = newVc
+        }
+        return vc
     }
 
     @objc
@@ -80,7 +94,7 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
                 as? Dictionary<NSObject, AnyObject> {
             self.deviceInfo = DeviceInfo(dictionary: deviceInfoDictionary)
         } else {
-            self.rootViewController?.performSegueWithIdentifier("registration", sender: self)
+            self.rootViewController?.performSegueWithIdentifier("registrationProgress", sender: self)
         }
 
         return true

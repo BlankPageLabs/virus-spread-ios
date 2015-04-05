@@ -150,9 +150,11 @@
                         <outlet property="statusImage" destination="cRO-k7-4JB" id="twt-sN-aRS"/>
                         <segue destination="Ipy-q4-zYH" kind="presentation" identifier="registration" id="nDG-a5-cME"/>
                         <segue destination="ppR-nZ-aVh" kind="presentation" identifier="progress" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" animates="NO" id="k6Y-wp-f8i"/>
+                        <segue destination="X3c-Ds-5eX" kind="presentation" identifier="registrationProgress" id="DaF-bF-whv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <exit id="uPv-KX-Bzt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
         </scene>
         <!--View Controller-->
@@ -185,6 +187,44 @@
                 <exit id="aUv-tC-p1g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="995" y="55"/>
+        </scene>
+        <!--Registration Progress View Controller-->
+        <scene sceneID="G76-Pq-Dgd">
+            <objects>
+                <viewController id="X3c-Ds-5eX" customClass="RegistrationProgressViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yA8-DV-4nJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bxu-7U-5IG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3VS-fS-aih">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RegistrationInProgress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zs-yT-clq">
+                                <rect key="frame" x="56" y="231" width="209" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1SY-bk-F0z">
+                                <rect key="frame" x="150" y="265" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="6zs-yT-clq" secondAttribute="centerY" constant="40" id="60P-CZ-FXL"/>
+                            <constraint firstAttribute="centerX" secondItem="6zs-yT-clq" secondAttribute="centerX" id="BLb-6b-R8h"/>
+                            <constraint firstAttribute="centerX" secondItem="1SY-bk-F0z" secondAttribute="centerX" id="Yqm-va-hTu"/>
+                            <constraint firstItem="1SY-bk-F0z" firstAttribute="top" secondItem="6zs-yT-clq" secondAttribute="bottom" constant="8" id="Zyi-2f-UQS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="uPv-KX-Bzt" kind="unwind" identifier="registrationFinished" unwindAction="unwindToRoot:" id="1Qn-XU-sQ8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZLE-G3-icr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="416" y="1433"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="hou-gQ-wBO">
