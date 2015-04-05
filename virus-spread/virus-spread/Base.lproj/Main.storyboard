@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lzJ-im-1P2" customClass="ASOBounceButtonView">
-                                <rect key="frame" x="25" y="76" width="61" height="13"/>
+                                <rect key="frame" x="-32" y="94" width="61" height="64"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outletCollection property="bounceButtonsFromUI" destination="BMp-Fy-eBg" id="lpq-8j-mcJ"/>
@@ -28,8 +28,8 @@
                                     <outletCollection property="bounceButtonsFromUI" destination="W86-DH-XgF" id="nE7-Lh-vm4"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcW-x4-W4a" customClass="VirusButton">
-                                <rect key="frame" x="132" y="337" width="56" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcW-x4-W4a" customClass="VirusButton">
+                                <rect key="frame" x="130" y="337" width="58" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="FluBtn">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -41,8 +41,8 @@
                                     <action selector="virusSelected:" destination="x5A-6p-PRh" eventType="touchUpInside" id="pE2-3c-X6x"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W86-DH-XgF" customClass="VirusButton">
-                                <rect key="frame" x="220" y="364" width="47" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W86-DH-XgF" customClass="VirusButton">
+                                <rect key="frame" x="220" y="364" width="104" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="MeaslesBtn">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -54,8 +54,8 @@
                                     <action selector="virusSelected:" destination="x5A-6p-PRh" eventType="touchUpInside" id="TQB-3A-OT9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="BMp-Fy-eBg" customClass="VirusButton">
-                                <rect key="frame" x="35" y="364" width="89" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="BMp-Fy-eBg" customClass="VirusButton">
+                                <rect key="frame" x="37" y="364" width="87" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="CColdBtn"/>
                                 <userDefinedRuntimeAttributes>
@@ -97,8 +97,8 @@
                                     <action selector="cured:" destination="x5A-6p-PRh" eventType="touchUpInside" id="dan-zr-eeC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" misplaced="YES" text="HealthyStatus" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAh-0p-Mac">
-                                <rect key="frame" x="95" y="300" width="130" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="HealthyStatus" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAh-0p-Mac">
+                                <rect key="frame" x="90" y="300" width="141" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" red="0.071690768003463745" green="0.11337379366159439" blue="0.039134576916694641" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
