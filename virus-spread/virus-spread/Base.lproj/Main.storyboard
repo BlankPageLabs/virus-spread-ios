@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lzJ-im-1P2" customClass="ASOBounceButtonView">
-                                <rect key="frame" x="-32" y="94" width="61" height="64"/>
+                                <rect key="frame" x="81" y="43" width="1" height="22"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outletCollection property="bounceButtonsFromUI" destination="BMp-Fy-eBg" id="lpq-8j-mcJ"/>
@@ -29,7 +29,7 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcW-x4-W4a" customClass="VirusButton">
-                                <rect key="frame" x="130" y="337" width="58" height="36"/>
+                                <rect key="frame" x="131" y="337" width="58" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="FluBtn">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,7 +42,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W86-DH-XgF" customClass="VirusButton">
-                                <rect key="frame" x="220" y="364" width="104" height="36"/>
+                                <rect key="frame" x="188" y="364" width="104" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="MeaslesBtn">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -79,7 +79,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="cRO-k7-4JB">
-                                <rect key="frame" x="43" y="37" width="234" height="234"/>
+                                <rect key="frame" x="49" y="53" width="222" height="222"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cRO-k7-4JB" secondAttribute="height" multiplier="1:1" id="4FT-CW-myu"/>
                                 </constraints>
@@ -98,11 +98,15 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="HealthyStatus" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAh-0p-Mac">
-                                <rect key="frame" x="90" y="300" width="141" height="28"/>
+                                <rect key="frame" x="90" y="304" width="141" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" red="0.071690768003463745" green="0.11337379366159439" blue="0.039134576916694641" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENs-Ur-fS9" userLabel="Settings">
+                                <rect key="frame" x="276" y="20" width="28" height="28"/>
+                                <state key="normal" image="settings"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -110,8 +114,11 @@
                             <constraint firstItem="jZr-R4-Z0U" firstAttribute="top" secondItem="EcW-x4-W4a" secondAttribute="bottom" constant="25" id="2le-es-AdU"/>
                             <constraint firstAttribute="centerX" secondItem="jZr-R4-Z0U" secondAttribute="centerX" id="37Y-zC-UfP"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="jZr-R4-Z0U" secondAttribute="bottom" constant="20" id="6Hm-vV-UgT"/>
-                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="leading" secondItem="BMp-Fy-eBg" secondAttribute="trailing" constant="-39" id="Bu2-gR-0He"/>
+                            <constraint firstItem="cRO-k7-4JB" firstAttribute="top" secondItem="ENs-Ur-fS9" secondAttribute="bottom" constant="5" id="9yb-yh-i9g"/>
+                            <constraint firstAttribute="centerX" secondItem="BMp-Fy-eBg" secondAttribute="centerX" multiplier="2:1" id="BbZ-Vo-gye"/>
+                            <constraint firstAttribute="centerX" secondItem="W86-DH-XgF" secondAttribute="centerX" multiplier="2:3" id="Ctu-bX-O7w"/>
                             <constraint firstItem="DAh-0p-Mac" firstAttribute="top" secondItem="cRO-k7-4JB" secondAttribute="bottom" constant="29" id="EhQ-U9-YKG"/>
+                            <constraint firstAttribute="centerX" secondItem="EcW-x4-W4a" secondAttribute="centerX" id="Khh-9R-AD3"/>
                             <constraint firstItem="jZr-R4-Z0U" firstAttribute="top" secondItem="DAh-0p-Mac" secondAttribute="bottom" priority="750" constant="70" id="L8k-eE-dbQ"/>
                             <constraint firstItem="jZr-R4-Z0U" firstAttribute="top" secondItem="BMp-Fy-eBg" secondAttribute="bottom" constant="-2" id="Pjz-sS-rBf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cRO-k7-4JB" secondAttribute="trailing" priority="999" constant="27" id="QMo-0Z-E66"/>
@@ -121,10 +128,11 @@
                             <constraint firstItem="YR8-hu-DJ8" firstAttribute="leading" secondItem="jZr-R4-Z0U" secondAttribute="leading" id="ZGi-sc-cch"/>
                             <constraint firstItem="YR8-hu-DJ8" firstAttribute="top" secondItem="DAh-0p-Mac" secondAttribute="bottom" priority="750" constant="70" id="aTc-vF-xbF"/>
                             <constraint firstItem="cRO-k7-4JB" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" priority="999" constant="27" id="bSl-QN-ylt"/>
+                            <constraint firstItem="ENs-Ur-fS9" firstAttribute="leading" secondItem="cRO-k7-4JB" secondAttribute="trailing" constant="5" id="ema-df-cgr"/>
+                            <constraint firstItem="ENs-Ur-fS9" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="fxs-8H-BpT"/>
                             <constraint firstItem="YR8-hu-DJ8" firstAttribute="trailing" secondItem="jZr-R4-Z0U" secondAttribute="trailing" id="hrp-dS-2df"/>
                             <constraint firstAttribute="centerX" secondItem="cRO-k7-4JB" secondAttribute="centerX" id="oOG-aV-WRk"/>
-                            <constraint firstItem="jZr-R4-Z0U" firstAttribute="leading" secondItem="EcW-x4-W4a" secondAttribute="trailing" constant="-103" id="oyw-rB-2fT"/>
-                            <constraint firstItem="W86-DH-XgF" firstAttribute="leading" secondItem="jZr-R4-Z0U" secondAttribute="trailing" constant="-15" id="wXi-w4-Y2w"/>
+                            <constraint firstItem="ENs-Ur-fS9" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="owa-pM-0VG"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -152,8 +160,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="c24-jb-6r4">
-                                <rect key="frame" x="142" y="266" width="37" height="37"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="c24-jb-6r4">
+                                <rect key="frame" x="170" y="316" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -269,4 +277,7 @@
             <point key="canvasLocation" x="1031" y="784"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings" width="28" height="28"/>
+    </resources>
 </document>
