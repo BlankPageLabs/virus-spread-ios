@@ -71,7 +71,7 @@
                                     <constraint firstAttribute="width" constant="150" id="DjW-Of-GnE"/>
                                     <constraint firstAttribute="height" constant="150" id="Web-VL-LFN"/>
                                 </constraints>
-                                <state key="normal" image="btn-ill">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -90,7 +90,7 @@
                                     <constraint firstAttribute="height" constant="150" id="1xu-Gh-oEi"/>
                                     <constraint firstAttribute="width" constant="150" id="ca9-2t-FeK"/>
                                 </constraints>
-                                <state key="normal" image="btn-cured">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -269,8 +269,4 @@
             <point key="canvasLocation" x="1031" y="784"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="btn-cured" width="150" height="150"/>
-        <image name="btn-ill" width="150" height="150"/>
-    </resources>
 </document>

@@ -30,6 +30,8 @@
 
 @property(nonatomic, retain) IBOutlet UIButton *curedButton;
 
+@property(nonatomic, retain) IBOutlet UILabel *cureStatusLabel;
+
 @end
 
 @implementation ViewController
@@ -41,6 +43,16 @@
     [self.bounceButtons collapseWithAnimationStyle:ASOAnimationStyleExpand];
     self.bounceButtons.bouncingDistance = @0.3;
     self.bounceButtons.speed = @0.2;
+
+    [self.gotVirusButton setImage:[UIImage imageNamed:NSLocalizedString(@"btn-ill", @"btn-ill")
+                                             inBundle:[NSBundle bundleForClass:[self class]]
+                        compatibleWithTraitCollection:nil]
+                         forState:UIControlStateNormal];
+
+    [self.curedButton setImage:[UIImage imageNamed:NSLocalizedString(@"btn-cured", @"btn-cured")
+                                          inBundle:[NSBundle bundleForClass:[self class]]
+                     compatibleWithTraitCollection:nil]
+                      forState:UIControlStateNormal];
 
     [self updateButtons];
 }

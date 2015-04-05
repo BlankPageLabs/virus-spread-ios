@@ -9,3 +9,7 @@
 "curedConfirm" = "Вы точно здоровы?";
 "curedConfirmYes" = "Да, сопли прошли";
 "curedConfirmNo" = "Не, только что чихнул";
+
+
+"btn-ill" = "btn-ill-en";
+"btn-cured" = "btn-cured-en";

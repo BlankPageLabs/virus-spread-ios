@@ -9,3 +9,8 @@
 "curedConfirm" = "Are you sure you cured?";
 "curedConfirmYes" = "Yes, not dizzy anymore";
 "curedConfirmNo" = "Nope, just sneezed";
+
+
+"btn-ill" = "btn-ill-en";
+"btn-cured" = "btn-cured-en";
+
