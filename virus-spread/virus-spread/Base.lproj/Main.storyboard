@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7525" systemVersion="14D113c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="localizable" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7525" systemVersion="14D113c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7516"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -142,8 +142,11 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="bounceButtons" destination="lzJ-im-1P2" id="6wN-ss-3n5"/>
+                        <outlet property="cureStatusLabel" destination="DAh-0p-Mac" id="9BM-G1-LmW"/>
                         <outlet property="curedButton" destination="YR8-hu-DJ8" id="Vqz-bw-AJK"/>
                         <outlet property="gotVirusButton" destination="jZr-R4-Z0U" id="wQg-5A-RBb"/>
+                        <outlet property="possibleInfectionLabel" destination="84a-Zh-3zj" id="wS3-iV-XQU"/>
+                        <outlet property="settingsButton" destination="ENs-Ur-fS9" id="WXB-Sg-bgS"/>
                         <outlet property="statusImage" destination="cRO-k7-4JB" id="twt-sN-aRS"/>
                         <segue destination="Ipy-q4-zYH" kind="presentation" identifier="registration" id="nDG-a5-cME"/>
                         <segue destination="ppR-nZ-aVh" kind="presentation" identifier="progress" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" animates="NO" id="k6Y-wp-f8i"/>

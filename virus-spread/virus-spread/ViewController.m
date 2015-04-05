@@ -32,6 +32,10 @@
 
 @property(nonatomic, retain) IBOutlet UILabel *cureStatusLabel;
 
+@property(nonatomic, retain) IBOutlet UIButton *settingsButton;
+
+@property(nonatomic, retain) IBOutlet UILabel *possibleInfectionLabel;
+
 @end
 
 @implementation ViewController
