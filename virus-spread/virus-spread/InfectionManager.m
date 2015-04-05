@@ -46,6 +46,7 @@
 - (void)infectWith:(VirusInfo *)virus {
     self.infected = YES;
     self.virus = virus;
+    self.possibleInfection = NO;
 
     [[[virus encodeToDictionary] JSONData]
             writeToURL:[[AppDelegate applicationDocumentsDirectory]
@@ -67,6 +68,7 @@
 - (void)cure {
     self.infected = NO;
     self.virus = nil;
+    self.possibleInfection = NO;
 
     NSError *error = nil;
     [[NSFileManager defaultManager]
@@ -78,5 +80,30 @@
     [[AppDelegate instance].bluetoothManager requestActivateCentralManager];
 }
 
+- (BOOL)possibleInfection {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"possibleInfectionDate"]) {
+        NSDate *infectionDate = [NSDate dateWithTimeIntervalSince1970:[[NSUserDefaults standardUserDefaults]
+                doubleForKey:@"possibleInfectionDate"]];
+        NSDate *now = [NSDate date];
+
+        if ([[infectionDate dateByAddingTimeInterval:60.0 * 60.0 * 24.0 * 2.0] compare:now] == NSOrderedAscending) {
+            // Two days passed, relax
+            self.possibleInfection = NO;
+            return NO;
+        } else {
+            return YES;
+        }
+    } else {
+        return NO;
+    }
+}
+
+- (void)setPossibleInfection:(BOOL)infection {
+    if (infection) {
+        [[NSUserDefaults standardUserDefaults] setDouble:[NSDate date].timeIntervalSince1970 forKey:@"possibleInfectionDate"];
+    } else {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"possibleInfectionDate"];
+    }
+}
 
 @end

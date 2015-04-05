@@ -104,6 +104,9 @@
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENs-Ur-fS9" userLabel="Settings">
                                 <rect key="frame" x="281" y="25" width="28" height="28"/>
                                 <state key="normal" image="settings"/>
+                                <connections>
+                                    <segue destination="Ipy-q4-zYH" kind="presentation" identifier="registration" id="gWx-iV-zUe"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="infectedPossibly" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84a-Zh-3zj" userLabel="InfectedPossibly">
                                 <rect key="frame" x="100" y="308" width="120" height="20"/>
@@ -148,7 +151,6 @@
                         <outlet property="possibleInfectionLabel" destination="84a-Zh-3zj" id="wS3-iV-XQU"/>
                         <outlet property="settingsButton" destination="ENs-Ur-fS9" id="WXB-Sg-bgS"/>
                         <outlet property="statusImage" destination="cRO-k7-4JB" id="twt-sN-aRS"/>
-                        <segue destination="Ipy-q4-zYH" kind="presentation" identifier="registration" id="nDG-a5-cME"/>
                         <segue destination="ppR-nZ-aVh" kind="presentation" identifier="progress" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" animates="NO" id="k6Y-wp-f8i"/>
                         <segue destination="X3c-Ds-5eX" kind="presentation" identifier="registrationProgress" id="DaF-bF-whv"/>
                     </connections>
@@ -288,6 +290,13 @@
                                     <segue destination="LGe-tF-Nya" kind="unwind" unwindAction="unwindToRoot:" id="agi-ha-C76"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYN-nq-UvF">
+                                <rect key="frame" x="16" y="486" width="288" height="94"/>
+                                <string key="text">registration Explanation Text registration Explanation Text registration Explanation Text registration Explanation Text registration Explanation Text registration Explanation Text registration Explanation Text registration Explanation Text </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -296,17 +305,20 @@
                             <constraint firstItem="eW5-Ac-1ca" firstAttribute="leading" secondItem="cK3-KN-n2y" secondAttribute="leading" id="6cC-sM-sbU"/>
                             <constraint firstItem="TZf-xI-cuM" firstAttribute="leading" secondItem="zUo-2b-9CH" secondAttribute="leadingMargin" id="8Hr-QQ-Gfq"/>
                             <constraint firstItem="eW5-Ac-1ca" firstAttribute="top" secondItem="19j-kP-Zep" secondAttribute="bottom" constant="14" id="AbU-sm-Dya"/>
+                            <constraint firstItem="BYN-nq-UvF" firstAttribute="leading" secondItem="zUo-2b-9CH" secondAttribute="leadingMargin" id="DMr-sG-Nw9"/>
                             <constraint firstItem="TZf-xI-cuM" firstAttribute="top" secondItem="eNq-p7-Y1S" secondAttribute="bottom" id="JBa-XA-921"/>
                             <constraint firstItem="cK3-KN-n2y" firstAttribute="top" secondItem="TZf-xI-cuM" secondAttribute="bottom" constant="10" id="Jsx-nU-cHo"/>
                             <constraint firstItem="Z1U-IZ-itF" firstAttribute="trailing" secondItem="zUo-2b-9CH" secondAttribute="trailingMargin" id="MMW-HP-jkY"/>
                             <constraint firstItem="19j-kP-Zep" firstAttribute="baseline" secondItem="cK3-KN-n2y" secondAttribute="baseline" id="QYm-pY-eVu"/>
                             <constraint firstItem="xfy-Bm-LYc" firstAttribute="baseline" secondItem="gVM-Ca-S30" secondAttribute="baseline" id="Qiq-4G-PJi"/>
+                            <constraint firstItem="QpN-0N-4h8" firstAttribute="top" secondItem="BYN-nq-UvF" secondAttribute="bottom" constant="20" id="TP0-kE-HoR"/>
                             <constraint firstItem="xfy-Bm-LYc" firstAttribute="leading" secondItem="zUo-2b-9CH" secondAttribute="leadingMargin" id="YFW-uQ-evR"/>
                             <constraint firstItem="TZf-xI-cuM" firstAttribute="baseline" secondItem="Z1U-IZ-itF" secondAttribute="baseline" id="dmH-Nw-C7C"/>
                             <constraint firstItem="QAP-zE-7MB" firstAttribute="leading" secondItem="zUo-2b-9CH" secondAttribute="leadingMargin" id="erk-ZZ-9y6"/>
                             <constraint firstItem="cK3-KN-n2y" firstAttribute="trailing" secondItem="zUo-2b-9CH" secondAttribute="trailingMargin" id="iNd-aA-aFJ"/>
                             <constraint firstItem="eW5-Ac-1ca" firstAttribute="baseline" secondItem="QAP-zE-7MB" secondAttribute="baseline" id="l4A-DV-0bN"/>
                             <constraint firstItem="eW5-Ac-1ca" firstAttribute="leading" secondItem="QAP-zE-7MB" secondAttribute="trailing" priority="750" constant="8" id="oOq-jC-2Fn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BYN-nq-UvF" secondAttribute="trailing" id="q9E-WL-ZZK"/>
                             <constraint firstItem="eW5-Ac-1ca" firstAttribute="trailing" secondItem="zUo-2b-9CH" secondAttribute="trailingMargin" id="qhZ-h9-Rwm"/>
                             <constraint firstItem="gVM-Ca-S30" firstAttribute="top" secondItem="QAP-zE-7MB" secondAttribute="bottom" constant="14" id="uUO-xn-lPg"/>
                             <constraint firstItem="gVM-Ca-S30" firstAttribute="trailing" secondItem="zUo-2b-9CH" secondAttribute="trailingMargin" id="vsB-xW-YEV"/>

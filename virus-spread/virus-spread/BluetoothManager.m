@@ -283,6 +283,9 @@ static NSString *const bt_VirusInfoCharacteristicId = @"1C5EB049-9D10-488C-9709-
     NSLog(@"Read virus: %@", virusDict);
     VirusInfo *virus = [VirusInfo infoWithDictionary:virusDict];
 
+    // Mark possible infection
+    [AppDelegate instance].infectionManager.possibleInfection = YES;
+
     __block UIBackgroundTaskIdentifier bgTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
         [[[ApiSession instance] operationQueue] cancelAllOperations];
         [[UIApplication sharedApplication] endBackgroundTask:bgTaskId];

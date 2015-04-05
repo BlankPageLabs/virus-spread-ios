@@ -14,6 +14,8 @@
 
 @property(nonatomic, retain) VirusInfo *virus;
 
+@property(nonatomic, assign) BOOL possibleInfection;
+
 - (void)infectWith:(VirusInfo *)virus;
 
 - (void)cure;

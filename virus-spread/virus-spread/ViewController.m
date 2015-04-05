@@ -61,13 +61,17 @@
     [self updateButtons];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self updateButtons];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)unwindToRoot:(UIStoryboardSegue *)segue {
-
+    [self updateButtons];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -116,12 +120,15 @@
                                                                           resizingMode:UIImageResizingModeStretch];
         self.curedButton.hidden = NO;
         self.gotVirusButton.hidden = YES;
+        self.possibleInfectionLabel.hidden = YES;
     } else {
         self.gotVirusButton.hidden = NO;
         self.curedButton.hidden = YES;
         self.statusImage.image = [UIImage imageNamed:@"yeah"
                                             inBundle:[NSBundle bundleForClass:[self class]]
                        compatibleWithTraitCollection:nil];
+
+        self.possibleInfectionLabel.hidden = ![AppDelegate instance].infectionManager.possibleInfection;
     }
     [self.view setNeedsUpdateConstraints];
 }
