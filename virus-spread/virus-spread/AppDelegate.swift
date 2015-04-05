@@ -11,7 +11,15 @@ import CoreData
 
 
 public class AppDelegate: UIResponder, UIApplicationDelegate {
-    public var deviceInfo: DeviceInfo!
+    public var deviceInfo: DeviceInfo! {
+        didSet {
+            if deviceInfo != nil {
+                self.infectionManager = InfectionManager()
+            } else {
+                self.infectionManager = nil
+            }
+        }
+    }
     public var bluetoothManager: BluetoothManager!
     public var infectionManager: InfectionManager!
     var errorController: ErrorController = ErrorController()
@@ -57,7 +65,6 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
     public func application(application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         self.bluetoothManager = BluetoothManager()
-        self.infectionManager = InfectionManager()
 
         // TODO: activate through UI
         self.locationManager = LocationManager()
