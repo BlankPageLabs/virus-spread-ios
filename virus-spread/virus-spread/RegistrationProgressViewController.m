@@ -23,12 +23,18 @@
 
 - (void)registerTask {
 
-    DeviceInfo *info = [[DeviceInfo alloc] init];
+    DeviceInfo *info;
 
-    info.userName = @"(unregistered)";
-    info.age = 0;
-    info.gender = @"undef";
-    info.deviceId = [[UIDevice currentDevice].identifierForVendor UUIDString];
+    if ([AppDelegate instance].deviceInfo) {
+        info = [AppDelegate instance].deviceInfo;
+    } else {
+        info = [[DeviceInfo alloc] init];
+
+        info.userName = @"(unregistered)";
+        info.age = 0;
+        info.gender = @"undef";
+        info.deviceId = [[UIDevice currentDevice].identifierForVendor UUIDString];
+    }
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 

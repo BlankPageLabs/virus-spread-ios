@@ -25,6 +25,22 @@
 
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    if ([AppDelegate instance].deviceInfo) {
+        DeviceInfo *info = [AppDelegate instance].deviceInfo;
+
+        self.nameField.text = info.userName;
+        self.ageField.text = [NSString stringWithFormat:@"%d", info.age];
+        self.genderField.selectedSegmentIndex = [info.gender isEqualToString:@"male"]
+                ? 0
+                : [info.gender isEqualToString:@"female"]
+                ? 1
+                : -1;
+    }
+}
+
 - (DeviceInfo *)deviceInfo {
     DeviceInfo *info = [[DeviceInfo alloc] init];
     BOOL valid = YES;
@@ -61,22 +77,10 @@
     DeviceInfo *info = self.deviceInfo;
     if (info) {
         info.deviceId = [[UIDevice currentDevice].identifierForVendor UUIDString];
-
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
-        NSURLSessionDataTask *dataTask = [[ApiSession instance] POST:@"device/reg"
-                         parameters: [info encodeToDictionary]
-                            success: ^(NSURLSessionTask *task, id responseObject) {
-                                [AppDelegate instance].deviceInfo = info;
-                                [defaults setObject:[info encodeToDictionary] forKey: @"deviceInfo"];
-                            }
-                            failure: ^(NSURLSessionTask *task, NSError *error) {
-                                NSLog(@"Network error for task %@: %@, %@", task, error, error.userInfo);
-                                defaultError(NSLocalizedString(@"networkUnreachable", @"Network is unreachable"));
-                                abort();
-                            }];
+        [AppDelegate instance].deviceInfo = info;
         return YES;
     } else {
+        defaultError(NSLocalizedString(@"notallfields", @"not all fields entered"));
         return NO;
     }
 }

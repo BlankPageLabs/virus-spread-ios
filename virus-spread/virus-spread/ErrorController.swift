@@ -96,7 +96,7 @@ class ErrorController: NSObject {
                 self.crashObservable.fire(from: self)
             }
         case let .Error(message):
-            AppDelegate.instance.presentError("Error", message: message)
+            AppDelegate.instance.presentError(NSLocalizedString("errorTitle", comment: "Error"), message: message)
         }
     }
 
