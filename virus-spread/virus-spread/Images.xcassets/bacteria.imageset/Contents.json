@@ -1,22 +1,19 @@
 {
   "images" : [
     {
-      "idiom" : "iphone",
-      "scale" : "1x"
+      "idiom" : "universal",
+      "scale" : "1x",
+      "filename" : "bacteria.png"
     },
     {
-      "idiom" : "iphone",
-      "scale" : "2x"
+      "idiom" : "universal",
+      "scale" : "2x",
+      "filename" : "bacteria@2x-1.png"
     },
     {
-      "idiom" : "iphone",
-      "subtype" : "retina4",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "iphone",
+      "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "bacteria@2x.png"
+      "filename" : "bacteria@3x.png"
     }
   ],
   "info" : {

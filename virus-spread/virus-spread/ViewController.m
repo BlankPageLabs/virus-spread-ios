@@ -128,7 +128,7 @@
     } else {
         self.gotVirusButton.hidden = NO;
         self.curedButton.hidden = YES;
-        self.statusImage.image = [UIImage imageNamed:@"yeah"
+        self.statusImage.image = [UIImage imageNamed:@"sun"
                                             inBundle:[NSBundle bundleForClass:[self class]]
                        compatibleWithTraitCollection:nil];
 
