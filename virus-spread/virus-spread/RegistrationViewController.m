@@ -32,7 +32,7 @@
         DeviceInfo *info = [AppDelegate instance].deviceInfo;
 
         self.nameField.text = info.userName;
-        self.ageField.text = [NSString stringWithFormat:@"%d", info.age];
+        self.ageField.text = [NSString stringWithFormat:@"%lu", (unsigned long) info.age];
         self.genderField.selectedSegmentIndex = [info.gender isEqualToString:@"male"]
                 ? 0
                 : [info.gender isEqualToString:@"female"]

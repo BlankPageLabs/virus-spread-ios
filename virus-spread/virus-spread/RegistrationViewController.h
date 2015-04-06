@@ -10,6 +10,6 @@
 
 @interface RegistrationViewController : UIViewController
 
-@property(nonatomic, retain, readonly) __nullable DeviceInfo *deviceInfo;
+@property(nonatomic, retain, readonly) DeviceInfo * __nullable deviceInfo;
 
 @end

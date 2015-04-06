@@ -9,16 +9,16 @@
 
 @interface DeviceInfo : NSObject
 
-@property(nonatomic, retain) __nullable NSString *deviceId;
-@property(nonatomic, retain) __nullable NSString *userName;
-@property(nonatomic, retain) __nullable NSString *gender;
+@property(nonatomic, retain) NSString * __nullable deviceId;
+@property(nonatomic, retain) NSString * __nullable userName;
+@property(nonatomic, retain) NSString * __nullable gender;
 @property(nonatomic, assign) NSUInteger age;
 
-- (__nonnull NSDictionary *)encodeToDictionary;
+- (NSDictionary * __nonnull)encodeToDictionary;
 
-- (__nonnull id)initWithDictionary:(__nonnull NSDictionary *)dataDictionary;
+- (id __nonnull)initWithDictionary:(NSDictionary * __nonnull)dataDictionary;
 
-+ (__nonnull id)infoWithDictionary:(__nonnull NSDictionary *)dataDictionary;
++ (id __nonnull)infoWithDictionary:(NSDictionary * __nonnull)dataDictionary;
 
 
 @end
