@@ -74,6 +74,10 @@
     [self updateButtons];
 }
 
+- (IBAction)unwindOneStep:(UIStoryboardSegue *)segue {
+    [self updateButtons];
+}
+
 - (void)viewDidLayoutSubviews {
     [self.bounceButtons setAnimationStartFromHere:self.gotVirusButton.frame];
 }

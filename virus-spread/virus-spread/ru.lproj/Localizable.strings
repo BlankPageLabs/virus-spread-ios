@@ -16,3 +16,5 @@
 "btn-cured" = "btn-cured-en";
 
 "notallfields" = "Не все поля заполнены";
+
+"serverError" = "Ошибка на сервере";

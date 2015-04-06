@@ -222,6 +222,7 @@
                     </view>
                     <connections>
                         <segue destination="uPv-KX-Bzt" kind="unwind" identifier="registrationFinished" unwindAction="unwindToRoot:" id="1Qn-XU-sQ8"/>
+                        <segue destination="LGe-tF-Nya" kind="unwind" identifier="registrationFailed" unwindAction="unwindOneStep:" id="G2U-V6-8j8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZLE-G3-icr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -352,6 +353,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D6p-Zq-ru2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="LGe-tF-Nya" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1031" y="784"/>
         </scene>

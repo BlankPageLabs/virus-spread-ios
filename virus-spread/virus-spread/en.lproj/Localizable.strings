@@ -16,3 +16,5 @@
 "btn-cured" = "btn-cured-en";
 
 "notallfields" = "All fields are required";
+
+"serverError" = "Server returned error";

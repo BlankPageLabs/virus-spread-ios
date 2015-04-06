@@ -41,10 +41,25 @@
     [[ApiSession instance] POST:@"device/reg"
                      parameters: [info encodeToDictionary]
                         success: ^(NSURLSessionTask *task, id responseObject) {
-                            NSLog(@"Registration succeeded: %@, %@", task, responseObject);
-                            [AppDelegate instance].deviceInfo = info;
-                            [defaults setObject:[info encodeToDictionary] forKey: @"deviceInfo"];
-                            [self performSegueWithIdentifier:@"registrationFinished" sender:self];
+                            if ([responseObject[@"status"] isEqual:@200]) {
+                                NSLog(@"Registration succeeded: %@, %@", task, responseObject);
+                                [AppDelegate instance].deviceInfo = info;
+                                [defaults setObject:[info encodeToDictionary] forKey: @"deviceInfo"];
+                                [self performSegueWithIdentifier:@"registrationFinished" sender:self];
+                            } else {
+                                NSLog(@"Registration failed: %@, %@", task, responseObject);
+                                UIAlertController *alert = [UIAlertController
+                                        alertControllerWithTitle:NSLocalizedString(@"errorTitle", @"Error")
+                                                         message:NSLocalizedString(@"serverError", @"Unknown server error")
+                                                  preferredStyle:UIAlertControllerStyleAlert];
+                                [alert addAction:[UIAlertAction
+                                        actionWithTitle:@"OK"
+                                                  style:UIAlertActionStyleCancel
+                                                handler:^(UIAlertAction *action) {
+                                                    [self performSegueWithIdentifier:@"registrationFailed" sender:self];
+                                                }]];
+                                [self presentViewController:alert animated:YES completion:nil];
+                            }
                         }
                         failure: ^(NSURLSessionTask *task, NSError *error) {
                             NSLog(@"Network error for task %@: %@, %@", task, error, error.userInfo);
