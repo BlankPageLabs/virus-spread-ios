@@ -2,13 +2,22 @@
 /* Class = "UILabel"; text = "Name"; ObjectID = "19j-kP-Zep"; */
 "19j-kP-Zep.text" = "Name";
 
-/* Class = "UIButton"; normalTitle = "Простуда"; ObjectID = "BMp-Fy-eBg"; */
-"BMp-Fy-eBg.normalTitle" = "Cold";
+/* Class = "UILabel"; text = "RegistrationInProgress"; ObjectID = "6zs-yT-clq"; */
+"6zs-yT-clq.text" = "Registering…";
 
-/* Class = "UILabel"; text = "Вы здоровы"; ObjectID = "DAh-0p-Mac"; */
-"DAh-0p-Mac.text" = "Completely healthy";
+/* Class = "UILabel"; text = "infectedPossibly"; ObjectID = "84a-Zh-3zj"; */
+"84a-Zh-3zj.text" = "but you may've been infected";
 
-/* Class = "UIButton"; normalTitle = "Грипп"; ObjectID = "EcW-x4-W4a"; */
+/* Class = "UIButton"; normalTitle = "CColdBtn"; ObjectID = "BMp-Fy-eBg"; */
+"BMp-Fy-eBg.normalTitle" = "Common cold";
+
+/* Class = "UILabel"; text = "registration Explanation Text"; ObjectID = "BYN-nq-UvF"; */
+"BYN-nq-UvF.text" = "Registration would allow you to track your infections online and (possibly) will provide some additional features in the future";
+
+/* Class = "UILabel"; text = "HealthyStatus"; ObjectID = "DAh-0p-Mac"; */
+"DAh-0p-Mac.text" = "HealthyStatus";
+
+/* Class = "UIButton"; normalTitle = "FluBtn"; ObjectID = "EcW-x4-W4a"; */
 "EcW-x4-W4a.normalTitle" = "Flu";
 
 /* Class = "UILabel"; text = "Age"; ObjectID = "QAP-zE-7MB"; */
@@ -17,7 +26,7 @@
 /* Class = "UILabel"; text = "Registration"; ObjectID = "TZf-xI-cuM"; */
 "TZf-xI-cuM.text" = "Registration";
 
-/* Class = "UIButton"; normalTitle = "Корь"; ObjectID = "W86-DH-XgF"; */
+/* Class = "UIButton"; normalTitle = "MeaslesBtn"; ObjectID = "W86-DH-XgF"; */
 "W86-DH-XgF.normalTitle" = "Measles";
 
 /* Class = "UIButton"; normalTitle = "Done"; ObjectID = "Z1U-IZ-itF"; */
@@ -28,6 +37,9 @@
 
 /* Class = "UISegmentedControl"; gVM-Ca-S30.segmentTitles[1] = "Female"; ObjectID = "gVM-Ca-S30"; */
 "gVM-Ca-S30.segmentTitles[1]" = "Female";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "m8P-uO-jH8"; */
+"m8P-uO-jH8.normalTitle" = "Cancel";
 
 /* Class = "UILabel"; text = "Gender"; ObjectID = "xfy-Bm-LYc"; */
 "xfy-Bm-LYc.text" = "Gender";

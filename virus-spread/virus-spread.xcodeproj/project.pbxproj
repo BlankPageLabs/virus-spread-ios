@@ -88,8 +88,8 @@
 		F66769941AC5CA1F00D2C96E /* virus-spreadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "virus-spreadTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66769991AC5CA1F00D2C96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F667699A1AC5CA1F00D2C96E /* virus_spreadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = virus_spreadTests.m; sourceTree = "<group>"; };
-		F67BB07A1AD1ED2600A92176 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
-		F67BB07C1AD1EDA800A92176 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		F67BB07F1AD297FB00A92176 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		F67BB0811AD297FD00A92176 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		F68A8E9B1ACC56B7001F5735 /* ErrorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorController.swift; sourceTree = "<group>"; };
 		F68A8E9C1ACC56B7001F5735 /* ErrorControllerExceptionShim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorControllerExceptionShim.h; sourceTree = "<group>"; };
 		F68A8E9D1ACC56B7001F5735 /* ErrorControllerExceptionShim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorControllerExceptionShim.m; sourceTree = "<group>"; };
@@ -438,8 +438,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				F6A999AA1ACC607D000E3F02 /* Base */,
-				F67BB07A1AD1ED2600A92176 /* ru */,
-				F67BB07C1AD1EDA800A92176 /* en */,
+				F67BB07F1AD297FB00A92176 /* ru */,
+				F67BB0811AD297FD00A92176 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

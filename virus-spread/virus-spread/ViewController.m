@@ -125,6 +125,8 @@
         self.curedButton.hidden = NO;
         self.gotVirusButton.hidden = YES;
         self.possibleInfectionLabel.hidden = YES;
+
+        self.cureStatusLabel.text = NSLocalizedString(@"healthyStatus_ill", @"infectedStatus");
     } else {
         self.gotVirusButton.hidden = NO;
         self.curedButton.hidden = YES;
@@ -133,6 +135,8 @@
                        compatibleWithTraitCollection:nil];
 
         self.possibleInfectionLabel.hidden = ![AppDelegate instance].infectionManager.possibleInfection;
+
+        self.cureStatusLabel.text = NSLocalizedString(@"healthyStatus_healthy", @"healthyStatus");
     }
     [self.view setNeedsUpdateConstraints];
 }

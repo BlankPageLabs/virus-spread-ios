@@ -2,13 +2,22 @@
 /* Class = "UILabel"; text = "Name"; ObjectID = "19j-kP-Zep"; */
 "19j-kP-Zep.text" = "Имя";
 
-/* Class = "UIButton"; normalTitle = "Простуда"; ObjectID = "BMp-Fy-eBg"; */
+/* Class = "UILabel"; text = "RegistrationInProgress"; ObjectID = "6zs-yT-clq"; */
+"6zs-yT-clq.text" = "Идет регистрация…";
+
+/* Class = "UILabel"; text = "infectedPossibly"; ObjectID = "84a-Zh-3zj"; */
+"84a-Zh-3zj.text" = "но вы могли заразиться";
+
+/* Class = "UIButton"; normalTitle = "CColdBtn"; ObjectID = "BMp-Fy-eBg"; */
 "BMp-Fy-eBg.normalTitle" = "Простуда";
 
-/* Class = "UILabel"; text = "Вы здоровы"; ObjectID = "DAh-0p-Mac"; */
-"DAh-0p-Mac.text" = "Вы здоровы";
+/* Class = "UILabel"; text = "registration Explanation Text"; ObjectID = "BYN-nq-UvF"; */
+"BYN-nq-UvF.text" = "Регистрация позволит вам отслеживать свои инфекции на нашем сайте и, возможно, даст вам дополнительные функции в будущем";
 
-/* Class = "UIButton"; normalTitle = "Грипп"; ObjectID = "EcW-x4-W4a"; */
+/* Class = "UILabel"; text = "HealthyStatus"; ObjectID = "DAh-0p-Mac"; */
+"DAh-0p-Mac.text" = "HealthyStatus";
+
+/* Class = "UIButton"; normalTitle = "FluBtn"; ObjectID = "EcW-x4-W4a"; */
 "EcW-x4-W4a.normalTitle" = "Грипп";
 
 /* Class = "UILabel"; text = "Age"; ObjectID = "QAP-zE-7MB"; */
@@ -17,7 +26,7 @@
 /* Class = "UILabel"; text = "Registration"; ObjectID = "TZf-xI-cuM"; */
 "TZf-xI-cuM.text" = "Регистрация";
 
-/* Class = "UIButton"; normalTitle = "Корь"; ObjectID = "W86-DH-XgF"; */
+/* Class = "UIButton"; normalTitle = "MeaslesBtn"; ObjectID = "W86-DH-XgF"; */
 "W86-DH-XgF.normalTitle" = "Корь";
 
 /* Class = "UIButton"; normalTitle = "Done"; ObjectID = "Z1U-IZ-itF"; */
@@ -28,6 +37,9 @@
 
 /* Class = "UISegmentedControl"; gVM-Ca-S30.segmentTitles[1] = "Female"; ObjectID = "gVM-Ca-S30"; */
 "gVM-Ca-S30.segmentTitles[1]" = "Женский";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "m8P-uO-jH8"; */
+"m8P-uO-jH8.normalTitle" = "Отмена";
 
 /* Class = "UILabel"; text = "Gender"; ObjectID = "xfy-Bm-LYc"; */
 "xfy-Bm-LYc.text" = "Пол";

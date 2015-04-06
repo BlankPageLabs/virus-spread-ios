@@ -18,3 +18,6 @@
 "notallfields" = "Не все поля заполнены";
 
 "serverError" = "Ошибка на сервере";
+
+"healthyStatus_healthy" = "Вы здоровы";
+"healthyStatus_ill" = "Вы инфецированы";
