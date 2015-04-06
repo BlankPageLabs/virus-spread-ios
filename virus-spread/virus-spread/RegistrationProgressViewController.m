@@ -18,7 +18,41 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self registerTask];
+
+    if (![AppDelegate instance].deviceInfo) {
+        // Try downloading first
+        [self retreiveTask];
+    } else {
+        // Send info
+        [self registerTask];
+    }
+}
+
+- (void)retreiveTask {
+    [[ApiSession instance] GET:@"device/"
+                    parameters:@{@"id": [[UIDevice currentDevice].identifierForVendor UUIDString]}
+                       success:^(NSURLSessionDataTask *task, id responseObject) {
+                           if ([responseObject[@"status"] isEqual:@200]) {
+                               NSDictionary *infoDict = responseObject[@"info"];
+                               if (infoDict) {
+                                   DeviceInfo *info = [DeviceInfo infoWithDictionary:infoDict];
+                                   [self setDeviceInfo:info permanent:YES];
+                                   return;
+                               }
+                           }
+                           [self registerTask];
+                       }
+                       failure:^(NSURLSessionDataTask *task, NSError *error) {
+                           [self registerTask];
+                       }];
+}
+
+- (void)setDeviceInfo:(DeviceInfo *)info permanent:(BOOL)permanent {
+    [AppDelegate instance].deviceInfo = info;
+    if (permanent) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:[info encodeToDictionary] forKey:@"deviceInfo"];
+    }
 }
 
 - (void)registerTask {
@@ -32,22 +66,19 @@
 
         info.userName = @"(unregistered)";
         info.age = 0;
-        info.gender = @"undef";
+        info.gender = @"male";
         info.deviceId = [[UIDevice currentDevice].identifierForVendor UUIDString];
     }
-
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     [[ApiSession instance] POST:@"device/reg"
                      parameters: [info encodeToDictionary]
                         success: ^(NSURLSessionTask *task, id responseObject) {
                             if ([responseObject[@"status"] isEqual:@200]) {
                                 NSLog(@"Registration succeeded: %@, %@", task, responseObject);
-                                [AppDelegate instance].deviceInfo = info;
-                                [defaults setObject:[info encodeToDictionary] forKey: @"deviceInfo"];
+                                [self setDeviceInfo:info permanent:YES];
                                 [self performSegueWithIdentifier:@"registrationFinished" sender:self];
                             } else {
-                                NSLog(@"Registration failed: %@, %@", task, responseObject);
+                                NSLog(@"Registration failed: %@, %@, %@", task, task.originalRequest, responseObject);
                                 UIAlertController *alert = [UIAlertController
                                         alertControllerWithTitle:NSLocalizedString(@"errorTitle", @"Error")
                                                          message:NSLocalizedString(@"serverError", @"Unknown server error")
@@ -58,6 +89,7 @@
                                                 handler:^(UIAlertAction *action) {
                                                     [self performSegueWithIdentifier:@"registrationFailed" sender:self];
                                                 }]];
+                                [self setDeviceInfo:nil permanent:YES];
                                 [self presentViewController:alert animated:YES completion:nil];
                             }
                         }

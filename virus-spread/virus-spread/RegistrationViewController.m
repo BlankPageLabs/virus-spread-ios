@@ -74,14 +74,18 @@
 
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    DeviceInfo *info = self.deviceInfo;
-    if (info) {
-        info.deviceId = [[UIDevice currentDevice].identifierForVendor UUIDString];
-        [AppDelegate instance].deviceInfo = info;
+    if ([identifier isEqualToString:@"cancel"]) {
         return YES;
     } else {
-        defaultError(NSLocalizedString(@"notallfields", @"not all fields entered"));
-        return NO;
+        DeviceInfo *info = self.deviceInfo;
+        if (info) {
+            info.deviceId = [[UIDevice currentDevice].identifierForVendor UUIDString];
+            [AppDelegate instance].deviceInfo = info;
+            return YES;
+        } else {
+            defaultError(NSLocalizedString(@"notallfields", @"not all fields entered"));
+            return NO;
+        }
     }
 }
 

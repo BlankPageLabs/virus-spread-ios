@@ -83,12 +83,17 @@
 }
 
 - (IBAction)gotVirus:(id)sender {
-    if (self.buttonsExpanded) {
-        [self.bounceButtons collapseWithAnimationStyle:ASOAnimationStyleRiseProgressively];
+    if (![AppDelegate instance].infectionManager) {
+        // User is not registered
+        [self performSegueWithIdentifier:@"registrationProgress" sender:self];
     } else {
-        [self.bounceButtons expandWithAnimationStyle:ASOAnimationStyleRiseProgressively];
+        if (self.buttonsExpanded) {
+            [self.bounceButtons collapseWithAnimationStyle:ASOAnimationStyleRiseProgressively];
+        } else {
+            [self.bounceButtons expandWithAnimationStyle:ASOAnimationStyleRiseProgressively];
+        }
+        self.buttonsExpanded = !self.buttonsExpanded;
     }
-    self.buttonsExpanded = !self.buttonsExpanded;
 }
 
 - (IBAction)virusSelected:(VirusButton *)sender {
