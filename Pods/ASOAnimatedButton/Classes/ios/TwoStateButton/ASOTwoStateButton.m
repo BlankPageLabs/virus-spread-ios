@@ -55,7 +55,7 @@ const int16_t kCustomViewTag = 702;
     if (([self backgroundImageForState:UIControlStateNormal] || self.onStateImageName) && self.offStateImageName)
     {
         // Initiate image used for on-state and off-state
-        UIImage *onStateImage = [[UIImage alloc] init];
+        UIImage *onStateImage = nil;
         
         if (self.onStateImageName == nil) {
             // If Runtime attribute for on-state image is not defined then use background image

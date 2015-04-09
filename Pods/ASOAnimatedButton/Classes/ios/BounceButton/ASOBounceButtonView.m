@@ -151,6 +151,7 @@
         // Create the animation object, specifying the position property as the key path.
         theAnimation=[CAKeyframeAnimation animationWithKeyPath:@"position"];
         theAnimation.path=thePath;
+        CGPathRelease(thePath);
         
         if (animationStyle != ASOAnimationStyleRiseConcurrently) {
             theAnimation.duration = [self.speed floatValue] * (item + 1);
@@ -166,7 +167,7 @@
 
 - (void)collapseWithAnimationStyle:(ASOAnimationStyle)animationStyle
 {
-    UIButton *bounceButton = [[UIButton alloc] init];
+    UIButton *bounceButton = nil;
     self.collapsedViewDuration = [NSNumber numberWithFloat:0.0];
     int16_t lastIdx = 0;
     
@@ -194,6 +195,7 @@
         CAKeyframeAnimation * collapsedAnimation;
         collapsedAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
         collapsedAnimation.path = thePath;
+        CGPathRelease(thePath);
         
         CABasicAnimation *theFadeOutAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
         theFadeOutAnimation.fromValue = [NSNumber numberWithFloat:1.0];
