@@ -11,6 +11,10 @@ import CoreData
 
 
 public class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    public var appVersion: String { return VirusSpread_AppVersion }
+    public var appRelease: String { return VirusSpread_Release }
+
     public var deviceInfo: DeviceInfo! {
         didSet {
             if deviceInfo != nil {

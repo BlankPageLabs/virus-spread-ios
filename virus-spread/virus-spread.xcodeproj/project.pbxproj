@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		F6589A811AD7DF000066B5A7 /* Versioning */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = F6589A821AD7DF000066B5A7 /* Build configuration list for PBXAggregateTarget "Versioning" */;
+			buildPhases = (
+				F6589A851AD7DF100066B5A7 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Versioning;
+			productName = Versioning;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		E32CADC84530EBEB52637E3F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5009B0F3D759BB65F6B615DF /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F39751C30C727AC3E3127596 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F3975EF5247852D66C73BCF2 /* DeviceInfo.m */; };
@@ -22,6 +36,7 @@
 		F60C45FB1AC62138002936BE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C45FA1AC62138002936BE /* LocationManager.swift */; };
 		F60C45FD1AC6218B002936BE /* Observation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C45FC1AC6218B002936BE /* Observation.swift */; };
 		F60C45FF1AC621D0002936BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C45FE1AC621D0002936BE /* AppDelegate.swift */; };
+		F6589A891AD7E3C20066B5A7 /* Versioning.m in Sources */ = {isa = PBXBuildFile; fileRef = F6589A881AD7E3C20066B5A7 /* Versioning.m */; };
 		F65D75101AC6CA3000C22954 /* LocationSynchronous.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D750F1AC6CA3000C22954 /* LocationSynchronous.swift */; };
 		F667697E1AC5CA1F00D2C96E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F667697D1AC5CA1F00D2C96E /* main.m */; };
 		F66769841AC5CA1F00D2C96E /* virus_spread.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F66769821AC5CA1F00D2C96E /* virus_spread.xcdatamodeld */; };
@@ -36,6 +51,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F6589A861AD7DF1F0066B5A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F66769701AC5CA1F00D2C96E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F6589A811AD7DF000066B5A7;
+			remoteInfo = Versioning;
+		};
 		F66769951AC5CA1F00D2C96E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F66769701AC5CA1F00D2C96E /* Project object */;
@@ -78,6 +100,8 @@
 		F60C45FC1AC6218B002936BE /* Observation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observation.swift; sourceTree = "<group>"; };
 		F60C45FE1AC621D0002936BE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6589A7D1AD7D3D00066B5A7 /* versionGen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = versionGen.sh; sourceTree = "<group>"; };
+		F6589A881AD7E3C20066B5A7 /* Versioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Versioning.m; sourceTree = "<group>"; };
+		F6589A8A1AD7E4C80066B5A7 /* Versioning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Versioning.h; sourceTree = "<group>"; };
 		F65D750F1AC6CA3000C22954 /* LocationSynchronous.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSynchronous.swift; sourceTree = "<group>"; };
 		F66769781AC5CA1F00D2C96E /* virus-spread.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "virus-spread.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F667697C1AC5CA1F00D2C96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -202,6 +226,8 @@
 				F3975153C50EACB5EB0BB438 /* Localizable.strings */,
 				F39751AE6CA42DA84B7C7678 /* RegistrationProgressViewController.m */,
 				F397574B0051B0E202E3C784 /* RegistrationProgressViewController.h */,
+				F6589A881AD7E3C20066B5A7 /* Versioning.m */,
+				F6589A8A1AD7E4C80066B5A7 /* Versioning.h */,
 			);
 			path = "virus-spread";
 			sourceTree = "<group>";
@@ -239,7 +265,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F667699E1AC5CA1F00D2C96E /* Build configuration list for PBXNativeTarget "virus-spread" */;
 			buildPhases = (
-				F6589A7F1AD7D3DF0066B5A7 /* Define version */,
 				6100630658A1497C45BCFA6D /* Check Pods Manifest.lock */,
 				F66769741AC5CA1F00D2C96E /* Sources */,
 				F66769751AC5CA1F00D2C96E /* Frameworks */,
@@ -250,6 +275,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				F6589A871AD7DF1F0066B5A7 /* PBXTargetDependency */,
 			);
 			name = "virus-spread";
 			productName = "virus-spread";
@@ -283,6 +309,9 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = morpheby;
 				TargetAttributes = {
+					F6589A811AD7DF000066B5A7 = {
+						CreatedOnToolsVersion = 6.3;
+					};
 					F66769771AC5CA1F00D2C96E = {
 						CreatedOnToolsVersion = 6.3;
 					};
@@ -308,6 +337,7 @@
 			targets = (
 				F66769771AC5CA1F00D2C96E /* virus-spread */,
 				F66769931AC5CA1F00D2C96E /* virus-spreadTests */,
+				F6589A811AD7DF000066B5A7 /* Versioning */,
 			);
 		};
 /* End PBXProject section */
@@ -379,19 +409,18 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F6589A7F1AD7D3DF0066B5A7 /* Define version */ = {
+		F6589A851AD7DF100066B5A7 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Define version";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PREFIX=XC PROJECT_DIR=`pwd`/.. ./versionGen.sh ${DERIVED_SOURCES_DIR}/Version.h\n";
+			shellScript = "mkdir -p ${PROJECT_DERIVED_FILE_DIR}\nPREFIX=XC PROJECT_DIR=`pwd`/.. ./versionGen.sh ${PROJECT_DERIVED_FILE_DIR}/Version.h\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -418,6 +447,7 @@
 				F3975F4BFE681094EB9E9B9C /* RegistrationViewController.m in Sources */,
 				F3975514BB47BEDE9ABA9784 /* VirusButton.m in Sources */,
 				F3975D546109AFE08E15A348 /* KissInfo.m in Sources */,
+				F6589A891AD7E3C20066B5A7 /* Versioning.m in Sources */,
 				F39755EE5AACCA6FA20486BA /* ProgressViewController.m in Sources */,
 				F39754F1AE4295D83EA78E2E /* RegistrationProgressViewController.m in Sources */,
 			);
@@ -434,6 +464,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F6589A871AD7DF1F0066B5A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F6589A811AD7DF000066B5A7 /* Versioning */;
+			targetProxy = F6589A861AD7DF1F0066B5A7 /* PBXContainerItemProxy */;
+		};
 		F66769961AC5CA1F00D2C96E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F66769771AC5CA1F00D2C96E /* virus-spread */;
@@ -474,6 +509,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F6589A831AD7DF000066B5A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F6589A841AD7DF000066B5A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		F667699C1AC5CA1F00D2C96E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -561,8 +610,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${PROJECT_DERIVED_FILE_DIR}",
+				);
 				INFOPLIST_FILE = "virus-spread/Info.plist";
-				INFOPLIST_PREFIX_HEADER = "${DERIVED_SOURCES_DIR}/Version.h";
+				INFOPLIST_PREFIX_HEADER = "${PROJECT_DERIVED_FILE_DIR}/Version.h";
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -579,8 +633,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${PROJECT_DERIVED_FILE_DIR}",
+				);
 				INFOPLIST_FILE = "virus-spread/Info.plist";
-				INFOPLIST_PREFIX_HEADER = "${DERIVED_SOURCES_DIR}/Version.h";
+				INFOPLIST_PREFIX_HEADER = "${PROJECT_DERIVED_FILE_DIR}/Version.h";
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -626,6 +685,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F6589A821AD7DF000066B5A7 /* Build configuration list for PBXAggregateTarget "Versioning" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6589A831AD7DF000066B5A7 /* Debug */,
+				F6589A841AD7DF000066B5A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		F66769731AC5CA1F00D2C96E /* Build configuration list for PBXProject "virus-spread" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

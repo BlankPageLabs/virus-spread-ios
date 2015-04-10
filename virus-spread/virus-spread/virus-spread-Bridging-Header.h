@@ -3,6 +3,7 @@
 //
 
 
+#import "Versioning.h"
 #import "DeviceInfo.h"
 #import "ApiSession.h"
 #import "BluetoothManager.h"
