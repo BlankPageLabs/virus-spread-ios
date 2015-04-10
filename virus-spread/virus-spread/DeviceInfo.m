@@ -24,7 +24,7 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dataDictionary {
     self = [super init];
     if (self) {
-        self.deviceId = dataDictionary[@"deviceId"];
+        self.deviceId = dataDictionary[@"deviceId"] ?: dataDictionary[@"id"];
         self.userName = dataDictionary[@"name"];
         self.age = [dataDictionary[@"age"] unsignedIntegerValue];
         self.gender = dataDictionary[@"gender"];

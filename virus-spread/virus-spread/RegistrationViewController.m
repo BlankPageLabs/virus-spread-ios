@@ -79,7 +79,9 @@
     } else {
         DeviceInfo *info = self.deviceInfo;
         if (info) {
-            info.deviceId = [[UIDevice currentDevice].identifierForVendor UUIDString];
+            if (!info.deviceId.length) {
+                info.deviceId = [[UIDevice currentDevice].identifierForVendor UUIDString];
+            }
             [AppDelegate instance].deviceInfo = info;
             return YES;
         } else {

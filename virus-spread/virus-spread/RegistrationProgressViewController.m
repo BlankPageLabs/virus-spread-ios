@@ -24,26 +24,30 @@
         [self retreiveTask];
     } else {
         // Send info
-        [self registerTask];
+        [self registerTaskIsFirstReg:NO];
     }
 }
 
 - (void)retreiveTask {
+    NSString *devId = [[UIDevice currentDevice].identifierForVendor UUIDString];
     [[ApiSession instance] GET:@"device/"
-                    parameters:@{@"id": [[UIDevice currentDevice].identifierForVendor UUIDString]}
+                    parameters:@{@"id": devId}
                        success:^(NSURLSessionDataTask *task, id responseObject) {
+                           NSLog(@"Requested user info for id %@: %@, %@", devId, task, responseObject);
                            if ([responseObject[@"status"] isEqual:@200]) {
-                               NSDictionary *infoDict = responseObject[@"info"];
+                               NSDictionary *infoDict = responseObject[@"res"];
                                if (infoDict) {
                                    DeviceInfo *info = [DeviceInfo infoWithDictionary:infoDict];
+                                   NSLog(@"Got user %@", info);
                                    [self setDeviceInfo:info permanent:YES];
+                                   [self performSegueWithIdentifier:@"registrationFinished" sender:self];
                                    return;
                                }
                            }
-                           [self registerTask];
+                           [self registerTaskIsFirstReg:YES];
                        }
                        failure:^(NSURLSessionDataTask *task, NSError *error) {
-                           [self registerTask];
+                           [self registerTaskIsFirstReg:YES];
                        }];
 }
 
@@ -55,7 +59,7 @@
     }
 }
 
-- (void)registerTask {
+- (void)registerTaskIsFirstReg:(BOOL)firstReg {
 
     DeviceInfo *info;
 
@@ -66,11 +70,11 @@
 
         info.userName = @"(unregistered)";
         info.age = 0;
-        info.gender = @"male";
+        info.gender = @"undef";
         info.deviceId = [[UIDevice currentDevice].identifierForVendor UUIDString];
     }
 
-    [[ApiSession instance] POST:@"device/reg"
+    [[ApiSession instance] POST:firstReg ? @"device/reg" : @"device/update"
                      parameters: [info encodeToDictionary]
                         success: ^(NSURLSessionTask *task, id responseObject) {
                             if ([responseObject[@"status"] isEqual:@200]) {
