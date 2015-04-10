@@ -77,6 +77,7 @@
 		F60C45FA1AC62138002936BE /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		F60C45FC1AC6218B002936BE /* Observation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observation.swift; sourceTree = "<group>"; };
 		F60C45FE1AC621D0002936BE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F6589A7D1AD7D3D00066B5A7 /* versionGen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = versionGen.sh; sourceTree = "<group>"; };
 		F65D750F1AC6CA3000C22954 /* LocationSynchronous.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSynchronous.swift; sourceTree = "<group>"; };
 		F66769781AC5CA1F00D2C96E /* virus-spread.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "virus-spread.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F667697C1AC5CA1F00D2C96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -145,6 +146,7 @@
 				F66769791AC5CA1F00D2C96E /* Products */,
 				8D8B147F512FE14C8EA74C96 /* Pods */,
 				9A9BBAD50734C2AA6D2CF316 /* Frameworks */,
+				F6589A7D1AD7D3D00066B5A7 /* versionGen.sh */,
 			);
 			sourceTree = "<group>";
 		};
@@ -237,6 +239,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F667699E1AC5CA1F00D2C96E /* Build configuration list for PBXNativeTarget "virus-spread" */;
 			buildPhases = (
+				F6589A7F1AD7D3DF0066B5A7 /* Define version */,
 				6100630658A1497C45BCFA6D /* Check Pods Manifest.lock */,
 				F66769741AC5CA1F00D2C96E /* Sources */,
 				F66769751AC5CA1F00D2C96E /* Frameworks */,
@@ -375,6 +378,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		F6589A7F1AD7D3DF0066B5A7 /* Define version */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Define version";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PREFIX=XC PROJECT_DIR=`pwd`/.. ./versionGen.sh ${DERIVED_SOURCES_DIR}/Version.h\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -545,6 +562,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "virus-spread/Info.plist";
+				INFOPLIST_PREFIX_HEADER = "${DERIVED_SOURCES_DIR}/Version.h";
+				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -561,6 +580,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "virus-spread/Info.plist";
+				INFOPLIST_PREFIX_HEADER = "${DERIVED_SOURCES_DIR}/Version.h";
+				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
