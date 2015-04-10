@@ -12,3 +12,4 @@
 #import "RegistrationViewController.h"
 #import "ErrorControllerExceptionShim.h"
 #import "isDebuggerAttached.h"
+#import "RegistrationManager.h"

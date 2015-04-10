@@ -26,6 +26,7 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     public var bluetoothManager: BluetoothManager!
     public var infectionManager: InfectionManager!
+    lazy public var registrationManager = RegistrationManager()
     var errorController: ErrorController = ErrorController()
 
     public let defaultDateFormatter: NSDateFormatter = {
@@ -116,10 +117,15 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     public func applicationDidBecomeActive(application: UIApplication) {
+        self.reactivateUser()
     }
 
     public func applicationWillTerminate(application: UIApplication) {
         self.saveContext()
+    }
+
+    private func reactivateUser() {
+        self.registrationManager.requestUserRetrievalWithSuccess({}, failure: { self.deviceInfo = nil })
     }
 
     lazy private var managedObjectContext: NSManagedObjectContext = {

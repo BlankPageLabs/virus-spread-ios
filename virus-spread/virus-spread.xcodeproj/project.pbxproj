@@ -29,6 +29,7 @@
 		F3975514BB47BEDE9ABA9784 /* VirusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F3975140809169F353C9B248 /* VirusButton.m */; };
 		F39755EE5AACCA6FA20486BA /* ProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F397599953E7FDBDAFC95B2A /* ProgressViewController.m */; };
 		F3975832D861311E357222E7 /* InfectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3975457D5742F6BE484EDD5 /* InfectionManager.m */; };
+		F397587EE154C4DE05594454 /* RegistrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3975453197376910D6A5480 /* RegistrationManager.m */; };
 		F3975A579BF86274CB596687 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F3975153C50EACB5EB0BB438 /* Localizable.strings */; };
 		F3975D546109AFE08E15A348 /* KissInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F3975CC2F38B720D3452EFD6 /* KissInfo.m */; };
 		F3975E1B5959739283DEE220 /* ApiSession.m in Sources */ = {isa = PBXBuildFile; fileRef = F3975068BBE15310C971C288 /* ApiSession.m */; };
@@ -78,10 +79,12 @@
 		F39751AE6CA42DA84B7C7678 /* RegistrationProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationProgressViewController.m; sourceTree = "<group>"; };
 		F39751C0DFB0B421C6F29C25 /* VirusInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VirusInfo.m; sourceTree = "<group>"; };
 		F3975295ABBDE5AA15019F1B /* ProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressViewController.h; sourceTree = "<group>"; };
+		F3975453197376910D6A5480 /* RegistrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationManager.m; sourceTree = "<group>"; };
 		F3975457D5742F6BE484EDD5 /* InfectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfectionManager.m; sourceTree = "<group>"; };
 		F3975635BCA9C0DDA5667148 /* ApiSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiSession.h; sourceTree = "<group>"; };
 		F397574B0051B0E202E3C784 /* RegistrationProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationProgressViewController.h; sourceTree = "<group>"; };
 		F39757819BF232A9A3178306 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
+		F39757E7C087015C3AEEAF4E /* RegistrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationManager.h; sourceTree = "<group>"; };
 		F397583C8E95EAE0CFB3ED02 /* BluetoothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothManager.m; sourceTree = "<group>"; };
 		F39758820C2FD7F9D7187ACA /* VirusInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirusInfo.h; sourceTree = "<group>"; };
 		F397599577C670FE55D092A4 /* KissInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KissInfo.h; sourceTree = "<group>"; };
@@ -228,6 +231,8 @@
 				F397574B0051B0E202E3C784 /* RegistrationProgressViewController.h */,
 				F6589A881AD7E3C20066B5A7 /* Versioning.m */,
 				F6589A8A1AD7E4C80066B5A7 /* Versioning.h */,
+				F3975453197376910D6A5480 /* RegistrationManager.m */,
+				F39757E7C087015C3AEEAF4E /* RegistrationManager.h */,
 			);
 			path = "virus-spread";
 			sourceTree = "<group>";
@@ -450,6 +455,7 @@
 				F6589A891AD7E3C20066B5A7 /* Versioning.m in Sources */,
 				F39755EE5AACCA6FA20486BA /* ProgressViewController.m in Sources */,
 				F39754F1AE4295D83EA78E2E /* RegistrationProgressViewController.m in Sources */,
+				F397587EE154C4DE05594454 /* RegistrationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
