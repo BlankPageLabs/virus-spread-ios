@@ -125,7 +125,9 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func reactivateUser() {
-        self.registrationManager.requestUserRetrievalOrRegistrationWithSuccess({}, failure: {})
+        if !self.registrationManager.registrationInProcess {
+            self.registrationManager.requestUserRetrievalOrRegistrationWithSuccess({}, failure: {})
+        }
     }
 
     lazy private var managedObjectContext: NSManagedObjectContext = {

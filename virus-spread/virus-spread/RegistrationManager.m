@@ -9,6 +9,12 @@
 #import "virus_spread-Swift.h"
 #import "Error-objc.h"
 
+@interface RegistrationManager ()
+
+@property (nonatomic, assign) BOOL registrationInProcess;
+
+@end
+
 
 @implementation RegistrationManager {
 
@@ -23,21 +29,28 @@
 }
 
 - (void)requestUserRetrievalOrRegistrationWithSuccess:(void(^)())successBlock failure:(void(^)())failureBlock {
+    self.registrationInProcess = YES;
     [self retrieveTaskWithSuccess:^{
+        self.registrationInProcess = NO;
         successBlock();
     } failure:^{
         [self registerTaskIsFirstReg:YES success:^{
+            self.registrationInProcess = NO;
             successBlock();
         } failure:^{
+            self.registrationInProcess = NO;
             failureBlock();
         }];
     }];
 }
 
 - (void)requestUserRegistrationWithSuccess:(void(^)())successBlock failure:(void(^)())failureBlock {
+    self.registrationInProcess = YES;
     [self registerTaskIsFirstReg:NO success:^{
+        self.registrationInProcess = NO;
         successBlock();
     } failure:^{
+        self.registrationInProcess = NO;
         failureBlock();
     }];
 }

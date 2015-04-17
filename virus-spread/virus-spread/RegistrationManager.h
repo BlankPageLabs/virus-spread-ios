@@ -18,4 +18,6 @@
 - (void)requestUserRegistrationWithSuccess:(void (^)())successBlock
                                    failure:(void (^)())failureBlock;
 
+@property (nonatomic, assign, readonly) BOOL registrationInProcess;
+
 @end
