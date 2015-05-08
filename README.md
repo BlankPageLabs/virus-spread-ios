@@ -16,6 +16,6 @@ For the version 2.0 complete code reengineering is planned.
 
 ## Notes for contributors ##
 
-There are some hack in the CocoaPods usage and in some of the pods sources.
+There are some hacks in the CocoaPods usage and in some of the pods sources.
 Those will be documented and contributed to the original developers ASAP. For now,
 please refrain from updating Pods.
