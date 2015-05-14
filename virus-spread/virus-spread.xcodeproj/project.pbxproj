@@ -37,15 +37,14 @@
 		F60C45FB1AC62138002936BE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C45FA1AC62138002936BE /* LocationManager.swift */; };
 		F60C45FD1AC6218B002936BE /* Observation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C45FC1AC6218B002936BE /* Observation.swift */; };
 		F60C45FF1AC621D0002936BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C45FE1AC621D0002936BE /* AppDelegate.swift */; };
+		F6400A0D1B04E59F0099E220 /* virus_spread.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6400A0B1B04E59F0099E220 /* virus_spread.xcdatamodeld */; };
 		F6589A891AD7E3C20066B5A7 /* Versioning.m in Sources */ = {isa = PBXBuildFile; fileRef = F6589A881AD7E3C20066B5A7 /* Versioning.m */; };
 		F65D75101AC6CA3000C22954 /* LocationSynchronous.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D750F1AC6CA3000C22954 /* LocationSynchronous.swift */; };
 		F667697E1AC5CA1F00D2C96E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F667697D1AC5CA1F00D2C96E /* main.m */; };
-		F66769841AC5CA1F00D2C96E /* virus_spread.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F66769821AC5CA1F00D2C96E /* virus_spread.xcdatamodeld */; };
 		F66769871AC5CA1F00D2C96E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66769861AC5CA1F00D2C96E /* ViewController.m */; };
 		F667698A1AC5CA1F00D2C96E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66769881AC5CA1F00D2C96E /* Main.storyboard */; };
 		F667698C1AC5CA1F00D2C96E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F667698B1AC5CA1F00D2C96E /* Images.xcassets */; };
 		F667698F1AC5CA1F00D2C96E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F667698D1AC5CA1F00D2C96E /* LaunchScreen.xib */; };
-		F667699B1AC5CA1F00D2C96E /* virus_spreadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F667699A1AC5CA1F00D2C96E /* virus_spreadTests.m */; };
 		F68A8E9E1ACC56B7001F5735 /* ErrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68A8E9B1ACC56B7001F5735 /* ErrorController.swift */; };
 		F68A8E9F1ACC56B7001F5735 /* ErrorControllerExceptionShim.m in Sources */ = {isa = PBXBuildFile; fileRef = F68A8E9D1ACC56B7001F5735 /* ErrorControllerExceptionShim.m */; };
 		F68A8EA11ACC58A2001F5735 /* IsDebuggerAttached.m in Sources */ = {isa = PBXBuildFile; fileRef = F68A8EA01ACC58A2001F5735 /* IsDebuggerAttached.m */; };
@@ -58,13 +57,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = F6589A811AD7DF000066B5A7;
 			remoteInfo = Versioning;
-		};
-		F66769951AC5CA1F00D2C96E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F66769701AC5CA1F00D2C96E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F66769771AC5CA1F00D2C96E;
-			remoteInfo = "virus-spread";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -102,6 +94,7 @@
 		F60C45FA1AC62138002936BE /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		F60C45FC1AC6218B002936BE /* Observation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observation.swift; sourceTree = "<group>"; };
 		F60C45FE1AC621D0002936BE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F6400A0C1B04E59F0099E220 /* virus_spread.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = virus_spread.xcdatamodel; sourceTree = "<group>"; };
 		F6589A7D1AD7D3D00066B5A7 /* versionGen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = versionGen.sh; sourceTree = "<group>"; };
 		F6589A881AD7E3C20066B5A7 /* Versioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Versioning.m; sourceTree = "<group>"; };
 		F6589A8A1AD7E4C80066B5A7 /* Versioning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Versioning.h; sourceTree = "<group>"; };
@@ -109,13 +102,9 @@
 		F66769781AC5CA1F00D2C96E /* virus-spread.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "virus-spread.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F667697C1AC5CA1F00D2C96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F667697D1AC5CA1F00D2C96E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F66769831AC5CA1F00D2C96E /* virus_spread.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = virus_spread.xcdatamodel; sourceTree = "<group>"; };
 		F66769851AC5CA1F00D2C96E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F66769861AC5CA1F00D2C96E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F667698B1AC5CA1F00D2C96E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		F66769941AC5CA1F00D2C96E /* virus-spreadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "virus-spreadTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F66769991AC5CA1F00D2C96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F667699A1AC5CA1F00D2C96E /* virus_spreadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = virus_spreadTests.m; sourceTree = "<group>"; };
 		F67BB07F1AD297FB00A92176 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		F67BB0811AD297FD00A92176 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		F68A8E9B1ACC56B7001F5735 /* ErrorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorController.swift; sourceTree = "<group>"; };
@@ -135,13 +124,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E32CADC84530EBEB52637E3F /* Pods.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F66769911AC5CA1F00D2C96E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,15 +147,272 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F64009EF1B04DEED0099E220 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				F64009F21B04DF240099E220 /* main */,
+				F64009F41B04E0000099E220 /* managers */,
+				F64009F31B04DFBA0099E220 /* support */,
+				F64009F91B04E1920099E220 /* utils */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		F64009F01B04DEF70099E220 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				F6400A0A1B04E4920099E220 /* controllers */,
+				F6400A081B04E4710099E220 /* views */,
+				F6400A061B04E41F0099E220 /* resources */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		F64009F11B04DF000099E220 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				F64009FB1B04E2020099E220 /* api-connection */,
+				F64009FC1B04E2160099E220 /* caching */,
+				F64009FD1B04E2320099E220 /* objects */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		F64009F21B04DF240099E220 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				F60C45FE1AC621D0002936BE /* AppDelegate.swift */,
+				F667697C1AC5CA1F00D2C96E /* Info.plist */,
+				F667697D1AC5CA1F00D2C96E /* main.m */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		F64009F31B04DFBA0099E220 /* support */ = {
+			isa = PBXGroup;
+			children = (
+				F3975F3404FE061D9155706A /* swift-shim.h */,
+				F6589A7D1AD7D3D00066B5A7 /* versionGen.sh */,
+				F6589A8A1AD7E4C80066B5A7 /* Versioning.h */,
+				F6589A881AD7E3C20066B5A7 /* Versioning.m */,
+				F60C45F91AC62138002936BE /* virus-spread-Bridging-Header.h */,
+			);
+			path = support;
+			sourceTree = "<group>";
+		};
+		F64009F41B04E0000099E220 /* managers */ = {
+			isa = PBXGroup;
+			children = (
+				F64009F61B04E1290099E220 /* BluetoothManager */,
+				F64009F51B04E0CA0099E220 /* ErrorController */,
+				F64009F71B04E1470099E220 /* InfectionManager */,
+				F64009F81B04E16F0099E220 /* LocationManager */,
+				F6400A071B04E4460099E220 /* RegistrationManager */,
+			);
+			path = managers;
+			sourceTree = "<group>";
+		};
+		F64009F51B04E0CA0099E220 /* ErrorController */ = {
+			isa = PBXGroup;
+			children = (
+				F39759DA04DD1AB52898AFB1 /* Error-objc.h */,
+				F68A8E9B1ACC56B7001F5735 /* ErrorController.swift */,
+				F68A8E9C1ACC56B7001F5735 /* ErrorControllerExceptionShim.h */,
+				F68A8E9D1ACC56B7001F5735 /* ErrorControllerExceptionShim.m */,
+			);
+			path = ErrorController;
+			sourceTree = "<group>";
+		};
+		F64009F61B04E1290099E220 /* BluetoothManager */ = {
+			isa = PBXGroup;
+			children = (
+				F3975BE8F9FF31D525E46922 /* BluetoothManager.h */,
+				F397583C8E95EAE0CFB3ED02 /* BluetoothManager.m */,
+			);
+			path = BluetoothManager;
+			sourceTree = "<group>";
+		};
+		F64009F71B04E1470099E220 /* InfectionManager */ = {
+			isa = PBXGroup;
+			children = (
+				F3975DCF94245863ECA43C5B /* InfectionManager.h */,
+				F3975457D5742F6BE484EDD5 /* InfectionManager.m */,
+			);
+			path = InfectionManager;
+			sourceTree = "<group>";
+		};
+		F64009F81B04E16F0099E220 /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				F60C45FA1AC62138002936BE /* LocationManager.swift */,
+				F65D750F1AC6CA3000C22954 /* LocationSynchronous.swift */,
+			);
+			path = LocationManager;
+			sourceTree = "<group>";
+		};
+		F64009F91B04E1920099E220 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				F68A8EA21ACC58CF001F5735 /* IsDebuggerAttached.h */,
+				F68A8EA01ACC58A2001F5735 /* IsDebuggerAttached.m */,
+				F60C45FC1AC6218B002936BE /* Observation.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		F64009FB1B04E2020099E220 /* api-connection */ = {
+			isa = PBXGroup;
+			children = (
+				F6400A011B04E32A0099E220 /* ApiSession */,
+			);
+			path = "api-connection";
+			sourceTree = "<group>";
+		};
+		F64009FC1B04E2160099E220 /* caching */ = {
+			isa = PBXGroup;
+			children = (
+				F6400A0B1B04E59F0099E220 /* virus_spread.xcdatamodeld */,
+			);
+			path = caching;
+			sourceTree = "<group>";
+		};
+		F64009FD1B04E2320099E220 /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				F64009FF1B04E2630099E220 /* DeviceInfo */,
+				F6400A001B04E2B00099E220 /* KissInfo */,
+				F64009FE1B04E2420099E220 /* VirusInfo */,
+			);
+			path = objects;
+			sourceTree = "<group>";
+		};
+		F64009FE1B04E2420099E220 /* VirusInfo */ = {
+			isa = PBXGroup;
+			children = (
+				F39758820C2FD7F9D7187ACA /* VirusInfo.h */,
+				F39751C0DFB0B421C6F29C25 /* VirusInfo.m */,
+			);
+			path = VirusInfo;
+			sourceTree = "<group>";
+		};
+		F64009FF1B04E2630099E220 /* DeviceInfo */ = {
+			isa = PBXGroup;
+			children = (
+				F3975F9D03864BC5B1592A60 /* DeviceInfo.h */,
+				F3975EF5247852D66C73BCF2 /* DeviceInfo.m */,
+			);
+			path = DeviceInfo;
+			sourceTree = "<group>";
+		};
+		F6400A001B04E2B00099E220 /* KissInfo */ = {
+			isa = PBXGroup;
+			children = (
+				F397599577C670FE55D092A4 /* KissInfo.h */,
+				F3975CC2F38B720D3452EFD6 /* KissInfo.m */,
+			);
+			path = KissInfo;
+			sourceTree = "<group>";
+		};
+		F6400A011B04E32A0099E220 /* ApiSession */ = {
+			isa = PBXGroup;
+			children = (
+				F3975635BCA9C0DDA5667148 /* ApiSession.h */,
+				F3975068BBE15310C971C288 /* ApiSession.m */,
+			);
+			path = ApiSession;
+			sourceTree = "<group>";
+		};
+		F6400A021B04E3610099E220 /* MainScreenViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F66769851AC5CA1F00D2C96E /* ViewController.h */,
+				F66769861AC5CA1F00D2C96E /* ViewController.m */,
+			);
+			path = MainScreenViewController;
+			sourceTree = "<group>";
+		};
+		F6400A031B04E38F0099E220 /* RegistrationScreenViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F3975FB46EBDBE2DD07E0510 /* RegistrationViewController.h */,
+				F39757819BF232A9A3178306 /* RegistrationViewController.m */,
+			);
+			path = RegistrationScreenViewController;
+			sourceTree = "<group>";
+		};
+		F6400A041B04E3B50099E220 /* RegistrationProcessViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F397574B0051B0E202E3C784 /* RegistrationProgressViewController.h */,
+				F39751AE6CA42DA84B7C7678 /* RegistrationProgressViewController.m */,
+			);
+			path = RegistrationProcessViewController;
+			sourceTree = "<group>";
+		};
+		F6400A051B04E3F00099E220 /* ProcessViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F3975295ABBDE5AA15019F1B /* ProgressViewController.h */,
+				F397599953E7FDBDAFC95B2A /* ProgressViewController.m */,
+			);
+			path = ProcessViewController;
+			sourceTree = "<group>";
+		};
+		F6400A061B04E41F0099E220 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				F667698B1AC5CA1F00D2C96E /* Images.xcassets */,
+				F667698D1AC5CA1F00D2C96E /* LaunchScreen.xib */,
+				F3975153C50EACB5EB0BB438 /* Localizable.strings */,
+				F66769881AC5CA1F00D2C96E /* Main.storyboard */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		F6400A071B04E4460099E220 /* RegistrationManager */ = {
+			isa = PBXGroup;
+			children = (
+				F39757E7C087015C3AEEAF4E /* RegistrationManager.h */,
+				F3975453197376910D6A5480 /* RegistrationManager.m */,
+			);
+			path = RegistrationManager;
+			sourceTree = "<group>";
+		};
+		F6400A081B04E4710099E220 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				F6400A091B04E4820099E220 /* VirusButton */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		F6400A091B04E4820099E220 /* VirusButton */ = {
+			isa = PBXGroup;
+			children = (
+				F3975FCB00A6FF5562781E9B /* VirusButton.h */,
+				F3975140809169F353C9B248 /* VirusButton.m */,
+			);
+			path = VirusButton;
+			sourceTree = "<group>";
+		};
+		F6400A0A1B04E4920099E220 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F6400A021B04E3610099E220 /* MainScreenViewController */,
+				F6400A051B04E3F00099E220 /* ProcessViewController */,
+				F6400A041B04E3B50099E220 /* RegistrationProcessViewController */,
+				F6400A031B04E38F0099E220 /* RegistrationScreenViewController */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
 		F667696F1AC5CA1F00D2C96E = {
 			isa = PBXGroup;
 			children = (
 				F667697A1AC5CA1F00D2C96E /* virus-spread */,
-				F66769971AC5CA1F00D2C96E /* virus-spreadTests */,
 				F66769791AC5CA1F00D2C96E /* Products */,
 				8D8B147F512FE14C8EA74C96 /* Pods */,
 				9A9BBAD50734C2AA6D2CF316 /* Frameworks */,
-				F6589A7D1AD7D3D00066B5A7 /* versionGen.sh */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,7 +420,6 @@
 			isa = PBXGroup;
 			children = (
 				F66769781AC5CA1F00D2C96E /* virus-spread.app */,
-				F66769941AC5CA1F00D2C96E /* virus-spreadTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,78 +427,11 @@
 		F667697A1AC5CA1F00D2C96E /* virus-spread */ = {
 			isa = PBXGroup;
 			children = (
-				F60C45FE1AC621D0002936BE /* AppDelegate.swift */,
-				F66769851AC5CA1F00D2C96E /* ViewController.h */,
-				F66769861AC5CA1F00D2C96E /* ViewController.m */,
-				F66769881AC5CA1F00D2C96E /* Main.storyboard */,
-				F667698B1AC5CA1F00D2C96E /* Images.xcassets */,
-				F667698D1AC5CA1F00D2C96E /* LaunchScreen.xib */,
-				F66769821AC5CA1F00D2C96E /* virus_spread.xcdatamodeld */,
-				F667697B1AC5CA1F00D2C96E /* Supporting Files */,
-				F397583C8E95EAE0CFB3ED02 /* BluetoothManager.m */,
-				F3975BE8F9FF31D525E46922 /* BluetoothManager.h */,
-				F39751C0DFB0B421C6F29C25 /* VirusInfo.m */,
-				F39758820C2FD7F9D7187ACA /* VirusInfo.h */,
-				F3975EF5247852D66C73BCF2 /* DeviceInfo.m */,
-				F3975F9D03864BC5B1592A60 /* DeviceInfo.h */,
-				F3975068BBE15310C971C288 /* ApiSession.m */,
-				F3975635BCA9C0DDA5667148 /* ApiSession.h */,
-				F3975457D5742F6BE484EDD5 /* InfectionManager.m */,
-				F3975DCF94245863ECA43C5B /* InfectionManager.h */,
-				F60C45FA1AC62138002936BE /* LocationManager.swift */,
-				F60C45F91AC62138002936BE /* virus-spread-Bridging-Header.h */,
-				F60C45FC1AC6218B002936BE /* Observation.swift */,
-				F3975F3404FE061D9155706A /* swift-shim.h */,
-				F39757819BF232A9A3178306 /* RegistrationViewController.m */,
-				F3975FB46EBDBE2DD07E0510 /* RegistrationViewController.h */,
-				F3975140809169F353C9B248 /* VirusButton.m */,
-				F3975FCB00A6FF5562781E9B /* VirusButton.h */,
-				F65D750F1AC6CA3000C22954 /* LocationSynchronous.swift */,
-				F3975CC2F38B720D3452EFD6 /* KissInfo.m */,
-				F397599577C670FE55D092A4 /* KissInfo.h */,
-				F397599953E7FDBDAFC95B2A /* ProgressViewController.m */,
-				F3975295ABBDE5AA15019F1B /* ProgressViewController.h */,
-				F68A8E9B1ACC56B7001F5735 /* ErrorController.swift */,
-				F68A8E9C1ACC56B7001F5735 /* ErrorControllerExceptionShim.h */,
-				F68A8E9D1ACC56B7001F5735 /* ErrorControllerExceptionShim.m */,
-				F68A8EA01ACC58A2001F5735 /* IsDebuggerAttached.m */,
-				F68A8EA21ACC58CF001F5735 /* IsDebuggerAttached.h */,
-				F39759DA04DD1AB52898AFB1 /* Error-objc.h */,
-				F3975153C50EACB5EB0BB438 /* Localizable.strings */,
-				F39751AE6CA42DA84B7C7678 /* RegistrationProgressViewController.m */,
-				F397574B0051B0E202E3C784 /* RegistrationProgressViewController.h */,
-				F6589A881AD7E3C20066B5A7 /* Versioning.m */,
-				F6589A8A1AD7E4C80066B5A7 /* Versioning.h */,
-				F3975453197376910D6A5480 /* RegistrationManager.m */,
-				F39757E7C087015C3AEEAF4E /* RegistrationManager.h */,
+				F64009F11B04DF000099E220 /* api */,
+				F64009EF1B04DEED0099E220 /* core */,
+				F64009F01B04DEF70099E220 /* ui */,
 			);
-			path = "virus-spread";
-			sourceTree = "<group>";
-		};
-		F667697B1AC5CA1F00D2C96E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				F667697C1AC5CA1F00D2C96E /* Info.plist */,
-				F667697D1AC5CA1F00D2C96E /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F66769971AC5CA1F00D2C96E /* virus-spreadTests */ = {
-			isa = PBXGroup;
-			children = (
-				F667699A1AC5CA1F00D2C96E /* virus_spreadTests.m */,
-				F66769981AC5CA1F00D2C96E /* Supporting Files */,
-			);
-			path = "virus-spreadTests";
-			sourceTree = "<group>";
-		};
-		F66769981AC5CA1F00D2C96E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				F66769991AC5CA1F00D2C96E /* Info.plist */,
-			);
-			name = "Supporting Files";
+			name = "virus-spread";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,24 +458,6 @@
 			productReference = F66769781AC5CA1F00D2C96E /* virus-spread.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F66769931AC5CA1F00D2C96E /* virus-spreadTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F66769A11AC5CA1F00D2C96E /* Build configuration list for PBXNativeTarget "virus-spreadTests" */;
-			buildPhases = (
-				F66769901AC5CA1F00D2C96E /* Sources */,
-				F66769911AC5CA1F00D2C96E /* Frameworks */,
-				F66769921AC5CA1F00D2C96E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F66769961AC5CA1F00D2C96E /* PBXTargetDependency */,
-			);
-			name = "virus-spreadTests";
-			productName = "virus-spreadTests";
-			productReference = F66769941AC5CA1F00D2C96E /* virus-spreadTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -319,10 +472,6 @@
 					};
 					F66769771AC5CA1F00D2C96E = {
 						CreatedOnToolsVersion = 6.3;
-					};
-					F66769931AC5CA1F00D2C96E = {
-						CreatedOnToolsVersion = 6.3;
-						TestTargetID = F66769771AC5CA1F00D2C96E;
 					};
 				};
 			};
@@ -341,7 +490,6 @@
 			projectRoot = "";
 			targets = (
 				F66769771AC5CA1F00D2C96E /* virus-spread */,
-				F66769931AC5CA1F00D2C96E /* virus-spreadTests */,
 				F6589A811AD7DF000066B5A7 /* Versioning */,
 			);
 		};
@@ -356,13 +504,6 @@
 				F667698F1AC5CA1F00D2C96E /* LaunchScreen.xib in Resources */,
 				F667698C1AC5CA1F00D2C96E /* Images.xcassets in Resources */,
 				F3975A579BF86274CB596687 /* Localizable.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F66769921AC5CA1F00D2C96E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +566,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "mkdir -p ${PROJECT_DERIVED_FILE_DIR}\nPREFIX=XC PROJECT_DIR=`pwd`/.. ./versionGen.sh ${PROJECT_DERIVED_FILE_DIR}/Version.h\n";
+			shellScript = "mkdir -p ${PROJECT_DERIVED_FILE_DIR}\nPREFIX=XC PROJECT_DIR=`pwd`/.. ./core/support/versionGen.sh ${PROJECT_DERIVED_FILE_DIR}/Version.h\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -434,7 +575,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F66769841AC5CA1F00D2C96E /* virus_spread.xcdatamodeld in Sources */,
 				F66769871AC5CA1F00D2C96E /* ViewController.m in Sources */,
 				F60C45FB1AC62138002936BE /* LocationManager.swift in Sources */,
 				F60C45FD1AC6218B002936BE /* Observation.swift in Sources */,
@@ -453,17 +593,10 @@
 				F3975514BB47BEDE9ABA9784 /* VirusButton.m in Sources */,
 				F3975D546109AFE08E15A348 /* KissInfo.m in Sources */,
 				F6589A891AD7E3C20066B5A7 /* Versioning.m in Sources */,
+				F6400A0D1B04E59F0099E220 /* virus_spread.xcdatamodeld in Sources */,
 				F39755EE5AACCA6FA20486BA /* ProgressViewController.m in Sources */,
 				F39754F1AE4295D83EA78E2E /* RegistrationProgressViewController.m in Sources */,
 				F397587EE154C4DE05594454 /* RegistrationManager.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F66769901AC5CA1F00D2C96E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F667699B1AC5CA1F00D2C96E /* virus_spreadTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,11 +607,6 @@
 			isa = PBXTargetDependency;
 			target = F6589A811AD7DF000066B5A7 /* Versioning */;
 			targetProxy = F6589A861AD7DF1F0066B5A7 /* PBXContainerItemProxy */;
-		};
-		F66769961AC5CA1F00D2C96E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F66769771AC5CA1F00D2C96E /* virus-spread */;
-			targetProxy = F66769951AC5CA1F00D2C96E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -621,13 +749,13 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"${PROJECT_DERIVED_FILE_DIR}",
 				);
-				INFOPLIST_FILE = "virus-spread/Info.plist";
+				INFOPLIST_FILE = core/main/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "${PROJECT_DERIVED_FILE_DIR}/Version.h";
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "virus-spread/virus-spread-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "core/support/virus-spread-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -644,47 +772,13 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"${PROJECT_DERIVED_FILE_DIR}",
 				);
-				INFOPLIST_FILE = "virus-spread/Info.plist";
+				INFOPLIST_FILE = core/main/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "${PROJECT_DERIVED_FILE_DIR}/Version.h";
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "virus-spread/virus-spread-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		F66769A21AC5CA1F00D2C96E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "virus-spreadTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/virus-spread.app/virus-spread";
-			};
-			name = Debug;
-		};
-		F66769A31AC5CA1F00D2C96E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "virus-spreadTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/virus-spread.app/virus-spread";
+				SWIFT_OBJC_BRIDGING_HEADER = "core/support/virus-spread-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -718,24 +812,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F66769A11AC5CA1F00D2C96E /* Build configuration list for PBXNativeTarget "virus-spreadTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F66769A21AC5CA1F00D2C96E /* Debug */,
-				F66769A31AC5CA1F00D2C96E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		F66769821AC5CA1F00D2C96E /* virus_spread.xcdatamodeld */ = {
+		F6400A0B1B04E59F0099E220 /* virus_spread.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				F66769831AC5CA1F00D2C96E /* virus_spread.xcdatamodel */,
+				F6400A0C1B04E59F0099E220 /* virus_spread.xcdatamodel */,
 			);
-			currentVersion = F66769831AC5CA1F00D2C96E /* virus_spread.xcdatamodel */;
+			currentVersion = F6400A0C1B04E59F0099E220 /* virus_spread.xcdatamodel */;
 			path = virus_spread.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
