@@ -99,7 +99,7 @@ class AppColors {
 }
 
 
-// -- Helper functions --
+// MARK: -- Helper functions --
 
 private func controlColor<ColorType, Colors: ColoredControlStates where Colors.ColorType == ColorType> (colors: Colors, forState state: UIControlState) -> ColorType {
     switch (state) {
