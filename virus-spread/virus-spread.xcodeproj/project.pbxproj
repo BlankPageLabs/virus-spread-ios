@@ -38,6 +38,8 @@
 		F60C45FD1AC6218B002936BE /* Observation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C45FC1AC6218B002936BE /* Observation.swift */; };
 		F60C45FF1AC621D0002936BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C45FE1AC621D0002936BE /* AppDelegate.swift */; };
 		F6400A0D1B04E59F0099E220 /* virus_spread.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6400A0B1B04E59F0099E220 /* virus_spread.xcdatamodeld */; };
+		F6400A101B04F25C0099E220 /* StilizedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6400A0F1B04F25C0099E220 /* StilizedTextField.swift */; };
+		F657B0861B0644AE0011378F /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F657B0851B0644AE0011378F /* AppColors.swift */; };
 		F6589A891AD7E3C20066B5A7 /* Versioning.m in Sources */ = {isa = PBXBuildFile; fileRef = F6589A881AD7E3C20066B5A7 /* Versioning.m */; };
 		F65D75101AC6CA3000C22954 /* LocationSynchronous.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D750F1AC6CA3000C22954 /* LocationSynchronous.swift */; };
 		F667697E1AC5CA1F00D2C96E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F667697D1AC5CA1F00D2C96E /* main.m */; };
@@ -95,6 +97,8 @@
 		F60C45FC1AC6218B002936BE /* Observation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observation.swift; sourceTree = "<group>"; };
 		F60C45FE1AC621D0002936BE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6400A0C1B04E59F0099E220 /* virus_spread.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = virus_spread.xcdatamodel; sourceTree = "<group>"; };
+		F6400A0F1B04F25C0099E220 /* StilizedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StilizedTextField.swift; sourceTree = "<group>"; };
+		F657B0851B0644AE0011378F /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		F6589A7D1AD7D3D00066B5A7 /* versionGen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = versionGen.sh; sourceTree = "<group>"; };
 		F6589A881AD7E3C20066B5A7 /* Versioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Versioning.m; sourceTree = "<group>"; };
 		F6589A8A1AD7E4C80066B5A7 /* Versioning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Versioning.h; sourceTree = "<group>"; };
@@ -365,6 +369,7 @@
 				F667698D1AC5CA1F00D2C96E /* LaunchScreen.xib */,
 				F3975153C50EACB5EB0BB438 /* Localizable.strings */,
 				F66769881AC5CA1F00D2C96E /* Main.storyboard */,
+				F657B0851B0644AE0011378F /* AppColors.swift */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -381,6 +386,7 @@
 		F6400A081B04E4710099E220 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				F6400A0E1B04F1EF0099E220 /* StilizedTextField */,
 				F6400A091B04E4820099E220 /* VirusButton */,
 			);
 			path = views;
@@ -404,6 +410,14 @@
 				F6400A031B04E38F0099E220 /* RegistrationScreenViewController */,
 			);
 			path = controllers;
+			sourceTree = "<group>";
+		};
+		F6400A0E1B04F1EF0099E220 /* StilizedTextField */ = {
+			isa = PBXGroup;
+			children = (
+				F6400A0F1B04F25C0099E220 /* StilizedTextField.swift */,
+			);
+			path = StilizedTextField;
 			sourceTree = "<group>";
 		};
 		F667696F1AC5CA1F00D2C96E = {
@@ -584,6 +598,7 @@
 				F39753940BDD846C1266D6A5 /* BluetoothManager.m in Sources */,
 				F60C45FF1AC621D0002936BE /* AppDelegate.swift in Sources */,
 				F39752C19C6551137F4437DC /* VirusInfo.m in Sources */,
+				F6400A101B04F25C0099E220 /* StilizedTextField.swift in Sources */,
 				F68A8E9E1ACC56B7001F5735 /* ErrorController.swift in Sources */,
 				F39751C30C727AC3E3127596 /* DeviceInfo.m in Sources */,
 				F3975E1B5959739283DEE220 /* ApiSession.m in Sources */,
@@ -595,6 +610,7 @@
 				F6589A891AD7E3C20066B5A7 /* Versioning.m in Sources */,
 				F6400A0D1B04E59F0099E220 /* virus_spread.xcdatamodeld in Sources */,
 				F39755EE5AACCA6FA20486BA /* ProgressViewController.m in Sources */,
+				F657B0861B0644AE0011378F /* AppColors.swift in Sources */,
 				F39754F1AE4295D83EA78E2E /* RegistrationProgressViewController.m in Sources */,
 				F397587EE154C4DE05594454 /* RegistrationManager.m in Sources */,
 			);
