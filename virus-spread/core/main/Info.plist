@@ -28,6 +28,19 @@
 	<string>${PRODUCT_NAME} is using your location to find the points of virus spreading</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>${PRODUCT_NAME} is using your location to find the points of virus spreading</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>OpenSans-Bold</string>
+		<string>OpenSans-BoldItalic</string>
+		<string>OpenSans-ExtraBold</string>
+		<string>OpenSans-ExtraBoldItalic</string>
+		<string>OpenSans-Italic</string>
+		<string>OpenSans-Light</string>
+		<string>OpenSans-LightItalic</string>
+		<string>OpenSans-Regular</string>
+		<string>OpenSans-Semibold</string>
+		<string>OpenSans-SemiboldItalic</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>bluetooth-central</string>

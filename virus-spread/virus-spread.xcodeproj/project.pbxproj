@@ -41,6 +41,17 @@
 		F6400A101B04F25C0099E220 /* StilizedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6400A0F1B04F25C0099E220 /* StilizedTextField.swift */; };
 		F657B0861B0644AE0011378F /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F657B0851B0644AE0011378F /* AppColors.swift */; };
 		F657B0891B068F8B0011378F /* StilizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F657B0881B068F8B0011378F /* StilizedButton.swift */; };
+		F657B08C1B06A2D00011378F /* FirstRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F657B08B1B06A2D00011378F /* FirstRegistrationViewController.swift */; };
+		F657B0981B06ABBE0011378F /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F657B08E1B06ABA70011378F /* OpenSans-Bold.ttf */; };
+		F657B0991B06ABC20011378F /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F657B08F1B06ABA70011378F /* OpenSans-BoldItalic.ttf */; };
+		F657B09A1B06ABC20011378F /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F657B0901B06ABA70011378F /* OpenSans-ExtraBold.ttf */; };
+		F657B09B1B06ABC20011378F /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F657B0911B06ABA70011378F /* OpenSans-ExtraBoldItalic.ttf */; };
+		F657B09C1B06ABC20011378F /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F657B0921B06ABA70011378F /* OpenSans-Italic.ttf */; };
+		F657B09D1B06ABC20011378F /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F657B0931B06ABA70011378F /* OpenSans-Light.ttf */; };
+		F657B09E1B06ABC20011378F /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F657B0941B06ABA70011378F /* OpenSans-LightItalic.ttf */; };
+		F657B09F1B06ABC20011378F /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F657B0951B06ABA70011378F /* OpenSans-Regular.ttf */; };
+		F657B0A01B06ABC20011378F /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F657B0961B06ABA70011378F /* OpenSans-Semibold.ttf */; };
+		F657B0A11B06ABC20011378F /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F657B0971B06ABA70011378F /* OpenSans-SemiboldItalic.ttf */; };
 		F6589A891AD7E3C20066B5A7 /* Versioning.m in Sources */ = {isa = PBXBuildFile; fileRef = F6589A881AD7E3C20066B5A7 /* Versioning.m */; };
 		F65D75101AC6CA3000C22954 /* LocationSynchronous.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D750F1AC6CA3000C22954 /* LocationSynchronous.swift */; };
 		F667697E1AC5CA1F00D2C96E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F667697D1AC5CA1F00D2C96E /* main.m */; };
@@ -101,6 +112,17 @@
 		F6400A0F1B04F25C0099E220 /* StilizedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StilizedTextField.swift; sourceTree = "<group>"; };
 		F657B0851B0644AE0011378F /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		F657B0881B068F8B0011378F /* StilizedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StilizedButton.swift; sourceTree = "<group>"; };
+		F657B08B1B06A2D00011378F /* FirstRegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstRegistrationViewController.swift; sourceTree = "<group>"; };
+		F657B08E1B06ABA70011378F /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		F657B08F1B06ABA70011378F /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		F657B0901B06ABA70011378F /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		F657B0911B06ABA70011378F /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		F657B0921B06ABA70011378F /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		F657B0931B06ABA70011378F /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		F657B0941B06ABA70011378F /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		F657B0951B06ABA70011378F /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		F657B0961B06ABA70011378F /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		F657B0971B06ABA70011378F /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		F6589A7D1AD7D3D00066B5A7 /* versionGen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = versionGen.sh; sourceTree = "<group>"; };
 		F6589A881AD7E3C20066B5A7 /* Versioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Versioning.m; sourceTree = "<group>"; };
 		F6589A8A1AD7E4C80066B5A7 /* Versioning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Versioning.h; sourceTree = "<group>"; };
@@ -367,6 +389,7 @@
 		F6400A061B04E41F0099E220 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				F657B08D1B06AB850011378F /* opensans */,
 				F667698B1AC5CA1F00D2C96E /* Images.xcassets */,
 				F667698D1AC5CA1F00D2C96E /* LaunchScreen.xib */,
 				F3975153C50EACB5EB0BB438 /* Localizable.strings */,
@@ -407,6 +430,7 @@
 		F6400A0A1B04E4920099E220 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F657B08A1B06A2A50011378F /* FirstRegistrationViewController */,
 				F6400A021B04E3610099E220 /* MainScreenViewController */,
 				F6400A051B04E3F00099E220 /* ProcessViewController */,
 				F6400A041B04E3B50099E220 /* RegistrationProcessViewController */,
@@ -429,6 +453,31 @@
 				F657B0881B068F8B0011378F /* StilizedButton.swift */,
 			);
 			path = StilizedButton;
+			sourceTree = "<group>";
+		};
+		F657B08A1B06A2A50011378F /* FirstRegistrationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F657B08B1B06A2D00011378F /* FirstRegistrationViewController.swift */,
+			);
+			path = FirstRegistrationViewController;
+			sourceTree = "<group>";
+		};
+		F657B08D1B06AB850011378F /* opensans */ = {
+			isa = PBXGroup;
+			children = (
+				F657B08E1B06ABA70011378F /* OpenSans-Bold.ttf */,
+				F657B08F1B06ABA70011378F /* OpenSans-BoldItalic.ttf */,
+				F657B0901B06ABA70011378F /* OpenSans-ExtraBold.ttf */,
+				F657B0911B06ABA70011378F /* OpenSans-ExtraBoldItalic.ttf */,
+				F657B0921B06ABA70011378F /* OpenSans-Italic.ttf */,
+				F657B0931B06ABA70011378F /* OpenSans-Light.ttf */,
+				F657B0941B06ABA70011378F /* OpenSans-LightItalic.ttf */,
+				F657B0951B06ABA70011378F /* OpenSans-Regular.ttf */,
+				F657B0961B06ABA70011378F /* OpenSans-Semibold.ttf */,
+				F657B0971B06ABA70011378F /* OpenSans-SemiboldItalic.ttf */,
+			);
+			path = opensans;
 			sourceTree = "<group>";
 		};
 		F667696F1AC5CA1F00D2C96E = {
@@ -525,10 +574,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F657B09C1B06ABC20011378F /* OpenSans-Italic.ttf in Resources */,
+				F657B0991B06ABC20011378F /* OpenSans-BoldItalic.ttf in Resources */,
+				F657B0981B06ABBE0011378F /* OpenSans-Bold.ttf in Resources */,
+				F657B0A01B06ABC20011378F /* OpenSans-Semibold.ttf in Resources */,
+				F657B09A1B06ABC20011378F /* OpenSans-ExtraBold.ttf in Resources */,
 				F667698A1AC5CA1F00D2C96E /* Main.storyboard in Resources */,
+				F657B09E1B06ABC20011378F /* OpenSans-LightItalic.ttf in Resources */,
 				F667698F1AC5CA1F00D2C96E /* LaunchScreen.xib in Resources */,
 				F667698C1AC5CA1F00D2C96E /* Images.xcassets in Resources */,
 				F3975A579BF86274CB596687 /* Localizable.strings in Resources */,
+				F657B0A11B06ABC20011378F /* OpenSans-SemiboldItalic.ttf in Resources */,
+				F657B09D1B06ABC20011378F /* OpenSans-Light.ttf in Resources */,
+				F657B09F1B06ABC20011378F /* OpenSans-Regular.ttf in Resources */,
+				F657B09B1B06ABC20011378F /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +667,7 @@
 				F667697E1AC5CA1F00D2C96E /* main.m in Sources */,
 				F39753940BDD846C1266D6A5 /* BluetoothManager.m in Sources */,
 				F60C45FF1AC621D0002936BE /* AppDelegate.swift in Sources */,
+				F657B08C1B06A2D00011378F /* FirstRegistrationViewController.swift in Sources */,
 				F39752C19C6551137F4437DC /* VirusInfo.m in Sources */,
 				F6400A101B04F25C0099E220 /* StilizedTextField.swift in Sources */,
 				F68A8E9E1ACC56B7001F5735 /* ErrorController.swift in Sources */,
