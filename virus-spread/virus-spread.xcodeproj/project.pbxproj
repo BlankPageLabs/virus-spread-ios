@@ -40,6 +40,7 @@
 		F6400A0D1B04E59F0099E220 /* virus_spread.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6400A0B1B04E59F0099E220 /* virus_spread.xcdatamodeld */; };
 		F6400A101B04F25C0099E220 /* StilizedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6400A0F1B04F25C0099E220 /* StilizedTextField.swift */; };
 		F657B0861B0644AE0011378F /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F657B0851B0644AE0011378F /* AppColors.swift */; };
+		F657B0891B068F8B0011378F /* StilizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F657B0881B068F8B0011378F /* StilizedButton.swift */; };
 		F6589A891AD7E3C20066B5A7 /* Versioning.m in Sources */ = {isa = PBXBuildFile; fileRef = F6589A881AD7E3C20066B5A7 /* Versioning.m */; };
 		F65D75101AC6CA3000C22954 /* LocationSynchronous.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D750F1AC6CA3000C22954 /* LocationSynchronous.swift */; };
 		F667697E1AC5CA1F00D2C96E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F667697D1AC5CA1F00D2C96E /* main.m */; };
@@ -99,6 +100,7 @@
 		F6400A0C1B04E59F0099E220 /* virus_spread.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = virus_spread.xcdatamodel; sourceTree = "<group>"; };
 		F6400A0F1B04F25C0099E220 /* StilizedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StilizedTextField.swift; sourceTree = "<group>"; };
 		F657B0851B0644AE0011378F /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		F657B0881B068F8B0011378F /* StilizedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StilizedButton.swift; sourceTree = "<group>"; };
 		F6589A7D1AD7D3D00066B5A7 /* versionGen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = versionGen.sh; sourceTree = "<group>"; };
 		F6589A881AD7E3C20066B5A7 /* Versioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Versioning.m; sourceTree = "<group>"; };
 		F6589A8A1AD7E4C80066B5A7 /* Versioning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Versioning.h; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 		F6400A081B04E4710099E220 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				F657B0871B068F5B0011378F /* StilizedButton */,
 				F6400A0E1B04F1EF0099E220 /* StilizedTextField */,
 				F6400A091B04E4820099E220 /* VirusButton */,
 			);
@@ -418,6 +421,14 @@
 				F6400A0F1B04F25C0099E220 /* StilizedTextField.swift */,
 			);
 			path = StilizedTextField;
+			sourceTree = "<group>";
+		};
+		F657B0871B068F5B0011378F /* StilizedButton */ = {
+			isa = PBXGroup;
+			children = (
+				F657B0881B068F8B0011378F /* StilizedButton.swift */,
+			);
+			path = StilizedButton;
 			sourceTree = "<group>";
 		};
 		F667696F1AC5CA1F00D2C96E = {
@@ -606,6 +617,7 @@
 				F68A8E9F1ACC56B7001F5735 /* ErrorControllerExceptionShim.m in Sources */,
 				F3975F4BFE681094EB9E9B9C /* RegistrationViewController.m in Sources */,
 				F3975514BB47BEDE9ABA9784 /* VirusButton.m in Sources */,
+				F657B0891B068F8B0011378F /* StilizedButton.swift in Sources */,
 				F3975D546109AFE08E15A348 /* KissInfo.m in Sources */,
 				F6589A891AD7E3C20066B5A7 /* Versioning.m in Sources */,
 				F6400A0D1B04E59F0099E220 /* virus_spread.xcdatamodeld in Sources */,
