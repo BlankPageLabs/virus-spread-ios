@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable
 class StilizedButton: UIButton {
 
-    func customize() {
+    private func customize() {
         self.setTitleColor(AppColors.button.normal.textColor, forState: .Normal)
         self.setTitleColor(AppColors.button.normalHighlighted.textColor, forState: .Normal | .Highlighted)
         self.setTitleColor(AppColors.button.disabled.textColor, forState: .Disabled)
@@ -37,7 +37,8 @@ class StilizedButton: UIButton {
             })
         }
     }
-    func syncVisualState() {
+
+    private func syncVisualState() {
         self.layer.borderColor = AppColors.button.colorForState(self.state).borderColor.CGColor
         self.backgroundColor = AppColors.button.colorForState(self.state).backgroundColor
     }

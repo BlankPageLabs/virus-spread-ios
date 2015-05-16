@@ -25,7 +25,7 @@ class StilizedTextField: UITextField {
         }
     }
 
-    func customize() {
+    private func customize() {
         self.placeholderFont = createPlaceholderFontWithFont(self.font)
 
         self.borderStyle = .None
@@ -34,13 +34,13 @@ class StilizedTextField: UITextField {
         self.syncVisualState()
     }
 
-    func syncVisualState() {
+    private func syncVisualState() {
         self.layer.borderColor = AppColors.textField.colorForState(self.state).borderColor.CGColor
         self.backgroundColor = AppColors.textField.colorForState(self.state).backgroundColor
         self.textColor = AppColors.textField.colorForState(self.state).textColor
     }
 
-    var placeholderFont: UIFont!
+    private var placeholderFont: UIFont!
 
     override dynamic var font: UIFont! {
         didSet {
@@ -49,7 +49,7 @@ class StilizedTextField: UITextField {
         }
     }
 
-    func createPlaceholderFontWithFont(font: UIFont) -> UIFont {
+    private func createPlaceholderFontWithFont(font: UIFont) -> UIFont {
         return UIFont(descriptor: font.fontDescriptor().fontDescriptorWithSymbolicTraits(.TraitItalic)!,
             size: font.pointSize)
     }

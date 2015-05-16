@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable
 class StilizedSegmentedControl: UISegmentedControl {
 
-    func customize() {
+    private func customize() {
         self.setTitleTextAttributes([
             NSFontAttributeName: UIFont(name: "OpenSans-Bold", size: 18.0)!
             ], forState: .Normal)
