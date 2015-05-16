@@ -53,6 +53,10 @@ class DateSelector: UIControl, UITextFieldDelegate {
 
     @objc
     private func dateSelectorValueChanged(sender: UIDatePicker) {
+        self.updateDateValue()
+    }
+
+    private func updateDateValue() {
         self.textFieldView.text = dateFormatter.stringFromDate(self.datePickerView.date)
         self.date = self.datePickerView.date
     }
@@ -146,6 +150,7 @@ class DateSelector: UIControl, UITextFieldDelegate {
     override func becomeFirstResponder() -> Bool {
         super.becomeFirstResponder()
         self.selected = true
+        self.updateDateValue()
         return true
     }
 
@@ -230,8 +235,12 @@ class DateSelector: UIControl, UITextFieldDelegate {
     }
 
     func textFieldShouldClear(textField: UITextField) -> Bool {
-        self.date = nil
-        return true
+        dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue()) { () -> Void in
+            self.resignFirstResponder()
+            self.date = nil
+            self.textFieldView.text = nil
+        }
+        return false
     }
 }
 
