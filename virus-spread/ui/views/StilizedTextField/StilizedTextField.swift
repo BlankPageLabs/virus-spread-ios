@@ -18,6 +18,13 @@ class StilizedTextField: UITextField {
         }
     }
 
+    @IBInspectable
+    var hasBorders: Bool = true {
+        didSet {
+            self.layer.borderWidth = hasBorders ? 1.0 : 0.0
+        }
+    }
+
     func customize() {
         self.placeholderFont = createPlaceholderFontWithFont(self.font)
 
