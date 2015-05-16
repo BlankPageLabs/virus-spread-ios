@@ -11,6 +11,13 @@ import UIKit
 @IBDesignable
 class StilizedTextField: UITextField {
 
+    @IBInspectable
+    var roundedCorners: Bool = false {
+        didSet {
+            self.layer.cornerRadius = roundedCorners ? 5.0 : 0.0
+        }
+    }
+
     func customize() {
         self.placeholderFont = createPlaceholderFontWithFont(self.font)
 
