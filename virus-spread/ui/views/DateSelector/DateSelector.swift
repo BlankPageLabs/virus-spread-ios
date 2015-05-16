@@ -39,6 +39,20 @@ class DateSelector: UIControl {
         self.addSubview(datePickerView)
     }
 
+    private func recolorDatePicker(picker: UIDatePicker) {
+        // Yeah, I know. That is a veeeerry fracking big hack
+        self.datePickerView.setValue(UIColor.whiteColor(), forKey: "textColor")
+
+        // For the declaration, see at the bottom of this file. Yep, I said, BIG FRACKING hack
+        (self.datePickerView as AnyObject).setHighlightsToday(false)
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        self.recolorDatePicker(self.datePickerView)
+    }
+
     @IBInspectable
     var placeholder: String? {
         get {
@@ -49,7 +63,7 @@ class DateSelector: UIControl {
         }
     }
 
-    func setDatePickerActive(active: Bool) {
+    private func setDatePickerActive(active: Bool) {
         if active {
             NSLayoutConstraint.deactivateConstraints(self.inactiveDatePickerConstraints)
             NSLayoutConstraint.activateConstraints(self.activeDatePickerConstraints)
@@ -103,7 +117,7 @@ class DateSelector: UIControl {
         if self.enabled {
             self.becomeFirstResponder()
             if self.highlighted {
-                self.selected = !self.selected
+                self.selected = true
             }
         }
         self.highlighted = false
@@ -167,6 +181,16 @@ class DateSelector: UIControl {
     }
 
     override func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
-        return false
+        if gestureRecognizer is UITapGestureRecognizer {
+            // Prevent taps from interfering with the control
+            return false
+        } else {
+            return true
+        }
     }
+}
+
+@objc
+private protocol TextColor {
+    func setHighlightsToday(obj: Bool)
 }
