@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class DateSelector: UIControl {
+class DateSelector: UIControl, UITextFieldDelegate {
 
     private let textFieldView = StilizedTextField()
     private let datePickerView = UIDatePicker()
@@ -19,12 +19,17 @@ class DateSelector: UIControl {
 
     private func dateSelectorInit() {
         self.datePickerView.datePickerMode = .Date
+        // FIXME: disabled text not updated on scrolling, and the color is not suitable
+//        self.datePickerView.maximumDate = NSDate()
+        self.datePickerView.addTarget(self, action: Selector("dateSelectorValueChanged:"), forControlEvents: .ValueChanged)
+
+        self.textFieldView.delegate = self
+        self.textFieldView.clearButtonMode = .Always
 
         // Get rid of pesky autoresizing
         self.textFieldView.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.datePickerView.setTranslatesAutoresizingMaskIntoConstraints(false)
 
-        self.textFieldView.userInteractionEnabled = false
         self.datePickerView.hidden = true
 
         self.textFieldView.hasBorders = false
@@ -37,6 +42,17 @@ class DateSelector: UIControl {
 
         self.addSubview(textFieldView)
         self.addSubview(datePickerView)
+    }
+
+    let dateFormatter: NSDateFormatter = {
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = NSDateFormatterStyle.LongStyle
+        return formatter
+    }()
+
+    @objc
+    private func dateSelectorValueChanged(sender: UIDatePicker) {
+        self.textFieldView.text = dateFormatter.stringFromDate(self.datePickerView.date)
     }
 
     private func recolorDatePicker(picker: UIDatePicker) {
@@ -82,7 +98,6 @@ class DateSelector: UIControl {
             self.datePickerView.hidden = false
             UIView.animateWithDuration(0.1, animations: { () -> Void in
                 self.textFieldView.selected = self.selected
-                self.textFieldView.enabled = !self.selected
                 self.datePickerView.alpha = self.selected ? 1.0 : 0.0
                 self.setDatePickerActive(self.selected)
                 self.superview!.layoutIfNeeded()
@@ -115,15 +130,20 @@ class DateSelector: UIControl {
     override func endTrackingWithTouch(touch: UITouch, withEvent event: UIEvent) {
         super.endTrackingWithTouch(touch, withEvent: event)
         if self.enabled {
-            self.becomeFirstResponder()
             if self.highlighted {
-                self.selected = true
+                self.becomeFirstResponder()
             }
         }
         self.highlighted = false
     }
 
     override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+
+    override func becomeFirstResponder() -> Bool {
+        super.becomeFirstResponder()
+        self.selected = true
         return true
     }
 
@@ -183,10 +203,25 @@ class DateSelector: UIControl {
     override func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer is UITapGestureRecognizer {
             // Prevent taps from interfering with the control
-            return false
+
+            // Filter out only gestureRecognizers up the chain, not down
+            if let view = gestureRecognizer.view {
+                var superviews: [UIView] = [self.superview!]
+                while let other = superviews.last?.superview {
+                    superviews += [other]
+                }
+                return contains(superviews, view) ? false : true
+            } else {
+                return true
+            }
         } else {
             return true
         }
+    }
+
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        self.becomeFirstResponder()
+        return false
     }
 }
 
