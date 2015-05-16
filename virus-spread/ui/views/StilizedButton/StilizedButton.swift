@@ -33,11 +33,6 @@ class StilizedButton: UIButton {
         self.backgroundColor = AppColors.button.colorForState(self.state).backgroundColor
     }
 
-    override func layoutIfNeeded() {
-        super.layoutIfNeeded()
-        self.syncVisualState()
-    }
-
     override init(frame: CGRect) {
         super.init(frame: frame)
 
