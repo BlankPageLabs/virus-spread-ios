@@ -150,6 +150,7 @@ class DateSelector: UIControl, UITextFieldDelegate {
     }
 
     override func resignFirstResponder() -> Bool {
+        super.resignFirstResponder()
         self.selected = false
         return true
     }
@@ -222,7 +223,9 @@ class DateSelector: UIControl, UITextFieldDelegate {
     }
 
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        self.becomeFirstResponder()
+        dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue()) { () -> Void in
+            self.becomeFirstResponder()
+        }
         return false
     }
 

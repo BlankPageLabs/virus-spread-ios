@@ -73,15 +73,19 @@ class StilizedTextField: UITextField {
 
     override func becomeFirstResponder() -> Bool {
         let r = super.becomeFirstResponder()
-        self.highlighted = false
-        self.selected = true
+        if r {
+            self.highlighted = false
+            self.selected = true
+        }
         self.syncVisualState()
         return r
     }
 
     override func resignFirstResponder() -> Bool {
         let r = super.resignFirstResponder()
-        self.selected = false
+        if r {
+            self.selected = false
+        }
         self.syncVisualState()
         return r
     }
