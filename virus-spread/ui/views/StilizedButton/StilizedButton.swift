@@ -22,6 +22,12 @@ class StilizedButton: UIButton {
         self.syncVisualState()
     }
 
+    override dynamic var highlighted: Bool {
+        didSet {
+            self.syncVisualState()
+        }
+    }
+
     func syncVisualState() {
         self.layer.borderColor = AppColors.button.colorForState(self.state).borderColor.CGColor
         self.backgroundColor = AppColors.button.colorForState(self.state).backgroundColor
