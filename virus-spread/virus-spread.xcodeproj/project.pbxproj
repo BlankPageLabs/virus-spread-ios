@@ -54,6 +54,7 @@
 		F657B0891B068F8B0011378F /* StilizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F657B0881B068F8B0011378F /* StilizedButton.swift */; };
 		F657B08C1B06A2D00011378F /* FirstRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F657B08B1B06A2D00011378F /* FirstRegistrationViewController.swift */; };
 		F6589A891AD7E3C20066B5A7 /* Versioning.m in Sources */ = {isa = PBXBuildFile; fileRef = F6589A881AD7E3C20066B5A7 /* Versioning.m */; };
+		F65A91461B06E137007AFB22 /* DateSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65A91451B06E137007AFB22 /* DateSelector.swift */; };
 		F65D75101AC6CA3000C22954 /* LocationSynchronous.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D750F1AC6CA3000C22954 /* LocationSynchronous.swift */; };
 		F667697E1AC5CA1F00D2C96E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F667697D1AC5CA1F00D2C96E /* main.m */; };
 		F66769871AC5CA1F00D2C96E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66769861AC5CA1F00D2C96E /* ViewController.m */; };
@@ -128,6 +129,7 @@
 		F6589A7D1AD7D3D00066B5A7 /* versionGen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = versionGen.sh; sourceTree = "<group>"; };
 		F6589A881AD7E3C20066B5A7 /* Versioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Versioning.m; sourceTree = "<group>"; };
 		F6589A8A1AD7E4C80066B5A7 /* Versioning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Versioning.h; sourceTree = "<group>"; };
+		F65A91451B06E137007AFB22 /* DateSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSelector.swift; sourceTree = "<group>"; };
 		F65D750F1AC6CA3000C22954 /* LocationSynchronous.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSynchronous.swift; sourceTree = "<group>"; };
 		F66769781AC5CA1F00D2C96E /* virus-spread.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "virus-spread.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F667697C1AC5CA1F00D2C96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 		F6400A081B04E4710099E220 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				F65A91441B06E07D007AFB22 /* DateSelector */,
 				F600A7671B06C4590097B808 /* StilizedSegmentedControl */,
 				F657B0871B068F5B0011378F /* StilizedButton */,
 				F6400A0E1B04F1EF0099E220 /* StilizedTextField */,
@@ -489,6 +492,14 @@
 				F657B0971B06ABA70011378F /* OpenSans-SemiboldItalic.ttf */,
 			);
 			path = opensans;
+			sourceTree = "<group>";
+		};
+		F65A91441B06E07D007AFB22 /* DateSelector */ = {
+			isa = PBXGroup;
+			children = (
+				F65A91451B06E137007AFB22 /* DateSelector.swift */,
+			);
+			path = DateSelector;
 			sourceTree = "<group>";
 		};
 		F667696F1AC5CA1F00D2C96E = {
@@ -682,6 +693,7 @@
 				F39752C19C6551137F4437DC /* VirusInfo.m in Sources */,
 				F6400A101B04F25C0099E220 /* StilizedTextField.swift in Sources */,
 				F68A8E9E1ACC56B7001F5735 /* ErrorController.swift in Sources */,
+				F65A91461B06E137007AFB22 /* DateSelector.swift in Sources */,
 				F39751C30C727AC3E3127596 /* DeviceInfo.m in Sources */,
 				F3975E1B5959739283DEE220 /* ApiSession.m in Sources */,
 				F3975832D861311E357222E7 /* InfectionManager.m in Sources */,
