@@ -10,6 +10,7 @@ import UIKit
 
 @IBDesignable
 class DateSelector: UIControl, UITextFieldDelegate {
+    var date: NSDate?
 
     private let textFieldView = StilizedTextField()
     private let datePickerView = UIDatePicker()
@@ -44,7 +45,7 @@ class DateSelector: UIControl, UITextFieldDelegate {
         self.addSubview(datePickerView)
     }
 
-    let dateFormatter: NSDateFormatter = {
+    private let dateFormatter: NSDateFormatter = {
         let formatter = NSDateFormatter()
         formatter.dateStyle = NSDateFormatterStyle.LongStyle
         return formatter
@@ -53,6 +54,7 @@ class DateSelector: UIControl, UITextFieldDelegate {
     @objc
     private func dateSelectorValueChanged(sender: UIDatePicker) {
         self.textFieldView.text = dateFormatter.stringFromDate(self.datePickerView.date)
+        self.date = self.datePickerView.date
     }
 
     private func recolorDatePicker(picker: UIDatePicker) {
@@ -222,6 +224,11 @@ class DateSelector: UIControl, UITextFieldDelegate {
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         self.becomeFirstResponder()
         return false
+    }
+
+    func textFieldShouldClear(textField: UITextField) -> Bool {
+        self.date = nil
+        return true
     }
 }
 
