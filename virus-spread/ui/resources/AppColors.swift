@@ -22,6 +22,8 @@ protocol ColoredControlStates {
     var activeHighlighted: ColorType { get }
     var disabled: ColorType { get }
     var disabledHighlighted: ColorType { get }
+    var disabledActive: ColorType { get }
+    var disabledActiveHighlighted: ColorType { get }
 }
 
 class AppColors {
@@ -105,17 +107,22 @@ private func controlColor<ColorType, Colors: ColoredControlStates where Colors.C
     switch (state) {
     case UIControlState.Normal:
         return colors.normal
-    case UIControlState.Normal | UIControlState.Highlighted:
+    case UIControlState.Highlighted:
         return colors.normalHighlighted
     case UIControlState.Selected:
         return colors.active
-    case UIControlState.Selected | UIControlState.Highlighted:
+    case .Selected | .Highlighted:
         return colors.activeHighlighted
     case UIControlState.Disabled:
         return colors.disabled
-    case UIControlState.Disabled | UIControlState.Highlighted:
+    case .Disabled | .Highlighted:
         return colors.disabledHighlighted
+    case .Disabled | .Selected:
+        return colors.disabledActive
+    case .Disabled | .Selected | .Highlighted:
+        return colors.disabledActiveHighlighted
     default:
+        assertionFailure("Unsupported combination used")
         return colors.normal
     }
 }
@@ -123,6 +130,8 @@ private func controlColor<ColorType, Colors: ColoredControlStates where Colors.C
 extension AppColors.TextField: ColoredControlStates {
     typealias ColorType = Colors
     var disabledHighlighted: Colors { return disabled }
+    var disabledActive: Colors { return active }
+    var disabledActiveHighlighted: Colors { return active }
 }
 
 extension AppColors.TextField {
@@ -136,6 +145,8 @@ extension AppColors.Button: ColoredControlStates {
     var active: Colors { return normal }
     var activeHighlighted: Colors { return normalHighlighted }
     var disabledHighlighted: Colors { return disabled }
+    var disabledActive: Colors { return disabled }
+    var disabledActiveHighlighted: Colors { return disabled }
 }
 
 extension AppColors.Button {
