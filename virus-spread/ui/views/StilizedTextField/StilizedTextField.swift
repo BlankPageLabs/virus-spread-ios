@@ -56,9 +56,63 @@ class StilizedTextField: UITextField {
                 ])
         }
     }
-    override func layoutIfNeeded() {
-        super.layoutIfNeeded()
+
+    override func becomeFirstResponder() -> Bool {
+        let r = super.becomeFirstResponder()
+        self.highlighted = false
+        self.selected = true
         self.syncVisualState()
+        return r
+    }
+
+    override func resignFirstResponder() -> Bool {
+        let r = super.resignFirstResponder()
+        self.selected = false
+        self.syncVisualState()
+        return r
+    }
+
+    override dynamic var selected: Bool {
+        didSet {
+            UIView.animateWithDuration(0.1, animations: { () -> Void in
+                self.syncVisualState()
+            })
+        }
+    }
+
+    override dynamic var highlighted: Bool {
+        didSet {
+            UIView.animateWithDuration(0.1, animations: { () -> Void in
+                self.syncVisualState()
+            })
+        }
+    }
+
+    override dynamic var enabled: Bool {
+        didSet {
+            UIView.animateWithDuration(0.1, animations: { () -> Void in
+                self.syncVisualState()
+            })
+        }
+    }
+
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+        super.touchesEnded(touches, withEvent: event)
+#if false
+        // Option 1 — deselect control
+        // This seems logical and visually correct
+        let touch = touches.first as! UITouch
+        if !self.bounds.contains(touch.locationInView(self)) {
+            self.highlighted = false
+        }
+#else
+        // Option 2 — activate control
+        // This is the default behaviour of all system buttons and controls (except, well, Text Fields. wow)
+        if self.highlighted {
+            self.becomeFirstResponder()
+        }
+#endif
+
     }
 
     override init(frame: CGRect) {
