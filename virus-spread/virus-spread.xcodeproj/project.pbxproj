@@ -44,6 +44,7 @@
 		F600A7641B06BB8E0097B808 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F657B0951B06ABA70011378F /* OpenSans-Regular.ttf */; };
 		F600A7651B06BB8E0097B808 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F657B0961B06ABA70011378F /* OpenSans-Semibold.ttf */; };
 		F600A7661B06BB8E0097B808 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F657B0971B06ABA70011378F /* OpenSans-SemiboldItalic.ttf */; };
+		F600A7691B06C47E0097B808 /* StilizedSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F600A7681B06C47E0097B808 /* StilizedSegmentedControl.swift */; };
 		F60C45FB1AC62138002936BE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C45FA1AC62138002936BE /* LocationManager.swift */; };
 		F60C45FD1AC6218B002936BE /* Observation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C45FC1AC6218B002936BE /* Observation.swift */; };
 		F60C45FF1AC621D0002936BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C45FE1AC621D0002936BE /* AppDelegate.swift */; };
@@ -104,6 +105,7 @@
 		F3975F9D03864BC5B1592A60 /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
 		F3975FB46EBDBE2DD07E0510 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		F3975FCB00A6FF5562781E9B /* VirusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirusButton.h; sourceTree = "<group>"; };
+		F600A7681B06C47E0097B808 /* StilizedSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StilizedSegmentedControl.swift; sourceTree = "<group>"; };
 		F60C45F91AC62138002936BE /* virus-spread-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "virus-spread-Bridging-Header.h"; sourceTree = "<group>"; };
 		F60C45FA1AC62138002936BE /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		F60C45FC1AC6218B002936BE /* Observation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observation.swift; sourceTree = "<group>"; };
@@ -173,6 +175,14 @@
 				5009B0F3D759BB65F6B615DF /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F600A7671B06C4590097B808 /* StilizedSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				F600A7681B06C47E0097B808 /* StilizedSegmentedControl.swift */,
+			);
+			path = StilizedSegmentedControl;
 			sourceTree = "<group>";
 		};
 		F64009EF1B04DEED0099E220 /* core */ = {
@@ -411,6 +421,7 @@
 		F6400A081B04E4710099E220 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				F600A7671B06C4590097B808 /* StilizedSegmentedControl */,
 				F657B0871B068F5B0011378F /* StilizedButton */,
 				F6400A0E1B04F1EF0099E220 /* StilizedTextField */,
 				F6400A091B04E4820099E220 /* VirusButton */,
@@ -681,6 +692,7 @@
 				F3975D546109AFE08E15A348 /* KissInfo.m in Sources */,
 				F6589A891AD7E3C20066B5A7 /* Versioning.m in Sources */,
 				F6400A0D1B04E59F0099E220 /* virus_spread.xcdatamodeld in Sources */,
+				F600A7691B06C47E0097B808 /* StilizedSegmentedControl.swift in Sources */,
 				F39755EE5AACCA6FA20486BA /* ProgressViewController.m in Sources */,
 				F657B0861B0644AE0011378F /* AppColors.swift in Sources */,
 				F39754F1AE4295D83EA78E2E /* RegistrationProgressViewController.m in Sources */,
