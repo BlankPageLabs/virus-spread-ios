@@ -18,7 +18,6 @@
 		223F50FCE6027036D5BA8B00 /* Pods-ASOAnimatedButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4498F9262ADF41550E81F35A /* Pods-ASOAnimatedButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A1336B9068422A94BEBBC3C /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3332D0941422D8316C63404B /* UIWebView+AFNetworking.m */; };
 		388E7E181DFDEF6087B8EC0D /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CCB6B559E9EC3114E315901 /* AFURLConnectionOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		41B8FC3CD4F4450038A03ED7 /* ASOTwoStateButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 15FA1B375989C8C1AE4BB38D /* ASOTwoStateButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		442E722D74E547C86CC21DBC /* ASOBounceButtonViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 88A42E8574ACE750224735D7 /* ASOBounceButtonViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		469F57A22A7A5DA6558CF505 /* ASOBounceButtonView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C0775C836F67FED4712BFA8 /* ASOBounceButtonView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		46FD01AF0D1F85FB37134321 /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 95661DFD91BBC394542F4D55 /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,7 +27,6 @@
 		5847AD4FD6AADBA182D68868 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0643413736552DDBE8E1A67E /* Foundation.framework */; };
 		59332085BC4698C518581A34 /* Pods-AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E5CC88FA768B411DBF22E /* Pods-AFNetworking-dummy.m */; };
 		598240894EAB4ACFF46B159C /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F83693F7A1C0137D3DBF88C /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5FEDE533FA804F5AE7D3BC30 /* ASOBounceButtonView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C0775C836F67FED4712BFA8 /* ASOBounceButtonView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		600CD18CFF862FCF5247D7C4 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B66C0A3283AEEFBD63BFAEF /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		68155A586B8F9E8BC618875F /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF9EE62C7981A4E4B1CA90C /* UIRefreshControl+AFNetworking.m */; };
 		681BAC2FEC602519F8FC8197 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A10FC978C5A8008D4A51F42D /* AFURLSessionManager.m */; };
@@ -66,7 +64,6 @@
 		E701F31EAD8158BCCA38D07E /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CFAC22994B146F455F8B772 /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED872C5EBB51CC48CF8ADC76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0643413736552DDBE8E1A67E /* Foundation.framework */; };
 		F0FAF8DD41F4C6048216A1F3 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC65F017903F8FF25C217E39 /* AFNetworkReachabilityManager.m */; };
-		F3AA965B5151F239A53AA687 /* ASOBounceButtonViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 88A42E8574ACE750224735D7 /* ASOBounceButtonViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FB201956D98445C1A01D43C4 /* Pods-JSONKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DF2E2B040BB199D4ED8643 /* Pods-JSONKit-dummy.m */; };
 		FD586940E57C3ADA0A2373EE /* Pods-JSONKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8108478251E08988D69CB62D /* Pods-JSONKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -495,11 +492,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				469F57A22A7A5DA6558CF505 /* ASOBounceButtonView.h in Headers */,
-				5FEDE533FA804F5AE7D3BC30 /* ASOBounceButtonView.h in Headers */,
 				442E722D74E547C86CC21DBC /* ASOBounceButtonViewDelegate.h in Headers */,
-				F3AA965B5151F239A53AA687 /* ASOBounceButtonViewDelegate.h in Headers */,
 				D0F249B30186A4091BAFAD3A /* ASOTwoStateButton.h in Headers */,
-				41B8FC3CD4F4450038A03ED7 /* ASOTwoStateButton.h in Headers */,
 				223F50FCE6027036D5BA8B00 /* Pods-ASOAnimatedButton-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -619,7 +613,7 @@
 		EC8001C5CEC85FCEF2534984 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0630;
 			};
 			buildConfigurationList = DD1932D535835F723F62FED5 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
