@@ -312,24 +312,26 @@ static NSString *const bt_VirusInfoCharacteristicId = @"1C5EB049-9D10-488C-9709-
 - (void)centralManager:(CBCentralManager *)central willRestoreState:(NSDictionary *)dict {
     CBPeripheral *peripheral = [dict[CBCentralManagerRestoredStatePeripheralsKey] firstObject];
     // TODO: there may be several peripherals
-    self.activePeripherals[peripheral.identifier] = peripheral;
-    if (peripheral.state == CBPeripheralStateConnected) {
-        peripheral.delegate = self;
-        if (peripheral.services.count == 0) {
-            [self requestDiscoverServices:peripheral];
-        } else {
-            CBService *service = peripheral.services.firstObject;
-            if (service.characteristics.count == 0) {
-                [self requestDiscoverCharacteristics:peripheral
-                                          forService:service];
+    if (peripheral) {
+        self.activePeripherals[peripheral.identifier] = peripheral;
+        if (peripheral.state == CBPeripheralStateConnected) {
+            peripheral.delegate = self;
+            if (peripheral.services.count == 0) {
+                [self requestDiscoverServices:peripheral];
             } else {
-                CBCharacteristic *characteristic = service.characteristics.firstObject;
-                if (characteristic.value == nil) {
-                    [self requestReadValueForCharacteristic:characteristic
-                                               onPeripheral:peripheral];
+                CBService *service = peripheral.services.firstObject;
+                if (service.characteristics.count == 0) {
+                    [self requestDiscoverCharacteristics:peripheral
+                                              forService:service];
                 } else {
-                    // Well, data is there. Just kiss
-                    [self kiss:characteristic.value];
+                    CBCharacteristic *characteristic = service.characteristics.firstObject;
+                    if (characteristic.value == nil) {
+                        [self requestReadValueForCharacteristic:characteristic
+                                                   onPeripheral:peripheral];
+                    } else {
+                        // Well, data is there. Just kiss
+                        [self kiss:characteristic.value];
+                    }
                 }
             }
         }
