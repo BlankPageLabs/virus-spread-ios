@@ -25,7 +25,6 @@
 		F39751C30C727AC3E3127596 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F3975EF5247852D66C73BCF2 /* DeviceInfo.m */; };
 		F39752C19C6551137F4437DC /* VirusInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F39751C0DFB0B421C6F29C25 /* VirusInfo.m */; };
 		F39753940BDD846C1266D6A5 /* BluetoothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F397583C8E95EAE0CFB3ED02 /* BluetoothManager.m */; };
-		F39754F1AE4295D83EA78E2E /* RegistrationProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F39751AE6CA42DA84B7C7678 /* RegistrationProgressViewController.m */; };
 		F3975514BB47BEDE9ABA9784 /* VirusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F3975140809169F353C9B248 /* VirusButton.m */; };
 		F39755EE5AACCA6FA20486BA /* ProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F397599953E7FDBDAFC95B2A /* ProgressViewController.m */; };
 		F3975832D861311E357222E7 /* InfectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3975457D5742F6BE484EDD5 /* InfectionManager.m */; };
@@ -84,13 +83,11 @@
 		F3975140809169F353C9B248 /* VirusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VirusButton.m; sourceTree = "<group>"; };
 		F3975153C50EACB5EB0BB439 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F3975163C50EACB5EB0BB439 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F39751AE6CA42DA84B7C7678 /* RegistrationProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationProgressViewController.m; sourceTree = "<group>"; };
 		F39751C0DFB0B421C6F29C25 /* VirusInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VirusInfo.m; sourceTree = "<group>"; };
 		F3975295ABBDE5AA15019F1B /* ProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressViewController.h; sourceTree = "<group>"; };
 		F3975453197376910D6A5480 /* RegistrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationManager.m; sourceTree = "<group>"; };
 		F3975457D5742F6BE484EDD5 /* InfectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfectionManager.m; sourceTree = "<group>"; };
 		F3975635BCA9C0DDA5667148 /* ApiSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiSession.h; sourceTree = "<group>"; };
-		F397574B0051B0E202E3C784 /* RegistrationProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationProgressViewController.h; sourceTree = "<group>"; };
 		F39757E7C087015C3AEEAF4E /* RegistrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationManager.h; sourceTree = "<group>"; };
 		F397583C8E95EAE0CFB3ED02 /* BluetoothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothManager.m; sourceTree = "<group>"; };
 		F39758820C2FD7F9D7187ACA /* VirusInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirusInfo.h; sourceTree = "<group>"; };
@@ -370,15 +367,6 @@
 			path = MainScreenViewController;
 			sourceTree = "<group>";
 		};
-		F6400A041B04E3B50099E220 /* RegistrationProcessViewController */ = {
-			isa = PBXGroup;
-			children = (
-				F397574B0051B0E202E3C784 /* RegistrationProgressViewController.h */,
-				F39751AE6CA42DA84B7C7678 /* RegistrationProgressViewController.m */,
-			);
-			path = RegistrationProcessViewController;
-			sourceTree = "<group>";
-		};
 		F6400A051B04E3F00099E220 /* ProcessViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,7 +426,6 @@
 				F657B08A1B06A2A50011378F /* FirstRegistrationViewController */,
 				F6400A021B04E3610099E220 /* MainScreenViewController */,
 				F6400A051B04E3F00099E220 /* ProcessViewController */,
-				F6400A041B04E3B50099E220 /* RegistrationProcessViewController */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -705,7 +692,6 @@
 				F600A7691B06C47E0097B808 /* StilizedSegmentedControl.swift in Sources */,
 				F39755EE5AACCA6FA20486BA /* ProgressViewController.m in Sources */,
 				F657B0861B0644AE0011378F /* AppColors.swift in Sources */,
-				F39754F1AE4295D83EA78E2E /* RegistrationProgressViewController.m in Sources */,
 				F397587EE154C4DE05594454 /* RegistrationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
