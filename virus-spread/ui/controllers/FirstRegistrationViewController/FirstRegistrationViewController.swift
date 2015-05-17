@@ -106,7 +106,7 @@ class FirstRegistrationViewController: UIViewController {
             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                 let success = { () -> Void in
                     self.presentedViewController!.performSegueWithIdentifier("return", sender: self)
-                    //                    self.performSegueWithIdentifier("registerComplete", sender: self)
+                    self.performSegueWithIdentifier("registerComplete", sender: self)
                 }
                 let failure = { () -> Void in
                     let alert = UIAlertController(title: NSLocalizedString("errorTitle", comment: "Error"),
