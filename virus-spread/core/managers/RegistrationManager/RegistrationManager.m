@@ -86,7 +86,7 @@
     NSAssert(info, @"Registration requested with no device info present");
 
     [[ApiSession instance] POST:firstReg ? @"device/reg" : @"device/update"
-                     parameters: [info encodeToDictionary]
+                     parameters: [info encodeToDictionaryCompatibleWithApi]
                         success: ^(NSURLSessionTask *task, id responseObject) {
                             if ([responseObject[@"status"] isEqual:@200]) {
                                 NSLog(@"Registration succeeded: %@, %@", task, responseObject);

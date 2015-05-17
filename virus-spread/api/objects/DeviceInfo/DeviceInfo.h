@@ -15,6 +15,7 @@
 @property(nonatomic, retain, nullable) NSDate *birthdate;
 
 - (nonnull NSDictionary *)encodeToDictionary;
+- (nonnull NSDictionary *)encodeToDictionaryCompatibleWithApi;
 
 - (nonnull id)initWithDictionary:(nonnull NSDictionary *)dataDictionary;
 
