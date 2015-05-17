@@ -61,6 +61,7 @@
 		F667698A1AC5CA1F00D2C96E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66769881AC5CA1F00D2C96E /* Main.storyboard */; };
 		F667698C1AC5CA1F00D2C96E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F667698B1AC5CA1F00D2C96E /* Images.xcassets */; };
 		F667698F1AC5CA1F00D2C96E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F667698D1AC5CA1F00D2C96E /* LaunchScreen.xib */; };
+		F6747E2F1B08F7C8008A5C1B /* UIControlEvents+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6747E2E1B08F7C8008A5C1B /* UIControlEvents+App.swift */; };
 		F68A8E9E1ACC56B7001F5735 /* ErrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68A8E9B1ACC56B7001F5735 /* ErrorController.swift */; };
 		F68A8E9F1ACC56B7001F5735 /* ErrorControllerExceptionShim.m in Sources */ = {isa = PBXBuildFile; fileRef = F68A8E9D1ACC56B7001F5735 /* ErrorControllerExceptionShim.m */; };
 		F68A8EA11ACC58A2001F5735 /* IsDebuggerAttached.m in Sources */ = {isa = PBXBuildFile; fileRef = F68A8EA01ACC58A2001F5735 /* IsDebuggerAttached.m */; };
@@ -137,6 +138,7 @@
 		F66769851AC5CA1F00D2C96E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F66769861AC5CA1F00D2C96E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F667698B1AC5CA1F00D2C96E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F6747E2E1B08F7C8008A5C1B /* UIControlEvents+App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControlEvents+App.swift"; sourceTree = "<group>"; };
 		F67BB07F1AD297FB00A92176 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		F67BB0811AD297FD00A92176 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		F68A8E9B1ACC56B7001F5735 /* ErrorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorController.swift; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 		F6400A081B04E4710099E220 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				F6747E2D1B08F7AC008A5C1B /* extensions */,
 				F65A91441B06E07D007AFB22 /* DateSelector */,
 				F600A7671B06C4590097B808 /* StilizedSegmentedControl */,
 				F657B0871B068F5B0011378F /* StilizedButton */,
@@ -528,6 +531,14 @@
 				F64009F01B04DEF70099E220 /* ui */,
 			);
 			name = "virus-spread";
+			sourceTree = "<group>";
+		};
+		F6747E2D1B08F7AC008A5C1B /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F6747E2E1B08F7C8008A5C1B /* UIControlEvents+App.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -697,6 +708,7 @@
 				F39751C30C727AC3E3127596 /* DeviceInfo.m in Sources */,
 				F3975E1B5959739283DEE220 /* ApiSession.m in Sources */,
 				F3975832D861311E357222E7 /* InfectionManager.m in Sources */,
+				F6747E2F1B08F7C8008A5C1B /* UIControlEvents+App.swift in Sources */,
 				F68A8E9F1ACC56B7001F5735 /* ErrorControllerExceptionShim.m in Sources */,
 				F3975F4BFE681094EB9E9B9C /* RegistrationViewController.m in Sources */,
 				F3975514BB47BEDE9ABA9784 /* VirusButton.m in Sources */,

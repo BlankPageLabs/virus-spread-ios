@@ -8,8 +8,11 @@
 
 import UIKit
 
+
 @IBDesignable
 class DateSelector: UIControl, UITextFieldDelegate {
+
+
     var date: NSDate?
 
     private let textFieldView = StilizedTextField()
@@ -115,6 +118,7 @@ class DateSelector: UIControl, UITextFieldDelegate {
                 self.datePickerView.hidden = !self.selected
                 self.datePickerView.alpha = 1.0
             })
+            self.sendActionsForControlEvents(.FoldStateChangedEvent)
         }
     }
 

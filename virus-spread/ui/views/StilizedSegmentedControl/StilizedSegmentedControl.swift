@@ -17,7 +17,21 @@ class StilizedSegmentedControl: UISegmentedControl {
             ], forState: .Normal)
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = 4.0
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
         self.layer.borderColor = self.tintColor.CGColor
+    }
+
+    override var tintColor: UIColor! {
+        set {
+            super.tintColor = newValue
+            self.layer.borderColor = self.tintColor.CGColor
+        }
+        get {
+            return super.tintColor
+        }
     }
 
     func flashError() {
