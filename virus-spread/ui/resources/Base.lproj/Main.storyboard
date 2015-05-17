@@ -197,7 +197,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGS-gi-YGu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="aUv-tC-p1g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2097" y="1775"/>
+            <point key="canvasLocation" x="1344" y="126"/>
         </scene>
         <!--Registration Progress View Controller-->
         <scene sceneID="G76-Pq-Dgd">
@@ -293,6 +293,7 @@
                                         </state>
                                         <connections>
                                             <action selector="registerAction:" destination="CO7-uL-6dA" eventType="touchUpInside" id="Uyc-bK-0DJ"/>
+                                            <segue destination="ppR-nZ-aVh" kind="presentation" identifier="progress" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="MX0-A8-MWJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -335,7 +336,8 @@
                         <outlet property="registerButton" destination="ZOl-ro-ckJ" id="YvS-1W-Flm"/>
                         <outlet property="scrollView" destination="Npn-fk-487" id="uyJ-um-vfl"/>
                         <outlet property="usernameField" destination="fIk-hT-xNF" id="j3f-f8-evO"/>
-                        <segue destination="vXZ-lx-hvc" kind="show" identifier="firstRegFinished" id="a5t-cV-Pdb"/>
+                        <segue destination="aUv-tC-p1g" kind="unwind" identifier="return" unwindAction="unwindOneStep:" id="0Xs-lV-FVN"/>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="registerComplete" id="Jel-ZL-UHC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKN-sE-CBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -482,6 +484,7 @@
         <image name="settings" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YF5-ZR-45O"/>
+        <segue reference="MX0-A8-MWJ"/>
+        <segue reference="DaF-bF-whv"/>
     </inferredMetricsTieBreakers>
 </document>

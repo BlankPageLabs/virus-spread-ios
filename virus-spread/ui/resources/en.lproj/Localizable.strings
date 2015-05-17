@@ -5,7 +5,7 @@
 
 "getCured" = "Cure";
 
-"networkUnreachable" = "Network is unreachable";
+"networkUnreachable" = "Server is unreachable";
 
 "curedConfirm" = "Are you sure you cured?";
 "curedConfirmYes" = "Yes, not dizzy anymore";

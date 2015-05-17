@@ -22,7 +22,16 @@ class DateSelector: UIControl, UITextFieldDelegate {
     private var activeDatePickerConstraints: [AnyObject] = []
 
     func flashError() {
-        self.textFieldView.flashError()
+        dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue()) { () -> Void in
+            let oldColor = self.layer.borderColor
+            let animation = CAKeyframeAnimation(keyPath: "borderColor")
+            animation.values = [oldColor, AppColors.textField.errorColor.CGColor, AppColors.textField.errorColor.CGColor, oldColor]
+            animation.removedOnCompletion = true
+            animation.duration = 2.1
+            animation.calculationMode = kCAAnimationCubic
+            animation.keyTimes = [0.0, 0.07, 0.52, 1.0]
+            self.layer.addAnimation(animation, forKey: "border color")
+        }
     }
 
     private func dateSelectorInit() {

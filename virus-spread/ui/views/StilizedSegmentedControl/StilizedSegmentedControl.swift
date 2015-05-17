@@ -36,7 +36,6 @@ class StilizedSegmentedControl: UISegmentedControl {
 
     func flashError() {
         dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue()) { () -> Void in
-            self.layer.borderWidth = 1.0
             let oldColor = self.layer.borderColor
             let animation = CAKeyframeAnimation(keyPath: "borderColor")
             animation.values = [oldColor, AppColors.textField.errorColor.CGColor, AppColors.textField.errorColor.CGColor, oldColor]
