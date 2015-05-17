@@ -12,7 +12,7 @@
 @property(nonatomic, retain, nullable) NSString *deviceId;
 @property(nonatomic, retain, nullable) NSString *userName;
 @property(nonatomic, retain, nullable) NSString *gender;
-@property(nonatomic, assign) NSUInteger age;
+@property(nonatomic, retain, nullable) NSDate *birthdate;
 
 - (nonnull NSDictionary *)encodeToDictionary;
 

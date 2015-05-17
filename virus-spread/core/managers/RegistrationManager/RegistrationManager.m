@@ -11,8 +11,6 @@
 
 @interface RegistrationManager ()
 
-@property (nonatomic, assign) BOOL registrationInProcess;
-
 @end
 
 
@@ -28,29 +26,18 @@
     }];
 }
 
-- (void)requestUserRetrievalOrRegistrationWithSuccess:(void(^)())successBlock failure:(void(^)())failureBlock {
-    self.registrationInProcess = YES;
-    [self retrieveTaskWithSuccess:^{
-        self.registrationInProcess = NO;
+- (void)requestUserRegistrationWithSuccess:(void(^)())successBlock failure:(void(^)())failureBlock {
+    [self registerTaskIsFirstReg:YES success:^{
         successBlock();
     } failure:^{
-        [self registerTaskIsFirstReg:YES success:^{
-            self.registrationInProcess = NO;
-            successBlock();
-        } failure:^{
-            self.registrationInProcess = NO;
-            failureBlock();
-        }];
+        failureBlock();
     }];
 }
 
-- (void)requestUserRegistrationWithSuccess:(void(^)())successBlock failure:(void(^)())failureBlock {
-    self.registrationInProcess = YES;
+- (void)requestUserUpdateWithSuccess:(void(^)())successBlock failure:(void(^)())failureBlock {
     [self registerTaskIsFirstReg:NO success:^{
-        self.registrationInProcess = NO;
         successBlock();
     } failure:^{
-        self.registrationInProcess = NO;
         failureBlock();
     }];
 }
@@ -94,18 +81,9 @@
 }
 
 - (void)registerTaskIsFirstReg:(BOOL)firstReg success:(void(^)())successBlock failure:(void(^)())failureBlock {
-    DeviceInfo *info;
+    DeviceInfo *info = [AppDelegate instance].deviceInfo;
 
-    if ([AppDelegate instance].deviceInfo) {
-        info = [AppDelegate instance].deviceInfo;
-    } else {
-        info = [[DeviceInfo alloc] init];
-
-        info.userName = @"(unregistered)";
-        info.age = 0;
-        info.gender = @"undef";
-        info.deviceId = [[UIDevice currentDevice].identifierForVendor UUIDString];
-    }
+    NSAssert(info, @"Registration requested with no device info present");
 
     [[ApiSession instance] POST:firstReg ? @"device/reg" : @"device/update"
                      parameters: [info encodeToDictionary]
@@ -123,11 +101,7 @@
                         failure: ^(NSURLSessionTask *task, NSError *error) {
                             NSLog(@"Network error for task %@: %@, %@", task, error, error.userInfo);
                             defaultError(NSLocalizedString(@"networkUnreachable", @"Network is unreachable"));
-
-                            // Retry in 1 sec
-                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1000), dispatch_get_main_queue(), ^{
-                                [self registerTaskIsFirstReg:firstReg success:successBlock failure:failureBlock];
-                            });
+                            failureBlock();
                         }];
 }
 

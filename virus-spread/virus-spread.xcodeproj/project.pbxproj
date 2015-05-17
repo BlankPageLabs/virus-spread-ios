@@ -33,7 +33,6 @@
 		F3975A579BF86274CB596687 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F3975153C50EACB5EB0BB438 /* Localizable.strings */; };
 		F3975D546109AFE08E15A348 /* KissInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F3975CC2F38B720D3452EFD6 /* KissInfo.m */; };
 		F3975E1B5959739283DEE220 /* ApiSession.m in Sources */ = {isa = PBXBuildFile; fileRef = F3975068BBE15310C971C288 /* ApiSession.m */; };
-		F3975F4BFE681094EB9E9B9C /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F39757819BF232A9A3178306 /* RegistrationViewController.m */; };
 		F600A75D1B06BB8E0097B808 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F657B08E1B06ABA70011378F /* OpenSans-Bold.ttf */; };
 		F600A75E1B06BB8E0097B808 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F657B08F1B06ABA70011378F /* OpenSans-BoldItalic.ttf */; };
 		F600A75F1B06BB8E0097B808 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F657B0901B06ABA70011378F /* OpenSans-ExtraBold.ttf */; };
@@ -92,7 +91,6 @@
 		F3975457D5742F6BE484EDD5 /* InfectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfectionManager.m; sourceTree = "<group>"; };
 		F3975635BCA9C0DDA5667148 /* ApiSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiSession.h; sourceTree = "<group>"; };
 		F397574B0051B0E202E3C784 /* RegistrationProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationProgressViewController.h; sourceTree = "<group>"; };
-		F39757819BF232A9A3178306 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		F39757E7C087015C3AEEAF4E /* RegistrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationManager.h; sourceTree = "<group>"; };
 		F397583C8E95EAE0CFB3ED02 /* BluetoothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothManager.m; sourceTree = "<group>"; };
 		F39758820C2FD7F9D7187ACA /* VirusInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirusInfo.h; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 		F3975EF5247852D66C73BCF2 /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
 		F3975F3404FE061D9155706A /* swift-shim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "swift-shim.h"; sourceTree = "<group>"; };
 		F3975F9D03864BC5B1592A60 /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
-		F3975FB46EBDBE2DD07E0510 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		F3975FCB00A6FF5562781E9B /* VirusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirusButton.h; sourceTree = "<group>"; };
 		F600A7681B06C47E0097B808 /* StilizedSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StilizedSegmentedControl.swift; sourceTree = "<group>"; };
 		F60C45F91AC62138002936BE /* virus-spread-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "virus-spread-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -373,15 +370,6 @@
 			path = MainScreenViewController;
 			sourceTree = "<group>";
 		};
-		F6400A031B04E38F0099E220 /* RegistrationScreenViewController */ = {
-			isa = PBXGroup;
-			children = (
-				F3975FB46EBDBE2DD07E0510 /* RegistrationViewController.h */,
-				F39757819BF232A9A3178306 /* RegistrationViewController.m */,
-			);
-			path = RegistrationScreenViewController;
-			sourceTree = "<group>";
-		};
 		F6400A041B04E3B50099E220 /* RegistrationProcessViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,7 +439,6 @@
 				F6400A021B04E3610099E220 /* MainScreenViewController */,
 				F6400A051B04E3F00099E220 /* ProcessViewController */,
 				F6400A041B04E3B50099E220 /* RegistrationProcessViewController */,
-				F6400A031B04E38F0099E220 /* RegistrationScreenViewController */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -710,7 +697,6 @@
 				F3975832D861311E357222E7 /* InfectionManager.m in Sources */,
 				F6747E2F1B08F7C8008A5C1B /* UIControlEvents+App.swift in Sources */,
 				F68A8E9F1ACC56B7001F5735 /* ErrorControllerExceptionShim.m in Sources */,
-				F3975F4BFE681094EB9E9B9C /* RegistrationViewController.m in Sources */,
 				F3975514BB47BEDE9ABA9784 /* VirusButton.m in Sources */,
 				F657B0891B068F8B0011378F /* StilizedButton.swift in Sources */,
 				F3975D546109AFE08E15A348 /* KissInfo.m in Sources */,

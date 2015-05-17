@@ -20,41 +20,41 @@
     [super viewDidLoad];
 
 
-    if (![AppDelegate instance].deviceInfo) {
-        // Try downloading first
-        [[AppDelegate instance].registrationManager requestUserRetrievalOrRegistrationWithSuccess:^{
-            [self performSegueWithIdentifier:@"registrationFinished" sender:self];
-        } failure:^{
-            UIAlertController *alert = [UIAlertController
-                    alertControllerWithTitle:NSLocalizedString(@"errorTitle", @"Error")
-                                     message:NSLocalizedString(@"serverError", @"Unknown server error")
-                              preferredStyle:UIAlertControllerStyleAlert];
-            [alert addAction:[UIAlertAction
-                    actionWithTitle:@"OK"
-                              style:UIAlertActionStyleCancel
-                            handler:^(UIAlertAction *action) {
-                                [self performSegueWithIdentifier:@"registrationFailed" sender:self];
-                            }]];
-            [self presentViewController:alert animated:YES completion:nil];
-        }];
-    } else {
-        // Send info
-        [[AppDelegate instance].registrationManager requestUserRegistrationWithSuccess:^{
-            [self performSegueWithIdentifier:@"registrationFinished" sender:self];
-        } failure:^{
-            UIAlertController *alert = [UIAlertController
-                    alertControllerWithTitle:NSLocalizedString(@"errorTitle", @"Error")
-                                     message:NSLocalizedString(@"serverError", @"Unknown server error")
-                              preferredStyle:UIAlertControllerStyleAlert];
-            [alert addAction:[UIAlertAction
-                    actionWithTitle:@"OK"
-                              style:UIAlertActionStyleCancel
-                            handler:^(UIAlertAction *action) {
-                                [self performSegueWithIdentifier:@"registrationFailed" sender:self];
-                            }]];
-            [self presentViewController:alert animated:YES completion:nil];
-        }];
-    }
+//    if (![AppDelegate instance].deviceInfo) {
+//        // Try downloading first
+//        [[AppDelegate instance].registrationManager requestUserRetrievalOrRegistrationWithSuccess:^{
+//            [self performSegueWithIdentifier:@"registrationFinished" sender:self];
+//        } failure:^{
+//            UIAlertController *alert = [UIAlertController
+//                    alertControllerWithTitle:NSLocalizedString(@"errorTitle", @"Error")
+//                                     message:NSLocalizedString(@"serverError", @"Unknown server error")
+//                              preferredStyle:UIAlertControllerStyleAlert];
+//            [alert addAction:[UIAlertAction
+//                    actionWithTitle:@"OK"
+//                              style:UIAlertActionStyleCancel
+//                            handler:^(UIAlertAction *action) {
+//                                [self performSegueWithIdentifier:@"registrationFailed" sender:self];
+//                            }]];
+//            [self presentViewController:alert animated:YES completion:nil];
+//        }];
+//    } else {
+//        // Send info
+//        [[AppDelegate instance].registrationManager requestUserRegistrationWithSuccess:^{
+//            [self performSegueWithIdentifier:@"registrationFinished" sender:self];
+//        } failure:^{
+//            UIAlertController *alert = [UIAlertController
+//                    alertControllerWithTitle:NSLocalizedString(@"errorTitle", @"Error")
+//                                     message:NSLocalizedString(@"serverError", @"Unknown server error")
+//                              preferredStyle:UIAlertControllerStyleAlert];
+//            [alert addAction:[UIAlertAction
+//                    actionWithTitle:@"OK"
+//                              style:UIAlertActionStyleCancel
+//                            handler:^(UIAlertAction *action) {
+//                                [self performSegueWithIdentifier:@"registrationFailed" sender:self];
+//                            }]];
+//            [self presentViewController:alert animated:YES completion:nil];
+//        }];
+//    }
 }
 
 @end

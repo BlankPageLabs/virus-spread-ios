@@ -11,13 +11,10 @@
 - (void)requestUserRetrievalWithSuccess:(void(^)())successBlock
                                 failure:(void(^)())failureBlock;
 
-
-- (void)requestUserRetrievalOrRegistrationWithSuccess:(void (^)())successBlock
-                                              failure:(void (^)())failureBlock;
-
 - (void)requestUserRegistrationWithSuccess:(void (^)())successBlock
                                    failure:(void (^)())failureBlock;
 
-@property (nonatomic, assign, readonly) BOOL registrationInProcess;
+- (void)requestUserUpdateWithSuccess:(void(^)())successBlock
+                             failure:(void(^)())failureBlock;
 
 @end

@@ -124,12 +124,6 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
         self.saveContext()
     }
 
-    private func reactivateUser() {
-        if !self.registrationManager.registrationInProcess {
-            self.registrationManager.requestUserRetrievalOrRegistrationWithSuccess({}, failure: {})
-        }
-    }
-
     lazy private var managedObjectContext: NSManagedObjectContext = {
         let context = NSManagedObjectContext()
         context.persistentStoreCoordinator = persistentStoreCoordinator

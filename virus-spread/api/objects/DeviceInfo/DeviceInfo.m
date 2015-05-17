@@ -6,6 +6,7 @@
 
 @import UIKit;
 #import "DeviceInfo.h"
+#import "virus_spread-Swift.h"
 
 
 @implementation DeviceInfo {
@@ -26,7 +27,7 @@
     if (self) {
         self.deviceId = dataDictionary[@"deviceId"] ?: dataDictionary[@"id"];
         self.userName = dataDictionary[@"name"];
-        self.age = [dataDictionary[@"age"] unsignedIntegerValue];
+        self.birthdate = [[AppDelegate instance].defaultDateFormatter dateFromString:dataDictionary[@"age"]];
         self.gender = dataDictionary[@"gender"];
     }
 
@@ -42,7 +43,7 @@
             @"deviceId": self.deviceId,
             @"name": self.userName,
             @"gender": self.gender,
-            @"age": @(self.age),
+            @"age": [[AppDelegate instance].defaultDateFormatter stringFromDate:self.birthdate] ?: @"",
             };
 }
 

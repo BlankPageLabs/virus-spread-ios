@@ -13,7 +13,18 @@ import UIKit
 class DateSelector: UIControl, UITextFieldDelegate {
 
 
-    var date: NSDate?
+    var date: NSDate? {
+        didSet {
+            if let d = date {
+                if self.datePickerView.date != d {
+                    self.datePickerView.date = d
+                    self.textFieldView.text = self.dateFormatter.stringFromDate(d)
+                }
+            } else if !self.textFieldView.text.isEmpty {
+                self.textFieldView.text = nil
+            }
+        }
+    }
 
     private let textFieldView = StilizedTextField()
     private let datePickerView = UIDatePicker()

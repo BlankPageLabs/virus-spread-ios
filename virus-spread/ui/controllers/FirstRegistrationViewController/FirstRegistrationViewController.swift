@@ -18,6 +18,7 @@ class FirstRegistrationViewController: UIViewController {
     var observationObjects: [AnyObject] = []
 
     private var deviceInfo: DeviceInfo?
+    private var firstRegistration = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,33 @@ class FirstRegistrationViewController: UIViewController {
         }
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        self.performSegueWithIdentifier("progress", sender: self)
+        AppDelegate.instance.registrationManager.requestUserRetrievalWithSuccess({ () -> Void in
+            self.deviceInfo = AppDelegate.instance.deviceInfo
+            if let username = self.deviceInfo?.userName {
+                self.usernameField.text = username
+            }
+            switch (self.deviceInfo?.gender) {
+            case .Some("male"):
+                self.genderField.selectedSegmentIndex = 0
+            case .Some("female"):
+                self.genderField.selectedSegmentIndex = 1
+            default:
+                break
+            }
+            if let birthdate = self.deviceInfo?.birthdate {
+                self.birthdateField.date = birthdate
+            }
+            self.firstRegistration = false
+            self.presentedViewController!.performSegueWithIdentifier("return", sender: self)
+        }, failure: { () -> Void in
+            self.presentedViewController!.performSegueWithIdentifier("return", sender: self)
+        })
+    }
+
     private func updateScrollViewInsets(kbdFrame: CGRect) {
         let inScrollFrame = self.view.convertRect(kbdFrame, fromView: nil)
         self.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: scrollView.frame.maxY - inScrollFrame.minY, right: 0)
@@ -68,20 +96,32 @@ class FirstRegistrationViewController: UIViewController {
             devInfo.gender = genderIdx == 0 ? "male" : "female"
             // XXX: Fix in API
             if let birthdate = birthdate_opt {
-                devInfo.age = UInt(NSCalendar.currentCalendar().components(.CalendarUnitYear, fromDate: birthdate, toDate: NSDate(), options: nil).year)
+                devInfo.birthdate = birthdate
             } else {
-                devInfo.age = 0
+                devInfo.birthdate = nil
             }
             self.deviceInfo = devInfo
             AppDelegate.instance.deviceInfo = devInfo
             self.performSegueWithIdentifier("progress", sender: self)
             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                AppDelegate.instance.registrationManager.requestUserRegistrationWithSuccess({ () -> Void in
-                    self.presentedViewController?.performSegueWithIdentifier("return", sender: self)
-//                    self.performSegueWithIdentifier("registerComplete", sender: self)
-                }, failure: { () -> Void in
+                let success = { () -> Void in
                     self.presentedViewController!.performSegueWithIdentifier("return", sender: self)
-                })
+                    //                    self.performSegueWithIdentifier("registerComplete", sender: self)
+                }
+                let failure = { () -> Void in
+                    let alert = UIAlertController(title: NSLocalizedString("errorTitle", comment: "Error"),
+                        message: NSLocalizedString("serverError", comment: "Unknown server error"),
+                        preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: { (action) -> Void in
+                        self.presentedViewController!.performSegueWithIdentifier("return", sender: self)
+                    }))
+                    self.presentedViewController!.presentViewController(alert, animated: true, completion: nil)
+                }
+                if self.firstRegistration {
+                    AppDelegate.instance.registrationManager.requestUserRegistrationWithSuccess(success, failure: failure)
+                } else {
+                    AppDelegate.instance.registrationManager.requestUserUpdateWithSuccess(success, failure: failure)
+                }
             })
         default:
             assertionFailure("This can't be, but the compiler says it can. Hm.")
@@ -94,13 +134,5 @@ class FirstRegistrationViewController: UIViewController {
 
 
     @IBAction func unwindOneStep(segue: UIStoryboardSegue) {
-    }
-
-    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-        if let info = self.deviceInfo {
-            return true
-        } else {
-            return false
-        }
     }
 }
