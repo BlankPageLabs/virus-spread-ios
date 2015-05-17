@@ -67,7 +67,14 @@ class FirstRegistrationViewController: UIViewController {
                 self.birthdateField.date = birthdate
             }
             self.firstRegistration = false
-            self.presentedViewController!.performSegueWithIdentifier("return", sender: self)
+            self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                if let info = self.deviceInfo where info.userName != nil && info.gender != nil && info.birthdate != nil {
+                    // Skip all that, just get to the app. The data is complete
+                    self.performSegueWithIdentifier("registerComplete", sender: self)
+                }
+            })
+
+
         }, failure: { () -> Void in
             self.presentedViewController!.performSegueWithIdentifier("return", sender: self)
         })

@@ -91,15 +91,18 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
 
         let defaults = NSUserDefaults.standardUserDefaults()
-        if let deviceInfoDictionary = defaults.objectForKey("deviceInfo")
-            as? Dictionary<NSObject, AnyObject> {
-                self.deviceInfo = DeviceInfo(dictionary: deviceInfoDictionary)
-                self.window?.rootViewController = UIStoryboard(name: "Main",
-                    bundle: NSBundle(forClass: AppDelegate.self)).instantiateInitialViewController() as? UIViewController
+
+        if (defaults.objectForKey("appVersion") as? String) == VirusSpread_AppVersion,
+        let deviceInfoDictionary = defaults.objectForKey("deviceInfo")
+        as? Dictionary<NSObject, AnyObject> {
+            self.deviceInfo = DeviceInfo(dictionary: deviceInfoDictionary)
+            self.window?.rootViewController = UIStoryboard(name: "Main",
+                bundle: NSBundle(forClass: AppDelegate.self)).instantiateInitialViewController() as? UIViewController
         } else {
             self.window?.rootViewController = UIStoryboard(name: "Main",
                 bundle: NSBundle(forClass: AppDelegate.self)).instantiateViewControllerWithIdentifier("firstReg") as? UIViewController
         }
+        defaults.setObject(VirusSpread_AppVersion, forKey: "appVersion")
 
         self.window?.makeKeyAndVisible()
 
