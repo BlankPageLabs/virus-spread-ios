@@ -39,7 +39,7 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
     var locationManager: LocationManager!
 
     public var window: UIWindow?
-    public var rootViewController: ViewController?
+    public var rootViewController: UIViewController?  { return self.window?.rootViewController }
 
     public var infected: Bool { return self.infectionManager.infected }
 
@@ -89,18 +89,19 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
         self.locationManager = LocationManager()
 
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.rootViewController = UIStoryboard(name: "Main",
-            bundle: NSBundle(forClass: AppDelegate.self)).instantiateInitialViewController() as? ViewController
-        self.window?.rootViewController = self.rootViewController
-        self.window?.makeKeyAndVisible()
 
         let defaults = NSUserDefaults.standardUserDefaults()
         if let deviceInfoDictionary = defaults.objectForKey("deviceInfo")
-                as? Dictionary<NSObject, AnyObject> {
-            self.deviceInfo = DeviceInfo(dictionary: deviceInfoDictionary)
+            as? Dictionary<NSObject, AnyObject> {
+                self.deviceInfo = DeviceInfo(dictionary: deviceInfoDictionary)
+                self.window?.rootViewController = UIStoryboard(name: "Main",
+                    bundle: NSBundle(forClass: AppDelegate.self)).instantiateInitialViewController() as? UIViewController
         } else {
-            self.rootViewController?.performSegueWithIdentifier("registrationProgress", sender: self)
+            self.window?.rootViewController = UIStoryboard(name: "Main",
+                bundle: NSBundle(forClass: AppDelegate.self)).instantiateViewControllerWithIdentifier("firstReg") as? UIViewController
         }
+
+        self.window?.makeKeyAndVisible()
 
         return true
     }
@@ -117,7 +118,6 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     public func applicationDidBecomeActive(application: UIApplication) {
-        self.reactivateUser()
     }
 
     public func applicationWillTerminate(application: UIApplication) {

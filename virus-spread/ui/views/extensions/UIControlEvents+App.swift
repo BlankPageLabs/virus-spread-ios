@@ -10,5 +10,5 @@ import Foundation
 
 
 extension UIControlEvents {
-    static let FoldStateChangedEvent = UIControlEvents(0x01000000)
+    static let FoldStateChanged = UIControlEvents(0x01000000)
 }

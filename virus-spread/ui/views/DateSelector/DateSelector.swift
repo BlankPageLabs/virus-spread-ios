@@ -118,7 +118,7 @@ class DateSelector: UIControl, UITextFieldDelegate {
                 self.datePickerView.hidden = !self.selected
                 self.datePickerView.alpha = 1.0
             })
-            self.sendActionsForControlEvents(.FoldStateChangedEvent)
+            self.sendActionsForControlEvents(.FoldStateChanged)
         }
     }
 
