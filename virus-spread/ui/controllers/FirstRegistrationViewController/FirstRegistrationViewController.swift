@@ -19,6 +19,7 @@ class FirstRegistrationViewController: UIViewController {
 
     private var deviceInfo: DeviceInfo?
     private var firstRegistration = true
+    private var registrationComplete = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,7 +95,6 @@ class FirstRegistrationViewController: UIViewController {
             devInfo.deviceId = UIDevice.currentDevice().identifierForVendor.UUIDString
             devInfo.userName = username
             devInfo.gender = genderIdx == 0 ? "male" : "female"
-            // XXX: Fix in API
             if let birthdate = birthdate_opt {
                 devInfo.birthdate = birthdate
             } else {
@@ -105,8 +105,14 @@ class FirstRegistrationViewController: UIViewController {
             self.performSegueWithIdentifier("progress", sender: self)
             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                 let success = { () -> Void in
-                    self.presentedViewController!.performSegueWithIdentifier("return", sender: self)
-                    self.performSegueWithIdentifier("registerComplete", sender: self)
+                    // This won't work — segues mess up the timing, transitions, etc. Without central
+                    // management this is useless. There is no way to ensure the segue is finished
+                    // before calling next segue
+//                    self.presentedViewController!.performSegueWithIdentifier("return", sender: self)
+                    self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                        self.performSegueWithIdentifier("registerComplete", sender: self)
+                    })
+                    self.registrationComplete = true
                 }
                 let failure = { () -> Void in
                     let alert = UIAlertController(title: NSLocalizedString("errorTitle", comment: "Error"),
