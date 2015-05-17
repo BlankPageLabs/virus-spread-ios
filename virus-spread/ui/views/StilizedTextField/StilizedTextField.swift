@@ -14,7 +14,7 @@ class StilizedTextField: UITextField {
     @IBInspectable
     var roundedCorners: Bool = false {
         didSet {
-            self.layer.cornerRadius = roundedCorners ? 5.0 : 0.0
+            self.layer.cornerRadius = roundedCorners ? 4.0 : 0.0
         }
     }
 
@@ -22,6 +22,19 @@ class StilizedTextField: UITextField {
     var hasBorders: Bool = true {
         didSet {
             self.layer.borderWidth = hasBorders ? 1.0 : 0.0
+        }
+    }
+
+    func flashError() {
+        dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue()) { () -> Void in
+            let oldColor = self.layer.borderColor
+            let animation = CAKeyframeAnimation(keyPath: "borderColor")
+            animation.values = [oldColor, AppColors.textField.errorColor.CGColor, AppColors.textField.errorColor.CGColor, oldColor]
+            animation.removedOnCompletion = true
+            animation.duration = 2.1
+            animation.calculationMode = kCAAnimationCubic
+            animation.keyTimes = [0.0, 0.07, 0.52, 1.0]
+            self.layer.addAnimation(animation, forKey: "border color")
         }
     }
 
@@ -77,7 +90,6 @@ class StilizedTextField: UITextField {
         if r {
             self.selected = true
         }
-        self.syncVisualState()
         return r
     }
 
@@ -86,7 +98,6 @@ class StilizedTextField: UITextField {
         if r {
             self.selected = false
         }
-        self.syncVisualState()
         return r
     }
 

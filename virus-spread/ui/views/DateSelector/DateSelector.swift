@@ -18,6 +18,10 @@ class DateSelector: UIControl, UITextFieldDelegate {
     private var inactiveDatePickerConstraints: [AnyObject] = []
     private var activeDatePickerConstraints: [AnyObject] = []
 
+    func flashError() {
+        self.textFieldView.flashError()
+    }
+
     private func dateSelectorInit() {
         self.datePickerView.datePickerMode = .Date
         // FIXME: disabled text not updated on scrolling, and the color is not suitable

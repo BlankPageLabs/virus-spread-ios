@@ -13,6 +13,8 @@ private let skyBlueColor = UIColor(red: 51.0/255.0, green: 155.0/255.0, blue: 21
 private let blueColor = UIColor(red: 0.0/255.0, green: 172.0/255.0, blue: 237.0/255.0, alpha: 1.0)
 private let lightedBlueColor = UIColor(red: 92.0/255.0, green: 175.0/255.0, blue: 221.0/255.0, alpha: 1.0)
 private let grayColor = UIColor(red: 150.0/255.0, green: 192.0/255.0, blue: 214.0/255.0, alpha: 1.0)
+private let redColor = UIColor(red: 255.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+private let clearColor = UIColor.clearColor()
 
 protocol ColoredControlStates {
     typealias ColorType
@@ -34,6 +36,8 @@ class AppColors {
             let textColor: UIColor
             let placeholderColor: UIColor = grayColor
         }
+
+        let errorColor = redColor
 
         let normal = Colors(
             borderColor: whiteColor,
